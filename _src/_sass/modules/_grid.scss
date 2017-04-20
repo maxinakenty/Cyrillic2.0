@@ -29,7 +29,6 @@
         @include above('#{$breakpoint-key}') {
           $breakpoint-key: nth($breakpoints-keys, $i);
           $leading: leading('#{$breakpoint-key}');
-
           @include grid-double-gradient($leading);
         }
     }
