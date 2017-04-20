@@ -1,0 +1,46 @@
+@import 'modules/calc-leading';
+
+
+// VENDOR
+@import "math";
+@import 'init';
+@import 'type';
+@import 'layout';
+@import 'scale';
+@import 'color';
+@import 'susy';
+
+// CONFIGURATION
+@import 'config/manifest';
+
+@import 'modules/all';
+
+
+:root {
+  font-size: 100%;
+}
+
+body {
+  font-size: size('xs-text');
+  @include line-height();
+}
+
+// h1, h2 ...h6
+@for $i from 1 through 6 {
+  h#{$i} {
+    @include heading('h#{$i}', 'all');
+  }
+}
+
+h6 {
+  font-style: italic;
+}
+
+p {
+  margin-bottom: leading('xs', 1);
+}
+
+.grid_double {
+  @include grid-double();
+}
+

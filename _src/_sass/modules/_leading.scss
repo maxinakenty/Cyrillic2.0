@@ -1,0 +1,40 @@
+
+// FUNCTION
+@function leading(
+  $name,
+  $multiplier: 1
+  ) {
+
+  @if map-has-key($leadings, $name){
+    @return map-get($leadings, $name) * $multiplier;
+
+  }
+
+  @error "#{$name} is not a set $leadings variable";
+}
+
+// MIXIN
+@mixin line-height(
+  $name: 'all',
+  $multiplier: 1
+  ) {
+  @if map-has-key($leadings, $name){
+    line-height: leading($name, $multiplier);
+
+  } @else if $name == all {
+    $breakpoint-key: nth($breakpoints-keys, 1);
+    $line-height: leading($breakpoint-key, $multiplier);
+    line-height: $line-height;
+
+    @for $i from 2 through $breakpoints-length {
+      $breakpoint-key: nth($breakpoints-keys, $i);
+
+      @include above($breakpoint-key) {
+        $line-height: leading($breakpoint-key, $multiplier);
+        line-height: $line-height;
+      }
+    }
+  } @else {
+    @error "#{$name} is not a set $leadings variable";
+  }
+}

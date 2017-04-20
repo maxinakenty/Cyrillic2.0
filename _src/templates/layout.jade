@@ -1,0 +1,18 @@
+//-  HEAD
+include ../_jade/head
+
+//- COMPONENTS
+include ../components/header/header
+include ../components/footer/footer
+
+doctype html
+html(lang="ru")
+  +head()
+  body.grid_double
+    .wrap
+      .content
+        +header()
+        block content
+
+      +footer()
+    script(src="js/main.js")

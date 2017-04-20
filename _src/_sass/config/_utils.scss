@@ -1,0 +1,39 @@
+// LEADING
+@function leading($name, $multiplier: 1) {
+  $name: unquote($name);
+
+  @if map-has-key($leadings, $name) {
+    $leading-key: map-get($leadings, $name);
+
+    @return $leading-key;
+  }
+}
+
+// MAP DEEP GET
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @if $map {
+    @return $map;
+  }
+
+  @error "value is not in map";
+  @return null;
+}
+
+
+/// Rounds the values to the nearest even. Since when the browser converts odd values into rem units, the font does not fit into the horizontal rhythm.
+/// @access private
+///
+/// @param {Number} $value - number
+/// @returns {Number} number
+@function _round-to-even($value) {
+  @if type-of($value) == number {
+     $result: 2 * round($value / 2);
+
+     @return $result;
+  }
+
+  @error ' type-of #{$value} should a number.';
+}

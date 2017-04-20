@@ -1,0 +1,127 @@
+// minor-sixth == line-height
+$ratios: (
+  'major-third': 1.25,
+  'minor-sixth': 1.6,
+);
+
+
+$sizes: (
+  'root': 16px,
+  'xs-line': 1 ('minor-sixth': 1),
+
+  // XS
+  'xs-base': 16px,
+  'xs-leading': 'xs-base' ('minor-sixth': 1),
+
+  'xs-text': 'xs-base' ('major-third': 0, 'convert-units': 'rem'),
+  'xs-h1': 'xs-base' ('major-third': 5, 'convert-units': 'rem'),
+  'xs-h2': 'xs-base' ('major-third': 4, 'convert-units': 'rem'),
+  'xs-h3': 'xs-base' ('major-third': 3, 'convert-units': 'rem'),
+  'xs-h4': 'xs-base' ('major-third': 2, 'convert-units': 'rem'),
+  'xs-h5': 'xs-base' ('major-third': 1, 'convert-units': 'rem'),
+  'xs-h6': 'xs-base' ('major-third': 1, 'convert-units': 'rem'),
+
+  // SM
+  'sm-base': 17px,
+  'sm-leading': 'sm-base' ('minor-sixth': 1),
+
+  'sm-text': 'sm-base' ('major-third': 0, 'convert-units': 'rem'),
+  'sm-h1': 'sm-base' ('major-third': 5, 'convert-units': 'rem'),
+  'sm-h2': 'sm-base' ('major-third': 4, 'convert-units': 'rem'),
+  'sm-h3': 'sm-base' ('major-third': 3, 'convert-units': 'rem'),
+  'sm-h4': 'sm-base' ('major-third': 2, 'convert-units': 'rem'),
+  'sm-h5': 'sm-base' ('major-third': 1, 'convert-units': 'rem'),
+  'sm-h6': 'sm-base' ('major-third': 1, 'convert-units': 'rem'),
+
+  // MD
+  'md-base': 18px,
+  'md-leading': 'md-base' ('minor-sixth': 1),
+
+  'md-text': 'md-base' ('major-third': 0, 'convert-units': 'rem'),
+  'md-h1': 'md-base' ('major-third': 5, 'convert-units': 'rem'),
+  'md-h2': 'md-base' ('major-third': 4, 'convert-units': 'rem'),
+  'md-h3': 'md-base' ('major-third': 3, 'convert-units': 'rem'),
+  'md-h4': 'md-base' ('major-third': 2, 'convert-units': 'rem'),
+  'md-h5': 'md-base' ('major-third': 1, 'convert-units': 'rem'),
+  'md-h6': 'md-base' ('major-third': 1, 'convert-units': 'rem'),
+
+  // LG
+  'lg-base': 20px,
+  'lg-leading': 'lg-base' ('minor-sixth': 1),
+
+  'lg-text': 'lg-base' ('major-third': 0, 'convert-units': 'rem'),
+  'lg-h1': 'lg-base' ('major-third': 5, 'convert-units': 'rem'),
+  'lg-h2': 'lg-base' ('major-third': 4, 'convert-units': 'rem'),
+  'lg-h3': 'lg-base' ('major-third': 3, 'convert-units': 'rem'),
+  'lg-h4': 'lg-base' ('major-third': 2, 'convert-units': 'rem'),
+  'lg-h5': 'lg-base' ('major-third': 1, 'convert-units': 'rem'),
+  'lg-h6': 'lg-base' ('major-third': 1, 'convert-units': 'rem'),
+
+  // XL
+  'xl-base': 22px,
+  'xl-leading': 'xl-base' ('minor-sixth': 1),
+
+  'xl-text': 'xl-base' ('major-third': 0, 'convert-units': 'rem'),
+  'xl-h1': 'xl-base' ('major-third': 5, 'convert-units': 'rem'),
+  'xl-h2': 'xl-base' ('major-third': 4, 'convert-units': 'rem'),
+  'xl-h3': 'xl-base' ('major-third': 3, 'convert-units': 'rem'),
+  'xl-h4': 'xl-base' ('major-third': 2, 'convert-units': 'rem'),
+  'xl-h5': 'xl-base' ('major-third': 1, 'convert-units': 'rem'),
+  'xl-h6': 'xl-base' ('major-third': 1, 'convert-units': 'rem'),
+);
+
+
+// LINE HEIGHTS
+$line-heights: (
+  'xs': size('xs-line')
+) !default;
+
+$line-heights-length: length($line-heights) !default;
+
+
+// LEADINGS
+// calc-modules function _src/_sass/modules/
+$leadings: (
+  'xs': calc-leading('xs-leading'),
+  'sm': calc-leading('sm-leading'),
+  'md': calc-leading('md-leading'),
+  'lg': calc-leading('lg-leading'),
+  'xl': calc-leading('xl-leading'),
+) !default;
+
+$leadings-length: length($leadings) !default;
+
+
+// Unit - leading
+$spacing-sizes: (
+  'h1': (
+    'line-height': 2,
+    'margin-top': 4,
+    'margin-bottom': 1,
+    ),
+  'h2': (
+    'line-height': 1.5,
+    'margin-top': 2.5,
+    'margin-bottom': 0.5,
+    ),
+  'h3': (
+    'line-height': 1,
+    'margin-top': 2,
+    'margin-bottom': 0.5,
+    ),
+  'h4': (
+    'line-height': 1,
+    'margin-top': 1.5,
+    'margin-bottom': 0.5,
+    ),
+  'h5': (
+    'line-height': 1,
+    'margin-top': 2.5,
+    'margin-bottom': 0.5,
+    ),
+  'h6': (
+    'line-height': 1,
+    'margin-top': 2.5,
+    'margin-bottom': 0.5,
+    ),
+) !default;

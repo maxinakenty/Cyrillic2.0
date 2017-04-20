@@ -1,0 +1,14 @@
+$brand: (
+  'black': #000,
+  'white': #fff,
+  'red': '#f00',
+  'blue': rgba(0, 170, 255, 0.3),
+);
+
+$patterns: (
+  'background': 'black',
+  'link': 'blue',
+  'grid-bg': 'blue',
+);
+
+$colors: merge-colors($brand, $patterns);

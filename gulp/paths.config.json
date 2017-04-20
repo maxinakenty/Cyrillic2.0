@@ -1,0 +1,74 @@
+{
+  "root": {
+    "src": "./_src/",
+    "dist": "./_dist/",
+    "tmp": "./tmp/",
+    "tasks": "./tasks/",
+    "manifest": "./manifest/",
+    "serve": "./_dist/**/*.*",
+    "debug": "./npm-debug.log"
+  },
+
+  "src": {
+    "assets": "./_src/assets/**",
+    "jade": [
+      "./_src/pages/index/index.jade"
+    ],
+    "styles": {
+      "main": "./_src/_sass/main.scss",
+      "sass": {
+        "includePaths": [
+          "./tmp/styles/",
+          "./node_modules/mathsass/dist/",
+          "./node_modules/accoutrement-init/sass/",
+          "./node_modules/accoutrement-type/",
+          "./node_modules/accoutrement-scale/sass/",
+          "./node_modules/accoutrement-layout/sass/",
+          "./node_modules/accoutrement-color/sass/",
+          "./node_modules/susy/sass/",
+          "./_src/styles/"
+        ]
+      }
+    },
+    "assets": "./_src/assets/**",
+    "imagemin": "./_src/assets/img/**",
+    "spriteSvg": "./_src/assets/img/**/*.svg",
+    "spritePng": "./_src/assets/img/**/*.png"
+  },
+
+  "dist": {
+    "all": "./_dist/**/*",
+    "html": "./_dist/**/*.html",
+    "img": "./_dist/img/",
+    "js": "./_dist/js/",
+    "css": "./_dist/css/",
+    "sprites": "./_dist/sprites/"
+  },
+
+  "tmp": {
+    "styles": "./tmp/styles/"
+  },
+
+  "favicon": "./faviconData.json",
+
+  "tasks": {
+    "serve": "./tasks/serve",
+    "jade": "./tasks/jade",
+    "assets": "./tasks/assets",
+    "styles": "./tasks/styles",
+    "stylelint": "./_src/**/*.scss",
+    "clean": "./tasks/clean",
+    "imagemin": "./tasks/imagemin",
+    "spriteSvg": "./tasks/spriteSvg",
+    "spritePng": "./tasks/spritePng"
+  },
+
+  "watch": {
+    "assets": "./_src/assets/**/*.*",
+    "jade": "./_src/**/*.jade",
+    "styles": "./_src/**/*.scss",
+    "scripts": "./_src/pages/**/*.js",
+    "svg": "./_src/assets/img/**/.svg",
+    "png": "./_src/assets/img/**/.png"
+  }
+}
