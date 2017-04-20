@@ -7,10 +7,9 @@
 
   @if map-has-key($leadings, $name){
     @return map-get($leadings, $name) * $multiplier;
-
   }
 
-  @error "#{$name} is not a set $leadings variable";
+  @error "#{$name} is not a set leadings variable";
 }
 
 // MIXIN
@@ -38,6 +37,6 @@
       }
     }
   } @else {
-    @error "#{$name} is not a set $leadings variable";
+    @error "#{$name} is not a set leadings variable";
   }
 }
