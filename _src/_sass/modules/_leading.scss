@@ -27,11 +27,14 @@
     line-height: $line-height;
 
     @for $i from 2 through $breakpoints-length {
-      $breakpoint-key: nth($breakpoints-keys, $i);
 
-      @include above($breakpoint-key) {
-        $line-height: leading($breakpoint-key, $multiplier);
-        line-height: $line-height;
+      @if $i <= $leadings-length {
+        $breakpoint-key: nth($breakpoints-keys, $i);
+
+        @include above($breakpoint-key) {
+          $line-height: leading($breakpoint-key, $multiplier);
+          line-height: $line-height;
+        }
       }
     }
   } @else {

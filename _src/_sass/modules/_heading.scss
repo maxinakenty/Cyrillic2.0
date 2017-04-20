@@ -11,6 +11,7 @@
     margin-bottom: leading($breakpoint-name, $margin-bottom);
 }
 
+
 @mixin heading($heading, $breakpoint-name: 'all') {
   $line_height: map-deep-get($spacing-sizes, $heading, 'line-height');
   $margin_top: map-deep-get($spacing-sizes, $heading, 'margin-top');
@@ -21,14 +22,15 @@
 
   } @else if $breakpoint-name == all {
       $breakpoint-key: nth($breakpoints-keys, 1);
-
       @include heading-value($heading, $breakpoint-key, $line-height, $margin-top, $margin-bottom);
 
       @for $i from 2 through $breakpoints-length {
         $breakpoint-key: nth($breakpoints-keys, $i);
 
-        @include above($breakpoint-key) {
-          @include heading-value($heading, $breakpoint-key, $line-height, $margin-top, $margin-bottom);
+        @if $i <= $leadings-length {
+          @include above($breakpoint-key) {
+            @include heading-value($heading, $breakpoint-key, $line-height, $margin-top, $margin-bottom);
+          }
         }
       }
   } @else {

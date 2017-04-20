@@ -23,17 +23,19 @@
   background-size: 100% $leading;
 
   @for $i from 2 through $breakpoints-length {
-    $breakpoint-key: nth($breakpoints-keys, $i);
 
-      @include above('#{$breakpoint-key}') {
+    @if $i <= $leadings-length {
+      $breakpoint-key: nth($breakpoints-keys, $i);
 
-        $breakpoint-key: nth($breakpoints-keys, $i);
-        $leading: leading('#{$breakpoint-key}');
+        @include above('#{$breakpoint-key}') {
+          $breakpoint-key: nth($breakpoints-keys, $i);
+          $leading: leading('#{$breakpoint-key}');
 
-        @include grid-double-gradient($leading);
-        background-position: left top;
-        background-repeat: repeat;
-        background-size: 100% $leading;
-      }
+          @include grid-double-gradient($leading);
+          background-position: left top;
+          background-repeat: repeat;
+          background-size: 100% $leading;
+        }
+    }
   }
 }
