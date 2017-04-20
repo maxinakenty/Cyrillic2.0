@@ -10,17 +10,16 @@
     transparent 0.5 * $leading + convert-units(1px, 'rem'),
     transparent $leading
   );
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 100% $leading;
 }
 
 
 @mixin grid-double() {
   $breakpoint-key: nth($breakpoints-keys, 1);
   $leading: leading($breakpoint-key);
-
   @include grid-double-gradient($leading);
-  background-position: left top;
-  background-repeat: repeat;
-  background-size: 100% $leading;
 
   @for $i from 2 through $breakpoints-length {
 
@@ -32,9 +31,6 @@
           $leading: leading('#{$breakpoint-key}');
 
           @include grid-double-gradient($leading);
-          background-position: left top;
-          background-repeat: repeat;
-          background-size: 100% $leading;
         }
     }
   }
