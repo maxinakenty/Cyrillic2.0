@@ -73,7 +73,7 @@ $sizes: (
 
 // LINE HEIGHTS
 $line-heights: (
-  'xs': size('xs-line')
+  'xs': size('xs-line'),
 ) !default;
 
 $line-heights-length: length($line-heights) !default;
