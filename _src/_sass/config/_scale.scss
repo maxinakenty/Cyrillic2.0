@@ -80,7 +80,7 @@ $line-heights-length: length($line-heights) !default;
 
 
 // LEADINGS
-// calc-modules function _src/_sass/modules/
+// calc-leading function _src/_sass/modules/
 $leadings: (
   'xs': calc-leading('xs-leading'),
   'sm': calc-leading('sm-leading'),
