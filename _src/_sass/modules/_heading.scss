@@ -34,6 +34,6 @@
         }
       }
   } @else {
-    @error "#{$breakpoint-name} is not a set breakpoint variable";
+    @error "#{$breakpoint-name} is not a set breakpoints variable";
   }
 }
