@@ -12,7 +12,8 @@
   }
 }
 
-// MAP DEEP GET
+// Map deep get [function]
+// -----------------------
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
     $map: map-get($map, $key);
