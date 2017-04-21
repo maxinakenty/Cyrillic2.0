@@ -16,12 +16,13 @@
 @import 'modules/all';
 
 
+
 :root {
   font-size: 100%;
 }
 
 body {
-  font-size: size('xs-text');
+  @include font-size('text');
   @include line-height();
 }
 
@@ -43,4 +44,3 @@ p {
 .grid_double {
   @include grid-double();
 }
-
