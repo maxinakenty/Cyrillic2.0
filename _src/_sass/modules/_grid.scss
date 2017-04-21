@@ -1,3 +1,7 @@
+// Grid double gradient [mixin]
+// --------------------
+/// Set the parametres for double gradient
+
 @mixin grid-double-gradient(
   $leading,
   $color: color('grid-bg')
@@ -16,6 +20,9 @@
 }
 
 
+// Grid-double [mixin]
+// -------------------
+/// Set the horizontal rhythm
 @mixin grid-double() {
   $breakpoint-key: nth($breakpoints-keys, 1);
   $leading: leading($breakpoint-key);
