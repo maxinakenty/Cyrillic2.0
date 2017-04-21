@@ -42,6 +42,6 @@
   @return  nth($breakpoints-keys, $index);
 }
 
-@function _breakpoint-key-width-name($breakpoint-key-index, $name) {
+@function _name-with-breakpoint-key($breakpoint-key-index, $name) {
   @return '#{_breakpoint-key($breakpoint-key-index)}-#{$name}';
 }
