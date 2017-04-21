@@ -1,4 +1,7 @@
-// LEADING
+// Leading [function]
+// ------------------
+/// @param {String} - $name -
+/// Key name in 
 @function leading($name, $multiplier: 1) {
   $name: unquote($name);
 
@@ -32,7 +35,7 @@
 ///
 /// @param {Number} $value - number
 /// @returns {Number} even number
-@function _round-to-even($value) {
+@function round-to-even($value) {
   @if type-of($value) == number {
      $result: 2 * round($value / 2);
 
