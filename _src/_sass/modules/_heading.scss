@@ -47,8 +47,8 @@
 
   } @else if $breakpoint-name == all {
 
-      @if map-has-key($sizes, _breakpoint-key-width-name(1, $heading) ) {
-        font-size: size( _breakpoint-key-width-name(1, $heading) );
+      @if map-has-key($sizes, _name-with-breakpoint-key(1, $heading) ) {
+        font-size: size( _name-with-breakpoint-key(1, $heading) );
         line-height: leading(_breakpoint-key(1), $line-height);
         margin-top: leading(_breakpoint-key(1), $margin-top);
         margin-bottom: leading(_breakpoint-key(1), $margin-bottom);
@@ -58,10 +58,10 @@
 
       @for $i from 2 through $breakpoints-length {
 
-        @if map-has-key( $sizes, _breakpoint-key-width-name($i, $heading) ) {
+        @if map-has-key( $sizes, _name-with-breakpoint-key($i, $heading) ) {
           @include above( _breakpoint-key($i) ) {
 
-            font-size: size( _breakpoint-key-width-name($i, $heading) );
+            font-size: size( _name-with-breakpoint-key($i, $heading) );
             line-height: leading(_breakpoint-key($i), $line-height);
             margin-top: leading(_breakpoint-key($i), $margin-top);
             margin-bottom: leading(_breakpoint-key($i), $margin-bottom);
