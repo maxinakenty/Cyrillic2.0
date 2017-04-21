@@ -1,16 +1,16 @@
 @mixin font-size($name) {
 
-  @if map-has-key( $sizes, _breakpoint-key-width-name(1, $name) ) {
-    font-size: size( _breakpoint-key-width-name(1, $name) );
+  @if map-has-key( $sizes, _name-with-breakpoint-key(1, $name) ) {
+    font-size: size( _name-with-breakpoint-key(1, $name) );
   } @else {
     @error "!!!";
   }
 
   @for $i from 2 through $breakpoints-length {
 
-    @if map-has-key( $sizes, _breakpoint-key-width-name($i, $name) ) {
+    @if map-has-key( $sizes, _name-with-breakpoint-key($i, $name) ) {
       @include above( _breakpoint-key($i) ) {
-        font-size: size( _breakpoint-key-width-name($i, $name) );
+        font-size: size( _name-with-breakpoint-key($i, $name) );
       }
     }
   }
