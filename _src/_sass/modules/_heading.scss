@@ -1,39 +1,72 @@
-@mixin heading-value(
+// Heading
+// ========
+
+
+// Heading [mixin]
+// --------------
+/// Heading sets header parameters such as:
+/// font-size, line-height, margin-top, margin-bottom
+/// @group heading
+/// @param {String} - $heading - heading name
+/// @param {String} - if $breakpoint-name ['all'] -
+///   Sets heading parametres for all breakpoints.
+///   If the headers are not set for all breakpoints,
+///   for example:
+///   $breakpoints: (
+///     xs: value,
+///     sm: value,
+///     md: value,
+///     lg: value,
+///     xl: value
+///   );
+///
+///   $sizes: (
+///     xs-h1: value,
+///     sm-h1: value,
+///     md-h1: value
+///   )
+///    The parameters will only be set for the available headers for each breakpoint
+///
+///   if $breakpoint-name ['breakpoint-name'] -
+///   Set the heading parameters for the specified breakpoint
+
+@mixin heading(
   $heading,
-  $breakpoint-name,
-  $line-height,
-  $margin-top,
-  $margin-bottom
+  $breakpoint-name: 'all'
   ) {
-    font-size: size('#{$breakpoint-name}-#{$heading}');
-    line-height: leading($breakpoint-name, $line-height);
-    margin-top: leading($breakpoint-name, $margin-top);
-    margin-bottom: leading($breakpoint-name, $margin-bottom);
-}
-
-
-@mixin heading($heading, $breakpoint-name: 'all') {
   $line_height: map-deep-get($spacing-sizes, $heading, 'line-height');
   $margin_top: map-deep-get($spacing-sizes, $heading, 'margin-top');
   $margin_bottom: map-deep-get($spacing-sizes, $heading, 'margin-bottom');
 
   @if $breakpoint-name != all and map-has-key($breakpoints, $breakpoint-name) {
-     @include heading-value($heading, $breakpoint-name, $line-height, $margin-top, $margin-bottom);
+
+     font-size: size('#{$breakpoint-name}-#{$heading}');
+     line-height: leading($breakpoint-name, $line-height);
+     margin-top: leading($breakpoint-name, $margin-top);
+     margin-bottom: leading($breakpoint-name, $margin-bottom);
 
   } @else if $breakpoint-name == all {
-      $breakpoint-key: nth($breakpoints-keys, 1);
-      @include heading-value($heading, $breakpoint-key, $line-height, $margin-top, $margin-bottom);
+
+      @if map-has-key($sizes, _breakpoint-key-width-name(1, $heading) ) {
+        font-size: size( _breakpoint-key-width-name(1, $heading) );
+        line-height: leading(_breakpoint-key(1), $line-height);
+        margin-top: leading(_breakpoint-key(1), $margin-top);
+        margin-bottom: leading(_breakpoint-key(1), $margin-bottom);
+      } @else {
+        @error "!!!";
+      }
 
       @for $i from 2 through $breakpoints-length {
-        $breakpoint-key: nth($breakpoints-keys, $i);
 
-        @if $i <= $leadings-length {
-          @include above($breakpoint-key) {
-            @include heading-value($heading, $breakpoint-key, $line-height, $margin-top, $margin-bottom);
+        @if map-has-key( $sizes, _breakpoint-key-width-name($i, $heading) ) {
+          @include above( _breakpoint-key($i) ) {
+
+            font-size: size( _breakpoint-key-width-name($i, $heading) );
+            line-height: leading(_breakpoint-key($i), $line-height);
+            margin-top: leading(_breakpoint-key($i), $margin-top);
+            margin-bottom: leading(_breakpoint-key($i), $margin-bottom);
           }
         }
       }
-  } @else {
-    @error "#{$breakpoint-name} is not a set breakpoints variable";
   }
 }
