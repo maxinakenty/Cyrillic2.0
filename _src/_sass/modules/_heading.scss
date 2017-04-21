@@ -8,7 +8,8 @@
 /// font-size, line-height, margin-top, margin-bottom
 /// @group heading
 /// @param {String} - $heading - heading name
-/// @param {String} - if $breakpoint-name ['all'] -
+/// @param {String} - $breakpoint-name -['all'] or brakpoint key.
+/// if $breakpoint-name ['all'] -
 ///   Sets heading parametres for all breakpoints.
 ///   If the headers are not set for all breakpoints,
 ///   for example:
