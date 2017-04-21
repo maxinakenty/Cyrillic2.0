@@ -2,7 +2,6 @@
 // -----------
 // Set the value of line-height at all breakpoints.
 @mixin line-height() {
-
   $line-height: leading(_breakpoint-key(1));
   line-height: $line-height;
 
