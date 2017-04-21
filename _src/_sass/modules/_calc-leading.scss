@@ -5,7 +5,7 @@
 // @returns {Number} - Rounded to integer and converted to rem number.
 
 @function calc-leading($leading) {
-  $result: round-to-even(size($leading));
+  $result: _round-to-even(size($leading));
 
   @return convert-units($result, 'rem');
 }

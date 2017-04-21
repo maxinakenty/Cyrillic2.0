@@ -36,7 +36,7 @@
 ///
 /// @param {Number} $value - number
 /// @returns {Number} even number
-@function round-to-even($value) {
+@function _round-to-even($value) {
   @if type-of($value) == number {
      $result: 2 * round($value / 2);
 
