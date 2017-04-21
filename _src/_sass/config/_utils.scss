@@ -1,16 +1,3 @@
-// Leading [function]
-// ------------------
-/// @param {String} - $breakpoint-key -
-/// Key name from the breakpoint map.
-/// @param {Number} - $multiplier -
-/// The default values is 1.
-@function leading($breakpoint-key, $multiplier: 1) {
-  @if map-has-key($leadings, $breakpoint-key) {
-    $leading-key: map-get($leadings, $breakpoint-key);
-
-    @return $leading-value;
-  }
-}
 
 // Map deep get [function]
 // -----------------------
