@@ -1,14 +1,14 @@
 // Leading [function]
 // ------------------
-/// @param {String} - $name -
-/// Key name in 
-@function leading($name, $multiplier: 1) {
-  $name: unquote($name);
+/// @param {String} - $breakpoint-key -
+/// Key name from the breakpoint map.
+/// @param {Number} - $multiplier -
+/// The default values is 1.
+@function leading($breakpoint-key, $multiplier: 1) {
+  @if map-has-key($leadings, $breakpoint-key) {
+    $leading-key: map-get($leadings, $breakpoint-key);
 
-  @if map-has-key($leadings, $name) {
-    $leading-key: map-get($leadings, $name);
-
-    @return $leading-key;
+    @return $leading-value;
   }
 }
 
