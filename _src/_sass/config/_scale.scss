@@ -70,14 +70,6 @@ $sizes: (
 );
 
 
-// LINE HEIGHTS
-$line-heights: (
-  'xs': size('xs-line'),
-) !default;
-
-$line-heights-length: length($line-heights) !default;
-
-
 // LEADINGS
 // calc-leading function _src/_sass/modules/
 $leadings: (
