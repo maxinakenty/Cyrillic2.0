@@ -38,7 +38,7 @@ h6 {
 }
 
 p {
-  margin-bottom: leading('xs', 1);
+  @include margin-bottom();
 }
 
 .grid_double {
