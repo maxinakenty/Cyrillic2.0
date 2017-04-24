@@ -53,6 +53,13 @@
         line-height: leading(_breakpoint-key(1), $line-height);
         margin-top: leading(_breakpoint-key(1), $margin-top);
         margin-bottom: leading(_breakpoint-key(1), $margin-bottom);
+
+      } @else if map-has-key($sizes, $heading) {
+        font-size: size($heading);
+        line-height: leading(_breakpoint-key(1), $line-height);
+        margin-top: leading(_breakpoint-key(1), $margin-top);
+        margin-bottom: leading(_breakpoint-key(1), $margin-bottom);
+
       } @else {
         @error "!!!";
       }
@@ -69,5 +76,7 @@
           }
         }
       }
+  } @else {
+    @error "!!!";
   }
 }
