@@ -62,3 +62,41 @@
   }
 }
 
+
+// Padding
+// -------
+@mixin padding($top, $right: null, $bottom: null, $left: null) {
+  @if $right == null and $bottom == null and $left == null {
+    padding: _leading-or-str(_breakpoint-key(1), $top);
+
+  } @else if $left == null and $bottom == null {
+      padding: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right);
+
+  } @else if $left == null or $left == $right {
+      padding: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom);
+
+  } @else {
+      padding: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom) _leading-or-str(_breakpoint-key(1), $left);
+  }
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        @if $right == null and $bottom == null and $left == null {
+          padding: _leading-or-str(_breakpoint-key($i), $top);
+
+        } @else if $left == null and $bottom == null {
+            padding: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right);
+
+        } @else if $left == null or $left == $right {
+            padding: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom);
+
+        } @else {
+            padding: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom) _leading-or-str(_breakpoint-key($i), $left);
+        }
+      }
+    }
+  }
+}
+
