@@ -1,0 +1,40 @@
+@mixin height($multiplier: 1) {
+  height: leading( _breakpoint-key(1) ) * $multiplier;
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        height: leading( _breakpoint-key($i) ) * $multiplier;
+      }
+    }
+  }
+}
+
+@mixin width($multiplier: 1) {
+  width: leading( _breakpoint-key(1) ) * $multiplier;
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        width: leading( _breakpoint-key($i) ) * $multiplier;
+      }
+    }
+  }
+}
+
+@mixin square($multiplier: 1) {
+  width: leading( _breakpoint-key(1) ) * $multiplier;
+  height: leading( _breakpoint-key(1) ) * $multiplier;
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        width: leading( _breakpoint-key($i) ) * $multiplier;
+        height: leading( _breakpoint-key($i) ) * $multiplier;
+      }
+    }
+  }
+}
