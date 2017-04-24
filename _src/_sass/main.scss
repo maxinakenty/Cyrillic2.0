@@ -29,7 +29,7 @@ body {
 // h1, h2 ...h6
 @for $i from 1 through 6 {
   h#{$i} {
-    @include heading('h#{$i}', 'all');
+    @include heading('h#{$i}');
   }
 }
 
