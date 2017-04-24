@@ -1,4 +1,21 @@
 
+
+// Получаем значение в виде числа или возвращаем стоку (например auto, inheright or initial)
+@function _leading-or-str($breakpoint-key-index, $multiplier) {
+  $typeof_value: type-of($multiplier);
+
+  @if $typeof_value == string {
+    @return unquote($multiplier);
+
+  } @else if $typeof_value == number {
+    @return leading($breakpoint-key-index, $multiplier);
+
+  } @else {
+    @error "typeof #{$multiplier} must be a string or number";
+  }
+}
+
+
 // Map deep get [function]
 // -----------------------
 @function map-deep-get($map, $keys...) {
