@@ -8,14 +8,12 @@
 @import 'layout';
 @import 'scale';
 @import 'color';
-// @import 'susy';
 @import 'vendor/susy/sass/susy';
 
 // CONFIGURATION
 @import 'config/manifest';
 
 @import 'modules/all';
-
 
 $susy: (
   'columns': 12,
@@ -37,6 +35,7 @@ $lg: (
 $xl: (
   'gutters': leading('xl'),
 );
+
 
 .block {
   width: span(12);
