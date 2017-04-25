@@ -1,0 +1,43 @@
+{
+  "name": "susy",
+  "version": "3.0.0-alpha.5",
+  "description": "Sass power-tools for web layout.",
+  "author": "Miriam Eric Suzanne <miriam@oddbird.net>",
+  "main": "sass/_susy.scss",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oddbird/susy.git"
+  },
+  "devDependencies": {
+    "mocha": "3.0.2",
+    "sass-lint": "1.10.2",
+    "sass-true": "2.2.1",
+    "sassdoc": "2.1.20"
+  },
+  "keywords": [
+    "layout",
+    "grid",
+    "sass",
+    "responsive",
+    "rwd",
+    "semantic",
+    "eyeglass-module"
+  ],
+  "eyeglass": {
+    "sassDir": "sass",
+    "exports": "eyeglass-exports.js",
+    "name": "susy",
+    "needs": "^1.0.0"
+  },
+  "scripts": {
+    "test": "npm run test-libsass && rake test && rake ag",
+    "test-libsass": "node_modules/.bin/mocha",
+    "lint": "node_modules/.bin/sass-lint -vq",
+    "docs": "sassdoc sass/",
+    "commit": "npm run lint && npm test && npm run docs"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/oddbird/susy/issues"
+  }
+}
