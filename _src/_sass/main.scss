@@ -8,13 +8,63 @@
 @import 'layout';
 @import 'scale';
 @import 'color';
-@import 'susy';
+// @import 'susy';
+@import 'vendor/susy/sass/susy';
 
 // CONFIGURATION
 @import 'config/manifest';
 
 @import 'modules/all';
 
+
+$susy: (
+  'columns': 12,
+  'gutters': leading('xs'),
+);
+
+$sm: (
+  'gutters': leading('sm'),
+);
+
+$md: (
+  'gutters': leading('md'),
+);
+
+$lg: (
+  'gutters': leading('lg'),
+);
+
+$xl: (
+  'gutters': leading('xl'),
+);
+
+.block {
+  width: span(12);
+  @include height(2)
+  background-color: lightblue;
+  padding-left: gutter(1);
+  padding-right: gutter(1);
+
+  @include above('sm') {
+    padding-left: gutter(1, $sm);
+    padding-right: gutter(1, $sm);
+  }
+
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg);
+  }
+
+  @include above('xl') {
+    padding-left: gutter(1, $xl);
+    padding-right: gutter(1, $xl);
+  }
+}
 
 
 :root {
