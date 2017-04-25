@@ -1,4 +1,4 @@
-# Cyrillic2.0
+# New Typography
 
 1) sudo npm install webpack gulp-cli -g
 2) clone repo
