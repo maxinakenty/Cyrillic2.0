@@ -36,6 +36,13 @@ $xl: (
   'gutters': leading('xl'),
 );
 
+.container {
+  margin: auto;
+  background-color: pink;
+  width: 94%;
+  @include max-width();
+}
+
 
 .block {
   width: span(12);
