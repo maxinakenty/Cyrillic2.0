@@ -38,9 +38,13 @@ $xl: (
 
 .container {
   margin: auto;
-  background-color: pink;
   width: 94%;
   @include max-width();
+}
+
+.single-measure {
+  margin: auto;
+  @include measure();
 }
 
 
