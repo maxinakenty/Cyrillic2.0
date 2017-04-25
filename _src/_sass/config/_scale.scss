@@ -12,7 +12,10 @@ $sizes: (
   'xs-base': 16px,
   'xs-leading': 'xs-base' ('minor-sixth': 1),
 
-  'xs-text': 'xs-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'xs-alpha': 'xs-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'xs-beta': 'xs-base' ('minor-third': -1, 'convert-units': 'rem'),
+  'xs-gamma': 'xs-base' ('minor-third': -2, 'convert-units': 'rem'),
+
   'xs-h1': 'xs-base' ('minor-third': 6, 'convert-units': 'rem'),
   'xs-h2': 'xs-base' ('minor-third': 4, 'convert-units': 'rem'),
   'xs-h3': 'xs-base' ('minor-third': 3, 'convert-units': 'rem'),
@@ -24,7 +27,10 @@ $sizes: (
   'sm-base': 17px,
   'sm-leading': 'sm-base' ('minor-sixth': 1),
 
-  'sm-text': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'sm-alpha': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'sm-beta': 'sm-base' ('minor-third': -1, 'convert-units': 'rem'),
+  'sm-gamma': 'sm-base' ('minor-third': -2, 'convert-units': 'rem'),
+
   'sm-h1': 'sm-base' ('minor-third': 6, 'convert-units': 'rem'),
   'sm-h2': 'sm-base' ('minor-third': 4, 'convert-units': 'rem'),
   'sm-h3': 'sm-base' ('minor-third': 3, 'convert-units': 'rem'),
@@ -36,7 +42,10 @@ $sizes: (
   'md-base': 18px,
   'md-leading': 'md-base' ('minor-sixth': 1),
 
-  'md-text': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'md-alpha': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'md-beta': 'md-base' ('minor-third': -1, 'convert-units': 'rem'),
+  'md-gamma': 'md-base' ('minor-third': -2, 'convert-units': 'rem'),
+
   'md-h1': 'md-base' ('minor-third': 6, 'convert-units': 'rem'),
   'md-h2': 'md-base' ('minor-third': 4, 'convert-units': 'rem'),
   'md-h3': 'md-base' ('minor-third': 3, 'convert-units': 'rem'),
@@ -48,7 +57,10 @@ $sizes: (
   'lg-base': 20px,
   'lg-leading': 'lg-base' ('minor-sixth': 1),
 
-  'lg-text': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'lg-alpha': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'lg-beta': 'lg-base' ('minor-third': -1, 'convert-units': 'rem'),
+  'lg-gamma': 'lg-base' ('minor-third': -2, 'convert-units': 'rem'),
+
   'lg-h1': 'lg-base' ('minor-third': 6, 'convert-units': 'rem'),
   'lg-h2': 'lg-base' ('minor-third': 4, 'convert-units': 'rem'),
   'lg-h3': 'lg-base' ('minor-third': 3, 'convert-units': 'rem'),
@@ -60,7 +72,10 @@ $sizes: (
   'xl-base': 22px,
   'xl-leading': 'xl-base' ('minor-sixth': 1),
 
-  'xl-text': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'xl-alpha': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
+  'xl-beta': 'xl-base' ('minor-third': -1, 'convert-units': 'rem'),
+  'xl-gamma': 'xl-base' ('minor-third': -2, 'convert-units': 'rem'),
+
   'xl-h1': 'xl-base' ('minor-third': 6, 'convert-units': 'rem'),
   'xl-h2': 'xl-base' ('minor-third': 4, 'convert-units': 'rem'),
   'xl-h3': 'xl-base' ('minor-third': 3, 'convert-units': 'rem'),
