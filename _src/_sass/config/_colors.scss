@@ -9,6 +9,7 @@ $patterns: (
   'background': 'black',
   'link': 'blue',
   'grid-bg': 'blue',
+  'sidenote': 'black' ('lighten': 35%),
 );
 
 $colors: merge-colors($brand, $patterns);
