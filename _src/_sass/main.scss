@@ -124,6 +124,7 @@ $xl: (
   max-width: span(4);
   padding-left: gutter(1, $sm);
   padding-right: gutter(1, $sm) * 2;
+  line-height: 1.6;
 
   @include above('lg') {
     padding-left: gutter(1, $lg);
@@ -139,6 +140,7 @@ $xl: (
   right: 0;
   padding-left: gutter(1, $sm) * 4;
   padding-right: gutter(1, $sm);
+  line-height: 1.6;
 
   @include above('lg') {
     padding-left: gutter(1, $lg) * 1.5;
