@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const HappyPack = require('happypack');
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 module.exports = {

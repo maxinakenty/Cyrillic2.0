@@ -50,7 +50,6 @@
     "gulp-zip": "^4.0.0",
     "gulp.spritesmith": "^6.2.1",
     "gulplog": "^1.0.0",
-    "happypack": "^3.0.3",
     "imagemin-pngquant": "^5.0.0",
     "install": "^0.8.8",
     "mathsass": "^0.9.5",
