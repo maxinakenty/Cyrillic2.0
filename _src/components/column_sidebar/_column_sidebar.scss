@@ -1,0 +1,24 @@
+.column--sidebar {
+  width: span(4);
+  float: left;
+  @include margin-top(0.5);
+  padding-left: gutter(1, $sm);
+  padding-right: gutter(1, $sm);
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg) * 2;
+  }
+}
+
+.column--sidebar p {
+  @include above('lg') {
+    @include font-size('beta');
+  }
+}
+
+.column--sidebar li {
+ @include above('lg') {
+   @include font-size('beta');
+ }
+}
