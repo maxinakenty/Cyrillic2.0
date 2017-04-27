@@ -1,6 +1,6 @@
 'use strict';
 
-const notifier = require('node-notifier');
+var notifier = require('node-notifier');
 
 module.exports = function (error) {
   notifier.notify({
