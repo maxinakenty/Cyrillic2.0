@@ -1,0 +1,7 @@
+.container {
+  position: relative;
+  clear: fix;
+  margin: auto;
+  width: 94%;
+  @include container-width();
+}
