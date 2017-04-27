@@ -30,24 +30,6 @@
   @return null;
 }
 
-// Round-to-even [function]
-//-------------------------
-//
-/// Rounds the values to the nearest even.
-/// @access private
-///
-/// @param {Number} $value - number
-/// @returns {Number} even number
-@function _round-to-even($value) {
-  @if type-of($value) == number {
-     $result: 2 * round($value / 2);
-
-     @return $result;
-  }
-
-  @error ' type-of #{$value} should a number.';
-}
-
 
 // Breakpoint key [function]
 // -------------------------
