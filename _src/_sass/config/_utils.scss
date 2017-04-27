@@ -34,8 +34,6 @@
 //-------------------------
 //
 /// Rounds the values to the nearest even.
-/// Since when the browser converts odd values into rem units,
-/// the font does not fit into the horizontal rhythm.
 /// @access private
 ///
 /// @param {Number} $value - number
