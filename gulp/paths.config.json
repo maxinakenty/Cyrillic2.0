@@ -22,7 +22,7 @@
           "./node_modules/mathsass/dist/",
           "./node_modules/accoutrement-init/sass/",
           "./node_modules/accoutrement-type/",
-          "./node_modules/accoutrement-scale/sass/",
+          "./node_modules/new-typography-scale/sass/",
           "./node_modules/accoutrement-layout/sass/",
           "./node_modules/accoutrement-color/sass/",
           "./node_modules/susy/sass/",
