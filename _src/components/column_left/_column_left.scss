@@ -1,0 +1,14 @@
+.column--left .sidenote{
+  position: absolute;
+  max-width: span(4);
+  right: 0;
+  padding-left: gutter(1, $sm) * 4;
+  padding-right: gutter(1, $sm);
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg) * 1.5;
+    padding-right: gutter(1, $lg);
+    @include font-size('gamma');
+    color: color('sidenote-color');
+  }
+}
