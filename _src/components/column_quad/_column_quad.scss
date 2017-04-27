@@ -1,0 +1,23 @@
+.column--quad {
+  width: span(3);
+  float: left;
+  padding-left: gutter(1, $sm);
+  padding-right: gutter(1, $sm);
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg);
+  }
+}
+
+.column--quad p {
+  @include above('lg') {
+    @include font-size('beta');
+  }
+}
+
+.column--quad li {
+ @include above('lg') {
+   @include font-size('beta');
+ }
+}
