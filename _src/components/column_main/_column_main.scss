@@ -1,0 +1,21 @@
+.column--main {
+  width: span(8);
+  float: left;
+  padding-left: gutter(1, $sm);
+  padding-right: gutter(1, $sm);
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg);
+  }
+}
+
+.column--main  + .column--sidebar {
+  padding-left: gutter(1, $sm);
+  padding-right: gutter(1, $sm);
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg) * 2;
+    padding-right: gutter(1, $lg);
+  }
+}
