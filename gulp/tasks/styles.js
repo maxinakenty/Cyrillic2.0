@@ -19,6 +19,7 @@ gulp.task('styles', function() {
     $.if(!IS_DEVELOPMENT, combine(
       $.cssnano()
     )),
+    $.rename('main.css'),
     gulp.dest(__paths.dist.css)
   ).on('error', $.notify.onError());
 });
