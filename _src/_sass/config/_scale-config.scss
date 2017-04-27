@@ -1,4 +1,3 @@
-// minor-sixth == line-height
 $ratios: (
   'minor-sixth': 1.6,
 );
@@ -8,7 +7,7 @@ $sizes: (
   'root': 16px,
   'xs-line': 1 ('minor-sixth': 1),
 
-  // XS
+  // XS <<<------------
   'xs-base': 16px,
   'xs-leading': 'xs-base' ('minor-sixth': 1),
 
@@ -23,7 +22,7 @@ $sizes: (
   'xs-h5': 'xs-base' ('minor-third': 1, 'convert-units': 'rem'),
   'xs-h6': 'xs-base' ('minor-third': 0, 'convert-units': 'rem'),
 
-  // SM
+  // SM <<<------------
   'sm-base': 17px,
   'sm-leading': 'sm-base' ('minor-sixth': 1),
 
@@ -38,7 +37,7 @@ $sizes: (
   'sm-h5': 'sm-base' ('minor-third': 1, 'convert-units': 'rem'),
   'sm-h6': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
 
-  // MD
+  // MD <<<------------
   'md-base': 18px,
   'md-leading': 'md-base' ('minor-sixth': 1),
 
@@ -53,7 +52,7 @@ $sizes: (
   'md-h5': 'md-base' ('minor-third': 1, 'convert-units': 'rem'),
   'md-h6': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
 
-  // LG
+  // LG <<<------------
   'lg-base': 20px,
   'lg-leading': 'lg-base' ('minor-sixth': 1),
 
@@ -68,7 +67,7 @@ $sizes: (
   'lg-h5': 'lg-base' ('minor-third': 1, 'convert-units': 'rem'),
   'lg-h6': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
 
-  // XL
+  // XL <<<------------
   'xl-base': 22px,
   'xl-leading': 'xl-base' ('minor-sixth': 1),
 
@@ -97,7 +96,7 @@ $sizes: (
 );
 
 
-// LEADINGS
+// LEADINGS <<<------------
 // calc-leading function _src/_sass/modules/
 $leadings: (
   'xs': calc-leading('xs-leading'),
@@ -110,7 +109,7 @@ $leadings: (
 $leadings-length: length($leadings) !default;
 
 
-// Unit - leading
+// Unit - leading <<<------------
 $spacing-sizes: (
   'h1': (
     'line-height': 2,
