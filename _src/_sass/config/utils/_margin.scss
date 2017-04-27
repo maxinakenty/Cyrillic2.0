@@ -1,0 +1,100 @@
+
+// Margin top
+// -----------
+@mixin margin-top($multiplier: 1) {
+  margin-top: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        margin-top: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+
+// Margin bottom
+// -------------
+@mixin margin-bottom($multiplier: 1) {
+  margin-bottom: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        margin-bottom: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+
+// Margin right
+// -------------
+@mixin margin-right($multiplier: 1) {
+  margin-right: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        margin-right: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+
+// Margin left
+// -----------
+@mixin margin-left($multiplier: 1) {
+  margin-left: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        margin-left: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+// Margin
+// -------
+@mixin margin($top, $right: null, $bottom: null, $left: null) {
+  @if $right == null and $bottom == null and $left == null {
+    margin: _leading-or-str(_breakpoint-key(1), $top);
+
+  } @else if $left == null and $bottom == null {
+      margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right);
+
+  } @else if $left == null or $left == $right {
+      margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom);
+
+  } @else {
+      margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom) _leading-or-str(_breakpoint-key(1), $left);
+  }
+
+  @for $i from 2 through $breakpoints-length {
+
+    @if $i <= $leadings-length {
+      @include above(_breakpoint-key($i)) {
+        @if $right == null and $bottom == null and $left == null {
+          margin: _leading-or-str(_breakpoint-key($i), $top);
+
+        } @else if $left == null and $bottom == null {
+            margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right);
+
+        } @else if $left == null or $left == $right {
+            margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom);
+
+        } @else {
+            margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom) _leading-or-str(_breakpoint-key($i), $left);
+        }
+      }
+    }
+  }
+}

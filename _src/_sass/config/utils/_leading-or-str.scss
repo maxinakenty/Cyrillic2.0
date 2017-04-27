@@ -1,0 +1,14 @@
+// Get the value in the form of a number or return the sink (for example auto, inherit or initial)
+@function _leading-or-str($breakpoint-key-index, $multiplier) {
+  $typeof_value: type-of($multiplier);
+
+  @if $typeof_value == string {
+    @return unquote($multiplier);
+
+  } @else if $typeof_value == number {
+    @return leading($breakpoint-key-index, $multiplier);
+
+  } @else {
+    @error "typeof #{$multiplier} must be a string or number";
+  }
+}

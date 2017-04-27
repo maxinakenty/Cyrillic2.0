@@ -1,0 +1,21 @@
+@mixin container-width($name: 'all') {
+  $typeof-name: type-of($name);
+
+  @if $typeof-name == string and $name != 'all' {
+    max-width: size($name, 'rem');
+
+  } @else if $typeof-name == string and $name == 'all' {
+    max-width: size( _name-with-breakpoint-key(1, 'container'), 'rem' );
+
+    @for $i from 2 through $breakpoints-length {
+
+      @if map-has-key( $sizes, _name-with-breakpoint-key($i, 'container') ) {
+        @include above( _breakpoint-key($i) ) {
+          max-width: size( _name-with-breakpoint-key($i, 'container'), 'rem' );
+        }
+      }
+    }
+  } @else {
+    @error "!!!";
+  }
+}
