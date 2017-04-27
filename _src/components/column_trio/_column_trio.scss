@@ -1,0 +1,23 @@
+.column--trio {
+  width: span(4);
+  float: left;
+  padding-left: gutter(1, $sm);
+  padding-right: gutter(1, $sm);
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg);
+  }
+}
+
+.column--trio p {
+  @include above('lg') {
+    @include font-size('beta');
+  }
+}
+
+.column--trio li {
+ @include above('lg') {
+   @include font-size('beta');
+ }
+}
