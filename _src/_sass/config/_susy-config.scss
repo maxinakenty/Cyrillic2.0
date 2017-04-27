@@ -1,0 +1,22 @@
+@import 'scale-config';
+
+$susy: (
+  'columns': 12,
+  'gutters': leading('xs'),
+);
+
+$sm: (
+  'gutters': leading('sm', 0.5),
+);
+
+$md: (
+  'gutters': leading('md'),
+);
+
+$lg: (
+  'gutters': leading('lg'),
+);
+
+$xl: (
+  'gutters': leading('xl'),
+);
