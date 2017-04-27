@@ -52,7 +52,7 @@
     "imagemin-pngquant": "^5.0.0",
     "install": "^0.8.8",
     "mathsass": "^0.9.5",
-    "new-typography-scale": "^1.0.2",
+    "new-typography-scale": "^1.0.3",
     "node-notifier": "^4.6.1",
     "normalize.css": "^5.0.0",
     "npm": "^4.5.0",
