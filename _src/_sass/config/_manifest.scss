@@ -1,7 +1,16 @@
-@import 'requirement';
-@import 'utils';
-@import 'typography';
-@import 'scale';
-@import 'layout';
-@import 'colors';
-@import 'susy';
+// Third-Party
+// --------------------
+@import 'requirements';
+
+// Utilities
+// ---------------------
+@import 'utils/manifest';
+
+// Accoutrement
+// ------------------------
+@import 'typography-config';
+@import 'scale-config';
+@import 'layout-config';
+@import 'colors-config';
+@import 'susy-config';
+
