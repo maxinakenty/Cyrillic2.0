@@ -83,11 +83,11 @@ $sizes: (
   'xl-h5': 'xl-base' ('minor-third': 1, 'convert-units': 'rem'),
   'xl-h6': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
 
-  'xs-max-width': 500px,
-  'sm-max-width': 600px,
-  'md-max-width': 800px,
-  'lg-max-width': 1170px,
-  'xl-max-width': 1300px,
+  'xs-container': 500px,
+  'sm-container': 600px,
+  'md-container': 800px,
+  'lg-container': 1170px,
+  'xl-container': 1300px,
 
   'xs-measure': 500px,
   'sm-measure': 550px,
