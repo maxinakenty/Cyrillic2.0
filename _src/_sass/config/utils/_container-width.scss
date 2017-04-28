@@ -2,7 +2,7 @@
   $typeof-name: type-of($name);
 
   @if $typeof-name == string and $name != 'all' {
-    max-width: size($name, 'rem');
+    max-width: size('#{$name}-container', 'rem');
 
   } @else if $typeof-name == string and $name == 'all' {
     max-width: size( _name-with-breakpoint-key(1, 'container'), 'rem' );
