@@ -18,14 +18,13 @@
   }
 }
 
-.column--sidebar p {
-  @include above('lg') {
-    @include font-size('beta');
-  }
-}
-
+.column--sidebar p,
 .column--sidebar li {
- @include above('lg') {
+  @include above('sm') {
+    font-size: 90%;
+  }
+
+  @include above('lg') {
    @include font-size('beta');
- }
+  }
 }
