@@ -7,6 +7,11 @@
     padding-right: gutter(1, $sm) / 2;
   }
 
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
+
   @include above('lg') {
     padding-left: gutter(1, $lg);
     padding-right: gutter(1, $lg);
