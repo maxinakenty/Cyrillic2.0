@@ -1,11 +1,10 @@
 $brand: (
   'black': #000,
-  'blue': rgba(0, 170, 255, 0.3),
 );
 
 
 $patterns: (
-  'grid-bg': 'blue',
+  'grid-bg': rgb(0, 170, 255) ('rgba': 0.3),
   'sidenote-color': 'black' ('lighten': 35%),
 );
 
