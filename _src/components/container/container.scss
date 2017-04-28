@@ -5,10 +5,10 @@
   width: 94%;
 
   @include above('lg') {
-    @include container-width('lg-container');
+    @include container-width('lg');
   }
 
   @include above('xl') {
-    @include container-width('xl-container');
+    @include container-width('xl');
   }
 }
