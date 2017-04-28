@@ -3,5 +3,12 @@
   clear: fix;
   margin: auto;
   width: 94%;
-  @include container-width();
+
+  @include above('lg') {
+    @include container-width('lg-container');
+  }
+
+  @include above('xl') {
+    @include container-width('xl-container');
+  }
 }
