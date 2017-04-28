@@ -24,17 +24,17 @@
 // -------------------
 /// Set the horizontal rhythm
 @mixin grid-double() {
-  $breakpoint-key: nth($breakpoints-keys, 1);
+  $breakpoint-key: nth(map-keys($breakpoints), 1);
   $leading: leading($breakpoint-key);
   @include grid-double-gradient($leading);
 
   @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
-      $breakpoint-key: nth($breakpoints-keys, $i);
+      $breakpoint-key: nth(map-keys($breakpoints), $i);
 
         @include above('#{$breakpoint-key}') {
-          $breakpoint-key: nth($breakpoints-keys, $i);
+          $breakpoint-key: nth(map-keys($breakpoints), $i);
           $leading: leading('#{$breakpoint-key}');
           @include grid-double-gradient($leading);
         }

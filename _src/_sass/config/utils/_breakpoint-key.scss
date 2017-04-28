@@ -5,5 +5,5 @@
 /// @param {Number} $index - number
 /// @returns {String} breakpoint key
 @function _breakpoint-key($index) {
-  @return  nth($breakpoints-keys, $index);
+  @return  nth(map-keys($breakpoints), $index);
 }
