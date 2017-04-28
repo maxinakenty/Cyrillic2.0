@@ -28,7 +28,7 @@
   $leading: leading($breakpoint-key);
   @include grid-double-gradient($leading);
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       $breakpoint-key: nth($breakpoints-keys, $i);

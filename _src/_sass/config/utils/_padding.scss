@@ -4,7 +4,7 @@
 @mixin padding-top($multiplier: 1) {
   padding-bottom: leading(_breakpoint-key(1)) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -20,7 +20,7 @@
 @mixin padding-bottom($multiplier: 1) {
   padding-bottom: leading(_breakpoint-key(1)) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -36,7 +36,7 @@
 @mixin padding-right($multiplier: 1) {
   padding-right: leading(_breakpoint-key(1)) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -52,7 +52,7 @@
 @mixin padding-left($multiplier: 1) {
   padding-left: leading(_breakpoint-key(1)) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -79,7 +79,7 @@
       padding: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom) _leading-or-str(_breakpoint-key(1), $left);
   }
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {

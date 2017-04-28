@@ -4,7 +4,7 @@
 @mixin height($multiplier: 1) {
   height: leading( _breakpoint-key(1) ) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -20,7 +20,7 @@
 @mixin min-height($multiplier: 1) {
   min-height: leading( _breakpoint-key(1) ) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -36,7 +36,7 @@
 @mixin max-height($multiplier: 1) {
   max-height: leading( _breakpoint-key(1) ) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -52,7 +52,7 @@
 @mixin width($multiplier: 1) {
   width: leading( _breakpoint-key(1) ) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -68,7 +68,7 @@
 @mixin min-width($multiplier: 1) {
   min-width: leading( _breakpoint-key(1) ) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -84,7 +84,7 @@
 @mixin max-width($multiplier: 1) {
   max-width: leading( _breakpoint-key(1) ) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
@@ -101,7 +101,7 @@
   width: leading( _breakpoint-key(1) ) * $multiplier;
   height: leading( _breakpoint-key(1) ) * $multiplier;
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {

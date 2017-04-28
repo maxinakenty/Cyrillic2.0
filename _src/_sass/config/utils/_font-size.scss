@@ -28,7 +28,7 @@
     @error "!!!";
   }
 
-  @for $i from 2 through $breakpoints-length {
+  @for $i from 2 through length($breakpoints) {
 
     @if map-has-key( $sizes, _name-with-breakpoint-key($i, $name) ) {
       @include above( _breakpoint-key($i) ) {

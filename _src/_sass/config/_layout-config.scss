@@ -6,6 +6,5 @@ $breakpoints: (
   'xl': 1600px,
 );
 
-$breakpoints-length: length($breakpoints);
 $breakpoints-keys: map-keys($breakpoints);
 
