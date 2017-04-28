@@ -1,0 +1,22 @@
+.column--duo {
+  @include above('sm') {
+    width: span(6);
+    float: left;
+    padding-left: gutter(1, $sm) / 2;
+    padding-right: gutter(1, $sm) / 2;
+  }
+
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg);
+  }
+}
+
+.column--duo:nth-of-type(2n+3) {
+  clear: left;
+}
