@@ -35,9 +35,9 @@
   $heading,
   $breakpoint-name: 'all'
   ) {
-  $line_height: map-deep-get($spacing-sizes, $heading, 'line-height');
-  $margin_top: map-deep-get($spacing-sizes, $heading, 'margin-top');
-  $margin_bottom: map-deep-get($spacing-sizes, $heading, 'margin-bottom');
+  $line_height: map-deep-get($headers-spacing, $heading, 'line-height');
+  $margin_top: map-deep-get($headers-spacing, $heading, 'margin-top');
+  $margin_bottom: map-deep-get($headers-spacing, $heading, 'margin-bottom');
 
   @if $breakpoint-name != all and map-has-key($breakpoints, $breakpoint-name) {
 
