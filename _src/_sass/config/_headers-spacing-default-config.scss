@@ -1,7 +1,9 @@
+
+// Custom user configuration map for $headers-spacing <<<------------
 $headers-spacing: () !default;
 
-
-$headers-spacing-default: (
+// Configuration map of Susy factory defaults <<<------------
+$headers-spacing-defaults: (
   'h1': (
     'line-height': 2,
     'margin-top': 4,
