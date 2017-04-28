@@ -3,11 +3,18 @@
 }
 
 .column--right .sidenote {
-  position: absolute;
-  left: 0;
-  max-width: span(4);
-  padding-left: gutter(1, $sm);
-  padding-right: gutter(1, $sm) * 2;
+  @include above('sm') {
+    position: absolute;
+    left: 0;
+    max-width: span(4);
+    padding-left: gutter(1, $sm) / 2;
+    padding-right: gutter(1, $sm);
+  }
+
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
 
   @include above('lg') {
     padding-left: gutter(1, $lg);
