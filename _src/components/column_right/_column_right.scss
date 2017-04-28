@@ -1,8 +1,12 @@
 .column--right {
-  margin-left: span(4);
+  @include above('sm') {
+    margin-left: span(4);
+  }
 }
 
 .column--right .sidenote {
+  color: color('sidenote-color');
+
   @include above('sm') {
     position: absolute;
     left: 0;
@@ -20,6 +24,5 @@
     padding-left: gutter(1, $lg);
     padding-right: gutter(1, $lg) * 1.5;
     @include font-size('gamma');
-    color: color('sidenote-color');
   }
 }
