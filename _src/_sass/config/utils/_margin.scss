@@ -6,7 +6,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         margin-top: leading(_breakpoint-key($i)) * $multiplier;
       }
@@ -22,7 +22,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         margin-bottom: leading(_breakpoint-key($i)) * $multiplier;
       }
@@ -38,7 +38,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         margin-right: leading(_breakpoint-key($i)) * $multiplier;
       }
@@ -54,7 +54,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         margin-left: leading(_breakpoint-key($i)) * $multiplier;
       }
@@ -80,7 +80,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         @if $right == null and $bottom == null and $left == null {
           margin: _leading-or-str(_breakpoint-key($i), $top);

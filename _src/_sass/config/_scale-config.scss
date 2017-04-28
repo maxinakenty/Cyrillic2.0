@@ -106,8 +106,6 @@ $leadings: (
   'xl': calc-leading('xl-leading'),
 ) !default;
 
-$leadings-length: length($leadings) !default;
-
 
 // Unit - leading <<<------------
 $spacing-sizes: (

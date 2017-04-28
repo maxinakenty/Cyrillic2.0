@@ -3,7 +3,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         border-radius: leading( _breakpoint-key($i) ) * $multiplier;
       }

@@ -7,7 +7,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
 
         $line-height: leading(_breakpoint-key($i));

@@ -30,7 +30,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       $breakpoint-key: nth($breakpoints-keys, $i);
 
         @include above('#{$breakpoint-key}') {

@@ -6,7 +6,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         height: leading( _breakpoint-key($i) ) * $multiplier;
       }
@@ -22,7 +22,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         min-height: leading( _breakpoint-key($i) ) * $multiplier;
       }
@@ -38,7 +38,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         max-height: leading( _breakpoint-key($i) ) * $multiplier;
       }
@@ -54,7 +54,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         width: leading( _breakpoint-key($i) ) * $multiplier;
       }
@@ -70,7 +70,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         min-width: leading( _breakpoint-key($i) ) * $multiplier;
       }
@@ -86,7 +86,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         max-width: leading( _breakpoint-key($i) ) * $multiplier;
       }
@@ -103,7 +103,7 @@
 
   @for $i from 2 through $breakpoints-length {
 
-    @if $i <= $leadings-length {
+    @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         width: leading( _breakpoint-key($i) ) * $multiplier;
         height: leading( _breakpoint-key($i) ) * $multiplier;
