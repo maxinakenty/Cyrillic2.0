@@ -1,13 +1,24 @@
 .column--trio {
-  width: span(4);
-  float: left;
-  padding-left: gutter(1, $sm);
-  padding-right: gutter(1, $sm);
+
+  @include above('sm') {
+    width: span(4);
+    float: left;
+    padding-left: gutter(1, $sm) / 2;
+    padding-right: gutter(1, $sm) / 2;
+  }
 
   @include above('lg') {
     padding-left: gutter(1, $lg);
     padding-right: gutter(1, $lg);
   }
+}
+
+.column--trio:nth-of-type(3n+4) {
+  clear: left;
+}
+
+.column--trio:nth-of-type(n+4) {
+  @include margin-top(1.5);
 }
 
 .column--trio p {
