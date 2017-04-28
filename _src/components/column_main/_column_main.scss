@@ -1,8 +1,15 @@
 .column--main {
-  width: span(8);
-  float: left;
-  padding-left: gutter(1, $sm);
-  padding-right: gutter(1, $sm);
+  @include above('sm') {
+    width: span(8);
+    float: left;
+    padding-left: gutter(1, $sm) / 2;
+    padding-right: gutter(1, $sm) / 2;
+  }
+
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
 
   @include above('lg') {
     padding-left: gutter(1, $lg);
