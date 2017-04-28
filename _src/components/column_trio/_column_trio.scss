@@ -17,10 +17,6 @@
   clear: left;
 }
 
-.column--trio:nth-of-type(n+4) {
-  @include margin-top(1.5);
-}
-
 .column--trio p {
   @include above('lg') {
     @include font-size('beta');
