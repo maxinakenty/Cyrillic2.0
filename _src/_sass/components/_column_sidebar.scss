@@ -1,0 +1,31 @@
+.column--sidebar {
+  flex: 0 0 100%;
+
+  @include above('sm') {
+    flex: 0 0 span(4);
+    padding-left: gutter(1, $sm) / 2;
+    padding-right: gutter(1, $sm);
+    @include margin-top(0.5);
+  }
+
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg) * 2;
+  }
+}
+
+.column--sidebar p,
+.column--sidebar li {
+  @include above('sm') {
+    font-size: 90%;
+  }
+
+  @include above('lg') {
+   @include font-size('beta');
+  }
+}
