@@ -3,7 +3,6 @@
 
   @include above('sm') {
     flex: 0 0 span(6);
-    float: left;
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm) / 2;
   }
