@@ -1,6 +1,8 @@
 .column--duo {
+  flex: 0 0 100%;
+
   @include above('sm') {
-    width: span(6);
+    flex: 0 0 span(6);
     float: left;
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm) / 2;
@@ -15,8 +17,4 @@
     padding-left: gutter(1, $lg);
     padding-right: gutter(1, $lg);
   }
-}
-
-.column--duo:nth-of-type(2n+3) {
-  clear: left;
 }
