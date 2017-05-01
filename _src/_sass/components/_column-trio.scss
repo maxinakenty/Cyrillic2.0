@@ -1,0 +1,31 @@
+.column-trio {
+    flex: 0 0 100%;
+
+  @include above('sm') {
+    flex: 0 0 span(4);
+    padding-left: gutter(1, $sm) / 2;
+    padding-right: gutter(1, $sm) / 2;
+  }
+
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
+
+  @include above('lg') {
+    padding-left: gutter(1, $lg);
+    padding-right: gutter(1, $lg);
+  }
+}
+
+.column-trio p {
+  @include above('lg') {
+    @include font-size('beta');
+  }
+}
+
+.column-trio li {
+ @include above('lg') {
+   @include font-size('beta');
+ }
+}
