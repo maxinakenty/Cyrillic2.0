@@ -1,13 +1,15 @@
 .column--quad {
+  flex: 0 0 100%;
+
   @include above('sm') {
-    width: span(6);
+    flex: 0 0 span(6);
     float: left;
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm) / 2;
   }
 
   @include above('md') {
-    width: span(3);
+    flex: 0 0 span(3);
     padding-left: gutter(1, $md);
     padding-right: gutter(1, $md);
   }
