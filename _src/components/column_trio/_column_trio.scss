@@ -1,8 +1,8 @@
 .column--trio {
+    flex: 0 0 100%;
 
   @include above('sm') {
-    width: span(4);
-    float: left;
+    flex: 0 0 span(4);
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm) / 2;
   }
@@ -16,10 +16,6 @@
     padding-left: gutter(1, $lg);
     padding-right: gutter(1, $lg);
   }
-}
-
-.column--trio:nth-of-type(3n+4) {
-  clear: left;
 }
 
 .column--trio p {
