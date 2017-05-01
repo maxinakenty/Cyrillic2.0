@@ -2,7 +2,7 @@
 // --------------------
 /// Set the parametres for double gradient
 
-@mixin rhythm_double-gradient(
+@mixin vertical-rhythm_double-gradient (
   $leading,
   $color: color('grid-bg')
   ) {
@@ -23,10 +23,10 @@
 // Grid-double [mixin]
 // -------------------
 /// Set the horizontal rhythm
-@mixin rhythm_double() {
+@mixin vertical-rhythm_double() {
   $breakpoint-key: nth(map-keys($breakpoints), 1);
   $leading: leading($breakpoint-key);
-  @include rhythm_double-gradient($leading);
+  @include vertical-rhythm_double-gradient($leading);
 
   @for $i from 2 through length($breakpoints) {
 
@@ -36,7 +36,7 @@
         @include above('#{$breakpoint-key}') {
           $breakpoint-key: nth(map-keys($breakpoints), $i);
           $leading: leading('#{$breakpoint-key}');
-          @include rhythm_double-gradient($leading);
+          @include vertical-rhythm_double-gradient($leading);
         }
     }
   }
