@@ -1,7 +1,8 @@
 .column--main {
+  flex: 0 0 100%;
+
   @include above('sm') {
-    width: span(8);
-    float: left;
+    flex: 0 0 span(8);
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm) / 2;
   }
