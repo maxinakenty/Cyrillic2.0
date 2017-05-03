@@ -1,0 +1,22 @@
+.toggle-button {
+  position: fixed;
+  @include top(1);
+  @include left(1);
+  @include width(4);
+  @include height(1);
+  @include border-radius(1);
+  background-color: color('toggle-button');
+  color: color('toggle-button-color');
+}
+
+.toggle-button[rhythm-state="off"] {
+
+}
+
+.toggle-button[rhythm-state="singe"] {
+  @include vertical-rhythm_single();
+}
+
+.toggle-button[rhythm-state="double"] {
+  @include vertical-rhythm_double();
+}
