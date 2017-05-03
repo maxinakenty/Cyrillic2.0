@@ -9,14 +9,14 @@
   color: color('toggle-button-color');
 }
 
-.toggle-button[rhythm-state="off"] {
-
+.toggle-button[data-rhythm="off"] {
+  display: none;
 }
 
-.toggle-button[rhythm-state="singe"] {
+.toggle-button[data-rhythm="singe"] {
   @include vertical-rhythm_single();
 }
 
-.toggle-button[rhythm-state="double"] {
+.toggle-button[data-rhythm="double"] {
   @include vertical-rhythm_double();
 }
