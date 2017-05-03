@@ -2,13 +2,13 @@
 // Padding top
 // ------------
 @mixin padding-top($multiplier: 1) {
-  padding-bottom: leading(_breakpoint-key(1)) * $multiplier;
+  padding-top: leading(_breakpoint-key(1)) * $multiplier;
 
   @for $i from 2 through length($breakpoints) {
 
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
-        padding-bottom: leading(_breakpoint-key($i)) * $multiplier;
+        padding-top: leading(_breakpoint-key($i)) * $multiplier;
       }
     }
   }
