@@ -1,8 +1,13 @@
-// CONFIGURATION <<<------------
+// Configuration <<<------------
 @import 'config/manifest';
+
+// Layout styles <<<------------
+@import '../templates/layout';
+
+
 @import 'initial/manifest';
 
-// COMPONENTS <<<------------
+// Components <<<------------
 @import 'components/manifest';
 
 
