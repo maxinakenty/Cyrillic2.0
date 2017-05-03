@@ -1,22 +1,15 @@
 .toggle-button {
+  display: flex;
+  align-content: center;
+  white-space: nowrap;
   position: fixed;
   @include top(1);
-  @include left(1);
-  @include width(4);
-  @include height(1);
+  @include right(1);
+  @include padding-left(0.75);
+  @include padding-right(0.75);
+  @include font-size('beta');
   @include border-radius(1);
-  background-color: color('toggle-button');
-  color: color('toggle-button-color');
-}
-
-.toggle-button[data-rhythm="off"] {
-  display: none;
-}
-
-.toggle-button[data-rhythm="singe"] {
-  @include vertical-rhythm_single();
-}
-
-.toggle-button[data-rhythm="double"] {
-  @include vertical-rhythm_double();
+  background-color: black;
+  color: white;
+  z-index: $z-index-toggle-button;
 }
