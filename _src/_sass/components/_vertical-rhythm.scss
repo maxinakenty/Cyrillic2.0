@@ -1,0 +1,17 @@
+%vertical-rhythm {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.vertical-rhythm[data-rhythm="single"] {
+  @extend %vertical-rhythm;
+  @include vertical-rhythm_single();
+}
+
+.vertical-rhythm[data-rhythm="double"] {
+  @extend %vertical-rhythm;
+  @include vertical-rhythm_double();
+}
