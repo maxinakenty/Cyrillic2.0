@@ -17,7 +17,7 @@
 // vertical-rhythm [mixin]
 // -------------------
 /// Set the horizontal rhythm
-@mixin vertical-rhythm() {
+@mixin vertical-rhythm_single() {
   $breakpoint-key: nth(map-keys($breakpoints), 1);
   $leading: leading($breakpoint-key);
 
