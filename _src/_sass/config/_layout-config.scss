@@ -6,3 +6,6 @@ $breakpoints: (
   'xl': 1600px,
 );
 
+$z-index-rhythm: 1000;
+$z-index-toggle-button: $z-index-rhythm + 1;
+
