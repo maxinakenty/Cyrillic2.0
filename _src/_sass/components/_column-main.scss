@@ -2,7 +2,7 @@
   flex: 0 0 100%;
 
   @include above('sm') {
-    flex: 0 0 span(8);
+    flex: 0 0 span(4, $sm);
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm) / 2;
   }
