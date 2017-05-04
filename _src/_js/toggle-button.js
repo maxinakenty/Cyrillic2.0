@@ -41,11 +41,20 @@ class ToggleButton {
       if (event.target.closest('.toggle-button')) this._toggle();
     });
 
-    // document.addEventListener('keydown', event => {
-    //   if (event.keyCode === 'A'.charCodeAt(0) || event.keyCode === 'B'.charCodeAt(0)) {
-    //     body.removeChild(this._elem);
-    //   }
-    // });
+
+    document.addEventListener('keydown', event => {
+      if (event.keyCode === 'R'.charCodeAt(0) || event.keyCode === 'B'.charCodeAt(0)) {
+        this._elem.remove();
+
+        return false;
+      }
+
+      if (event.keyCode === 'A'.charCodeAt(0) || event.keyCode === 'B'.charCodeAt(0)) {
+         body.insertBefore(this._elem, body.firstChild);
+
+        return false;
+      }
+    });
   }
 
   _off() {
