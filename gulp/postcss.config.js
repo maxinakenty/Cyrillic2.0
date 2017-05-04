@@ -7,6 +7,7 @@ var clearfix = require('postcss-clearfix');
 var inlineSvg = require('postcss-inline-svg');
 var flexbugs = require('postcss-flexbugs-fixes');
 var assets = require('postcss-assets');
+var packer = require('css-mqpacker');
 
 var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
@@ -26,5 +27,6 @@ module.exports = [
   assets({
     basePath: __paths.dist.root,
     loadPaths: ['img/']
-  })
+  }),
+  packer,
 ];
