@@ -2,9 +2,10 @@
   $typeof-name: type-of($name);
 
   @if $typeof-name == string and $name != 'all' {
-    @debug size($name, 'rem');
+    max-width: size($name, 'rem');
 
   } @else if $typeof-name == string $name == 'all' {
+    margin: auto;
     max-width: size( _name-with-breakpoint-key(1, 'measure'), 'rem' );
 
     @for $i from 2 through length($breakpoints) {
@@ -20,4 +21,5 @@
     @error "!!!";
   }
 }
+
 
