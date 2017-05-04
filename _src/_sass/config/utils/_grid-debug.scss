@@ -1,0 +1,16 @@
+@mixin grid-debug($color: #d9d9ff) {
+  background-image: linear-gradient(to right, $color , #fff);
+  background-repeat: repeat;
+  background-position: top left;
+  border-left: 1px solid $color;
+  border-right: 1px solid $color;
+  background-size: span(1);
+
+  @include above('sm') {
+    background-size: span(1, $sm);
+  }
+
+  @include above('md') {
+    background-size: span(1, $md);
+  }
+}
