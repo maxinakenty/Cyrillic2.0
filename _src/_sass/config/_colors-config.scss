@@ -11,4 +11,4 @@ $patterns: (
   'toggle-button-color': 'white',
 );
 
-$colors: merge-colors($brand, $patterns);
+@include add-colors($brand, $patterns);
