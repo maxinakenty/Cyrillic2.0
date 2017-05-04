@@ -3,7 +3,7 @@
 
   @include above('sm') {
     position: absolute;
-    max-width: span(4);
+    max-width: span(2, $sm);
     right: 0;
     padding-left: gutter(1, $sm);
     padding-right: gutter(1, $sm) / 2;
