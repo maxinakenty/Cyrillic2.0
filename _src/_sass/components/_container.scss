@@ -4,7 +4,7 @@
   flex-direction: column;
   flex-flow: row wrap;
   margin: auto;
-  width: 94%;
+  width: size('container-max-width');
 
   @include above('lg') {
     @include container-width('lg');
