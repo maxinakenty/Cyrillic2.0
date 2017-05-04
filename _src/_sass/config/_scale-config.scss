@@ -1,4 +1,5 @@
 $ratios: (
+  'multiple': 'linear',
   'minor-sixth': 1.6,
 );
 
@@ -7,7 +8,6 @@ $sizes: (
   'root': 16px,
   'xs-line': 1 ('minor-sixth': 1),
 
-  // XS <<<------------
   'xs-base': 16px,
   'xs-leading': 'xs-base' ('minor-sixth': 1),
 
@@ -21,8 +21,9 @@ $sizes: (
   'xs-h4': 'xs-base' ('minor-third': 2, 'convert-units': 'rem'),
   'xs-h5': 'xs-base' ('minor-third': 1, 'convert-units': 'rem'),
   'xs-h6': 'xs-base' ('minor-third': 0, 'convert-units': 'rem'),
+);
 
-  // SM <<<------------
+$sm-font-sizes: (
   'sm-base': 17px,
   'sm-leading': 'sm-base' ('minor-sixth': 1),
 
@@ -36,8 +37,9 @@ $sizes: (
   'sm-h4': 'sm-base' ('minor-third': 2, 'convert-units': 'rem'),
   'sm-h5': 'sm-base' ('minor-third': 1, 'convert-units': 'rem'),
   'sm-h6': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
+);
 
-  // MD <<<------------
+$md-font-sizes: (
   'md-base': 18px,
   'md-leading': 'md-base' ('minor-sixth': 1),
 
@@ -51,8 +53,9 @@ $sizes: (
   'md-h4': 'md-base' ('minor-third': 2, 'convert-units': 'rem'),
   'md-h5': 'md-base' ('minor-third': 1, 'convert-units': 'rem'),
   'md-h6': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
+);
 
-  // LG <<<------------
+$lg-font-sizes: (
   'lg-base': 20px,
   'lg-leading': 'lg-base' ('minor-sixth': 1),
 
@@ -67,7 +70,9 @@ $sizes: (
   'lg-h5': 'lg-base' ('minor-third': 1, 'convert-units': 'rem'),
   'lg-h6': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
 
-  // XL <<<------------
+);
+
+$xl-font-sizes: (
   'xl-base': 22px,
   'xl-leading': 'xl-base' ('minor-sixth': 1),
 
@@ -81,19 +86,38 @@ $sizes: (
   'xl-h4': 'xl-base' ('minor-third': 2, 'convert-units': 'rem'),
   'xl-h5': 'xl-base' ('minor-third': 1, 'convert-units': 'rem'),
   'xl-h6': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
+);
+
+$container-sizes: (
+  'container-max-width': 94%,
+  'half-container-max-width': 'container-max-width' ('multiple': 0.5),
 
   'xs-container': 500px,
   'sm-container': 600px,
   'md-container': 800px,
-  'lg-container': 1170px,
+  'lg-container': 1100px,
   'xl-container': 1300px,
+);
 
+$measure-sizes: (
   'xs-measure': 500px,
   'sm-measure': 550px,
   'md-measure': 600px,
   'lg-measure': 650px,
   'xl-measure': 750px,
 );
+
+
+@include add-sizes(
+  $sm-font-sizes,
+  $md-font-sizes,
+  $lg-font-sizes,
+  $xl-font-sizes,
+  $container-sizes,
+  $measure-sizes
+);
+
+@debug convert-units(22px, '%');
 
 
 // LEADINGS <<<------------
