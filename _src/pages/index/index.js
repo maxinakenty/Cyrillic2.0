@@ -11,3 +11,7 @@ verticalRhythm.init();
 toggleButton.getElem().addEventListener('click', () => {
   verticalRhythm.toggleState(toggleButton.getState());
 });
+
+document.querySelectorAll('.container').forEach(item => {
+  item.classList.add('grid-debug_show');
+});
