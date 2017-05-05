@@ -1,0 +1,27 @@
+// Breakpoint key [function]
+// -------------------------
+/// @access private
+///
+/// @param {Number} $index - number
+/// @returns {String} breakpoint key
+@function _breakpoint-key($index) {
+  @return  nth(map-keys($breakpoints), $index);
+}
+
+@function _breakpoint-next($name, $breakpoints, $breakpoint-keys: map-keys($breakpoints)) {
+  $n: index($breakpoint-keys, $name);
+
+  @return if($n < length($breakpoint-keys), nth($breakpoint-keys, $n + 1), null);
+}
+
+@function _breakpoint-min($name, $breakpoints) {
+  $min: map-get($breakpoints, $name);
+
+  @return if($min != 0, $min, null);
+}
+
+@function _breakpoint-max($name, $breakpoints) {
+  $next: _breakpoint-next($name, $breakpoints);
+
+  @return if($next, _breakpoint-min($next, $breakpoints) - 1, null);
+}
