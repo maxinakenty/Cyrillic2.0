@@ -1,4 +1,4 @@
-class ToggleGrid {
+class GridDebug {
   constructor(options) {
     this._options = options || {};
     this._elem = this._options.elem || '.container';
@@ -34,4 +34,4 @@ class ToggleGrid {
   }
 }
 
-export default ToggleGrid;
+export default GridDebug;
