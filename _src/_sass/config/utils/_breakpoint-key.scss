@@ -1,9 +1,0 @@
-// Breakpoint key [function]
-// -------------------------
-/// @access private
-///
-/// @param {Number} $index - number
-/// @returns {String} breakpoint key
-@function _breakpoint-key($index) {
-  @return  nth(map-keys($breakpoints), $index);
-}
