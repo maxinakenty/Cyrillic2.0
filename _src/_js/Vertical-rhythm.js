@@ -27,7 +27,6 @@ class VerticalRhythm {
     this._elem.className = this._options.className;
     this._elem.style.zIndex = this._options.zIndex;
     this._elem.setAttribute('data-rhythm', 'off');
-    this._window = document;
 
     const body = document.body;
     body.appendChild(this._elem, body);
