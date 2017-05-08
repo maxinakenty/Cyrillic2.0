@@ -14,7 +14,7 @@ class RhythmDegug {
     this._elem;
     this._map = {};
 
-    this._keyDown = this._keyDown.bind(this);
+    this._keydown = this._keydown.bind(this);
   }
 
   // Public
@@ -23,6 +23,8 @@ class RhythmDegug {
   }
 
   getElem() {
+    if (!this._elem) this._render();
+
     return this._elem;
   }
 
@@ -51,7 +53,7 @@ class RhythmDegug {
     this._elem.setAttribute(this._options.dataAttr, 'off');
 
     document.body.appendChild(this._elem);
-    window.addEventListener('keydown', this._keyDown);
+    window.addEventListener('keydown', this._keydown);
   }
 
   _getOptions(options) {
@@ -85,23 +87,27 @@ class RhythmDegug {
     return;
   }
 
-  _keyDown(event) {
+  _keydown(event) {
     this._map[event.key] = event.type === 'keydown';
 
-    if (
-      this._map[this._options.singleRhythmKey] &&
-      this._map[this._options.rhythmKey]
+    // More productive option if (a && b) func();
+    if ([
+        this._map[this._options.singleRhythmKey],
+        this._map[this._options.rhythmKey]
+      ].every(Boolean)
     ) this._single();
 
-    if (
-      this._map[this._options.doubleRhythmKey] &&
-      this._map[this._options.rhythmKey]
+    if ([
+        this._map[this._options.doubleRhythmKey],
+        this._map[this._options.rhythmKey]
+      ].every(Boolean)
     ) this._double();
 
-    if (
-      this._map[this._options.offRhythmKey] &&
-      this._map[this._options.rhythmKey]
-      ) this._off();
+    if ([
+        this._map[this._options.offRhythmKey],
+        this._map[this._options.rhythmKey]
+      ].every(Boolean)
+    ) this._off();
   }
 
   _clearMap() {
