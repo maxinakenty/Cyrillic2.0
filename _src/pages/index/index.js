@@ -7,13 +7,13 @@ const verticalRhythm = new VerticalRhythm();
 const gridDebug = new GridDebug();
 
 
-// toggleButton.init();
-// verticalRhythm.init();
+toggleButton.init();
+verticalRhythm.init();
 gridDebug.init();
 
-// toggleButton.getElem().addEventListener('click', () => {
-//   verticalRhythm.toggleState(toggleButton.getState());
-// });
+toggleButton.getElem().addEventListener('click', () => {
+  verticalRhythm.toggleState(toggleButton.getState());
+});
 
 
 
