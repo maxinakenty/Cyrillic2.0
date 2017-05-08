@@ -60,7 +60,7 @@ class GridDebug {
       this.showGrid();
     }
 
-    if (this._map[this._options.hideGridKey] && this._map[this._options.hideGridKey]) {
+    if (this._map[this._options.hideGridKey] && this._map[this._options.gridKey]) {
       this.hideGrid();
     }
   }
