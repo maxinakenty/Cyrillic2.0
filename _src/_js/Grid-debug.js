@@ -11,30 +11,66 @@ class GridDebug {
   constructor(options) {
     this._options = this._getOptions(options);
     this._elem = this._options.elem;
-    this._debugElem = this._options.debugElem;
-    this._map = {};
     this._elems = document.querySelectorAll(this._options.elem);
 
+    this._map = {};
     this._keyDown = this._keyDown.bind(this);
   }
 
+  // Public
   init() {
     this._render();
   }
 
+  getElem() {
+    return this._elem;
+  }
+
+  showGrid() {
+    this._elems.forEach( item => {
+      item.classList.add(this._options.debugElem);
+
+      this._clearMap();
+      event.preventDefault();
+
+      return;
+    });
+  }
+
+  hideGrid() {
+    this._elems.forEach( item => {
+      item.classList.remove(this._options.debugElem);
+
+      this._clearMap();
+      event.preventDefault();
+
+      return;
+    });
+  }
+
+  // Private
   _render() {
     window.addEventListener('keydown', this._keyDown);
   }
 
   _keyDown(event) {
     this._map[event.key] = event.type === 'keydown';
-    console.log(this._map);
+
+    if (this._map[this._options.showGridKey] && this._map[this._options.gridKey]) {
+      this.showGrid();
+    }
+
+    if (this._map[this._options.hideGridKey] && this._map[this._options.hideGridKey]) {
+      this.hideGrid();
+    }
   }
-
-
 
   _getOptions(options) {
     return Object.assign({}, defaultConfig, options);
+  }
+
+  _clearMap() {
+    this._map = {};
   }
 }
 
