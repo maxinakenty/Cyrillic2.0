@@ -14,7 +14,7 @@ class GridDebug {
     this._elems = document.querySelectorAll(this._options.elem);
 
     this._map = {};
-    this._keyDown = this._keyDown.bind(this);
+    this._keydown = this._keydown.bind(this);
   }
 
   // Public
@@ -23,6 +23,8 @@ class GridDebug {
   }
 
   getElem() {
+    if (!this._elem) this._render();
+
     return this._elem;
   }
 
@@ -50,14 +52,13 @@ class GridDebug {
 
   // Private
   _render() {
-    window.addEventListener('keydown', this._keyDown);
+    window.addEventListener('keydown', this._keydown);
   }
 
-  _keyDown(event) {
+  _keydown(event) {
     this._map[event.key] = event.type === 'keydown';
 
     // More productive option if (a && b) func();
-
     if ([
         this._map[this._options.showGridKey],
         this._map[this._options.gridKey]
