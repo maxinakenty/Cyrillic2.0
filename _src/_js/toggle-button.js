@@ -38,7 +38,7 @@ class ToggleButton {
     };
 
     this._elem.addEventListener('click', event => {
-      if (event.target.closest('.toggle-button')) this._toggle();
+      if (event.target.closest('.toggle-button')) this.toggle();
     });
 
 
@@ -57,33 +57,33 @@ class ToggleButton {
     });
   }
 
-  _off() {
+  off() {
     this._elem.setAttribute('data-target', 'off');
     this._elem.textContent = 'rhythm off';
     this._state = 'off';
   }
 
-  _single() {
+  single() {
     this._elem.setAttribute('data-target', 'single');
     this._elem.textContent = 'rhythm single';
     this._state = 'single';
   }
 
-  _double() {
+  double() {
     this._elem.setAttribute('data-target', 'double');
     this._elem.textContent = 'rhythm double';
     this._state = 'double';
   }
 
-  _toggle() {
+  toggle() {
     if (this._elem.closest('[data-target="off"]')) {
-      this._single();
+      this.single();
 
     } else if (this._elem.closest('[data-target="single"]')) {
-      this._double();
+      this.double();
 
     } else {
-      this._off();
+      this.off();
     }
   }
 }
