@@ -19,6 +19,8 @@ class ToggleButton {
   }
 
   getElem() {
+    if (!this._elem) this._render();
+
     return this._elem;
   }
 
