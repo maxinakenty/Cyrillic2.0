@@ -1,6 +1,6 @@
 const defaultOptions = {
   className: 'toggle-button',
-  attribute: 'data-target',
+  dataAttr: 'data-target',
 };
 
 
@@ -22,45 +22,46 @@ class ToggleButton {
     return this._elem;
   }
 
-  off() {
-    this._elem.setAttribute(this._options.attribute, 'off');
-    this._elem.textContent = 'rhythm off';
-    this._state = 'off';
-  }
-
-  single() {
-    this._elem.setAttribute(this._options.attribute, 'single');
-    this._elem.textContent = 'rhythm single';
-    this._state = 'single';
-  }
-
-  double() {
-    this._elem.setAttribute(this._options.attribute, 'double');
-    this._elem.textContent = 'rhythm double';
-    this._state = 'double';
-  }
-
-  toggle() {
-    if (this._elem.closest(`[${this._options.attribute}="off"]`)) {
-      this.single();
-
-    } else if (this._elem.closest(`[${this._options.attribute}="single"]`)) {
-      this.double();
-
-    } else {
-      this.off();
-    }
-  }
-
   getState() {
     return this._state;
   }
 
+  toggle() {
+    if (this._elem.closest(`[${this._options.dataAttr}="off"]`)) {
+      this._single();
+
+    } else if (this._elem.closest(`[${this._options.dataAttr}="single"]`)) {
+      this._double();
+
+    } else {
+      this._off();
+    }
+  }
+
+
   // Private
+  _off() {
+    this._elem.setAttribute(this._options.dataAttr, 'off');
+    this._elem.textContent = 'rhythm off';
+    this._state = 'off';
+  }
+
+  _single() {
+    this._elem.setAttribute(this._options.dataAttr, 'single');
+    this._elem.textContent = 'rhythm single';
+    this._state = 'single';
+  }
+
+  _double() {
+    this._elem.setAttribute(this._options.dataAttr, 'double');
+    this._elem.textContent = 'rhythm double';
+    this._state = 'double';
+  }
+
   _render() {
     this._elem = document.createElement('button');
     this._elem.className = this._options.className;
-    this._elem.setAttribute(this._options.attribute, 'off');
+    this._elem.setAttribute(this._options.dataAttr, 'off');
     this._elem.textContent = 'rhythm off';
 
     const body = document.body;
