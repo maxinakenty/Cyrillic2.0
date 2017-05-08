@@ -1,8 +1,9 @@
-const Default = {
+const defaultConfig = {
   elem: '.container',
   debugElem: 'grid-debug',
-  showGridKeys: ['s', 'g'],
-  hideGridKeys: ['h', 'g'],
+  showGridKey: 's',
+  gridKey: 'g',
+  hideGridKey: 'h',
 };
 
 
@@ -11,72 +12,29 @@ class GridDebug {
     this._options = this._getOptions(options);
     this._elem = this._options.elem;
     this._debugElem = this._options.debugElem;
-    this._showGridKeys = this._options.showGridKeys;
-    this._hideGridKeys = this._options.hideGridKeys;
-    this._elems = document.querySelectorAll(this._options.elem);
     this._map = {};
-    this._intervals = {};
+    this._elems = document.querySelectorAll(this._options.elem);
+
+    this._keyDown = this._keyDown.bind(this);
   }
 
   init() {
     this._render();
   }
 
-  getElem() {
-    return this._elem;
-  }
-
-  getDebugElem() {
-    return this._debugElem;
-  }
-
-  addClass() {
-    this._elems.forEach(item => {
-      item.classList.add(this._options.debugElem);
-    });
-  }
-
-  removeClass() {
-    this._elems.forEach(item => {
-      item.classList.remove(this._options.debugElem);
-    });
-  }
-
   _render() {
-    window.addEventListener('keydown', (event) => {
-      this._map[event.key] = (event.type === 'keydown');
-
-      if (this._map[this._showGridKeys[0]] && this._map[this._showGridKeys[1]]) {
-        this.addClass();
-
-        this._map  = {};
-        event.preventDefault();
-        return;
-      }
-    });
-
-
-    window.addEventListener('keydown', (event) => {
-      this._map[event.key] = (event.type === 'keydown');
-
-      if (this._map['h'] && this._map['g']) {
-        this.removeClass();
-
-        this._map  = {};
-        event.preventDefault();
-        return;
-      }
-    });
+    window.addEventListener('keydown', this._keyDown);
   }
 
-  _show() {
-    console.log(this);
+  _keyDown(event) {
+    this._map[event.key] = event.type === 'keydown';
+    console.log(this._map);
   }
+
+
 
   _getOptions(options) {
-    options = Object.assign({}, Default, options);
-
-    return options;
+    return Object.assign({}, defaultConfig, options);
   }
 }
 
