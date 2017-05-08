@@ -1,4 +1,4 @@
-const defaultConfig = {
+const defaultOptions = {
   elem: '.container',
   debugElem: 'grid-debug',
   showGridKey: 's',
@@ -66,7 +66,7 @@ class GridDebug {
   }
 
   _getOptions(options) {
-    return Object.assign({}, defaultConfig, options);
+    return Object.assign({}, defaultOptions, options);
   }
 
   _clearMap() {
@@ -75,49 +75,3 @@ class GridDebug {
 }
 
 export default GridDebug;
-
-
-
-
-
-
-
-
-
-// class GridDebug {
-//   constructor(options) {
-//     this._options = options || {};
-//     this._elem = this._options.elem || '.container';
-//     this._debugClassName = this._options.debugClassName || 'grid-debug';
-//   }
-
-//   init() {
-//     this._render();
-//   }
-
-//   toggle() {
-//     document.querySelectorAll(this._elem).forEach(item => {
-//       item.classList.toggle(this._debugClassName);
-//     });
-//   }
-
-//   _render() {
-//     const elem = document.querySelectorAll(this._elem);
-
-//     document.addEventListener('keydown', event => {
-//       if (event.shiftKey && event.keyCode === 'G'.charCodeAt(0)) {
-//         this.toggle();
-
-//         return false;
-//       }
-
-//       if (event.shiftKey && event.keyCode === 'H'.charCodeAt(0)) {
-//         this.toggle();
-
-//         return false;
-//       }
-//     });
-//   }
-// }
-
-// export default GridDebug;
