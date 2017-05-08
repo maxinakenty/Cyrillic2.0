@@ -27,7 +27,7 @@ class GridDebug {
   }
 
   showGrid() {
-    this._elems.forEach( item => {
+    this._elems.forEach(item => {
       item.classList.add(this._options.debugElem);
 
       this._clearMap();
@@ -38,7 +38,7 @@ class GridDebug {
   }
 
   hideGrid() {
-    this._elems.forEach( item => {
+    this._elems.forEach(item => {
       item.classList.remove(this._options.debugElem);
 
       this._clearMap();
@@ -56,13 +56,19 @@ class GridDebug {
   _keyDown(event) {
     this._map[event.key] = event.type === 'keydown';
 
-    if (this._map[this._options.showGridKey] && this._map[this._options.gridKey]) {
-      this.showGrid();
-    }
+    // More productive option if (a && b) func();
 
-    if (this._map[this._options.hideGridKey] && this._map[this._options.gridKey]) {
-      this.hideGrid();
-    }
+    if ([
+        this._map[this._options.showGridKey],
+        this._map[this._options.gridKey]
+      ].every(Boolean)
+    ) this.showGrid();
+
+    if (
+      [this._map[this._options.hideGridKey],
+        this._map[this._options.gridKey]
+      ].every(Boolean)
+    ) this.hideGrid();
   }
 
   _getOptions(options) {
