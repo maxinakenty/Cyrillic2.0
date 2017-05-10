@@ -4,16 +4,9 @@ mixin head()
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
 
     meta(http-equiv="x-ua-compatible" content="ie=edge")
-    //- Отключаем панель работы с изображениями
     meta(name='imagetoolbar' content='no')
-    //-  Просим IE оформлять все в классическом стиле без учета текущей темы операционки:
     meta(name='msthemecompatible' content='no')
-    //- Сглаживание шрифтов для IE
     meta(name='cleartype' content='on')
-    //-  Отменяем автоматическое масштабирование на мобильных
-    meta(name='HandheldFriendly' content='True')
-    //- Отменяем перевод
-    meta(name='google' value='notranslate')
 
     block head
     title= pageTitle || 'Заголовок страницы'
