@@ -16,14 +16,6 @@ This is truely a grids-on-demand approach,
 where you build your own system,
 and we handle the math.
 
-We're planning to build various output-modules
-with mixins to help you get started.
-We'll probably start with a float-based module,
-and a flexbox module.
-If you have ideas for another plugin,
-or want to help move floats or flexbox along,
-pull requests are welcome!
-
 
 Getting Started
 ---------------
@@ -36,13 +28,17 @@ npm install susy@pre
 ```
 
 There are two imports to choose from.
-The default `sass/_susy.scss` comes with
+The default `sass/susy` comes with
 un-prefixed versions of the core API functions.
 If you want Susy to be name-spaced,
-import `sass/_prefix.scss` instead.
+import `sass/prefix` instead.
 
 ```scss
-@import '../node_modules/susy/sass/susy';
+// un-prefixed api functions
+@import '<path-to>/susy/sass/susy';
+
+// fully-prefixed functions
+@import '<path-to>/susy/sass/prefix';
 ```
 
 
@@ -83,6 +79,8 @@ you can use the old `at $n`, `first`, or `last` syntax
 to describe the specific columns you want to span —
 e.g. `susy-span(3 at 2 of (1 2 3 4 5 6))`
 to span across `(2 3 4)`.
+To define new gutter-values in the shorthand syntax,
+use `set-gutters $n`.
 
 You can use these two functions
 to build all sorts of grids:
@@ -98,6 +96,7 @@ to build all sorts of grids:
   flex-basis: span(3);
   padding: gutter() / 2;
 }
+
 
 // Make your own class system!
 .span {
@@ -138,7 +137,7 @@ $static: (5em 5em 5em 5em 5em 5em);
 // six unequal fluid columns
 $asymmetrical: (1 1 2 3 5 8);
 
-// six unequal fluid columns
+// six unequal static columns
 // you can mix units, as long as they are comparable...
 $strange: (1in 1cm 2pt 3mm 5in 8cm);
 ```
@@ -155,6 +154,22 @@ $fluid: 6;
 // that's a lowercase 'x' — not a star or any other symbol...
 $static: 6 x 120px;
 ```
+
+We also provide a function
+that mimics CSS Grids `repeat()`
+to generate repetative grid definitions:
+
+```scss
+// six equal fluid columns
+$fluid: susy-repeat(6);
+
+// six 120px static columns
+$static: susy-repeat(6, 120px);
+
+// 12 columns, alternating 4em and 6em
+$static: susy-repeat(6, 4em 6em);
+```
+
 
 **Gutters**
 are defined relative to columns,
@@ -183,14 +198,56 @@ will be treated as a global default
 across your project.
 
 
+Debugging Plugin: SVG Grid Image
+--------------------------------
+
+If you want to generate svg-backgrounds
+for help visualizing and debugging your grids,
+import the SVG Grid Plugin:
+
+```
+// unprefixed
+@import '<path-to>/susy/sass/plugins/svg-grid';
+
+// prefixed
+@import '<path-to>/susy/sass/plugins/svg-grid/prefix';
+```
+
+The plugin adds `svg-grid-colors` setting
+to your global defaults,
+which you can override in `$susy`.
+It also provides you with a new function,
+`susy-svg-grids()`,
+which will return inline svg for use in
+backgrounds or generated content:
+
+```scss
+// usage
+background: susy-svg-grids() no-repeat scroll;
+
+// output sample
+background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"
+                 fill="%239cc" %3E%3Crect x="1em" width="44.44444%"
+                 height="100%" /%3E%3Crect x="55.55556%" width="44.44444%"
+                 height="100%" style="transform:translateX(1em)"
+                 /%3E%3C/svg%3E') no-repeat scroll;
+```
+
+
 Advanced Features
 -----------------
 
 Once you get used to the basics,
-you can dig into the `spread` options —
-allowing you to include extra gutters in a span —
-and the `susy-slice()` function
-that can help you handle nesting-context with asymmetrical grids.
+you can dig into some of the more advanced features:
+
+- Use the `spread` and `container-spread` options
+  to include extra gutters in a span, or it's container.
+- Use the `susy-slice()` function
+  to handle nesting-context with asymmetrical grids.
+- Use `susy-compile()` and `susy-call`
+  to quickly access the full power of our
+  syntax-parsing and math engines,
+  while building plugins of your own.
 
 Happy grid-building!
 
