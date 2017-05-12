@@ -2,7 +2,7 @@ import ToggleButton from 'Toggle-button';
 import VerticalRhythm from 'Rhythm-debug';
 import GridDebug from 'Grid-debug';
 import BreakpointsDebug from 'Breakpoints-debug';
-import FontSizeDebug from '../../_js/Font-size-debug';
+import FontSizeDebug from 'Font-size-debug';
 
 const toggleButton = new ToggleButton();
 const verticalRhythm = new VerticalRhythm();
