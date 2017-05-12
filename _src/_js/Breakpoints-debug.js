@@ -1,3 +1,5 @@
+const MAP = {};
+
 const defaultOptions = {
   elem: document.body,
   debugElem: 'breakpoints-debug',
@@ -11,7 +13,7 @@ class BreakpointsDebug {
   constructor(options) {
     this._options = this._getElem(options);
     this._elem;
-    this._map = {};
+    this._map = MAP;
     this._keydown = this._keydown.bind(this);
   }
 
