@@ -21,6 +21,19 @@ module.exports = {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
   ],
+
+  resolve: {
+    modules: [
+      __dirname + '/_src'
+    ],
+    alias: {
+      'Toggle-button': '_js/Toggle-button',
+      'Rhythm-debug': '_js/Rhythm-debug',
+      'Grid-debug': '_js/Grid-debug',
+      'Breakpoints-debug': '_js/Breakpoints-debug',
+    }
+  },
+
   module: {
     rules: [{
       test: /\.js?$/,
