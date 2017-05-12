@@ -13,7 +13,6 @@ const fontSizeDebug = new FontSizeDebug();
 toggleButton.init();
 verticalRhythm.init();
 gridDebug.init();
-fontSizeDebug.init();
 
 
 toggleButton.getElem().addEventListener('click', () => {
