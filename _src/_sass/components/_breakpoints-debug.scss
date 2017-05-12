@@ -1,12 +1,12 @@
-body.breakpoints-debug {
+.breakpoints-debug {
   display: block;
   position: relative;
 }
 
-body.breakpoints-debug::before {
+.breakpoints-debug::before {
 }
 
-body.breakpoints-debug::after {
+.breakpoints-debug::after {
   display: block;
   @include breakpoints-param();
   position: fixed;
