@@ -3,44 +3,51 @@ const MAP = {};
 const defaultOptions = {
   elem: document.body,
   debugElem: 'font-size-debug',
-  showFontSizeKey: 's',
-  fontSizeKey: 'f',
-  hideFontSizeKye: 'h'
+  showBreakKey: 's',
+  breakKey: 'f',
+  hideBreakKey: 'h',
 };
+
 
 class FontSizeDebug {
   constructor(options) {
-    this._options = this._getOptions(options);
+    this._options = this._getElem(options);
     this._elem;
     this._map = MAP;
-
     this._keydown = this._keydown.bind(this);
   }
 
+  // Public
   init() {
     this._render();
   }
 
   getElem() {
-    if (!this._elem) this._render();
+    if(!this._elem) this._render();
 
     return this._elem;
   }
 
   showFontSize() {
-    this.classList.add(this._options.debugElem);
-    this._clearMap();
-    event.preventDefault();
+   this._elem.classList.add(this._options.debugElem);
+   this._clearMap();
+   event.preventDefault();
 
-    return;
+   return;
   }
 
   hideFontSize() {
-    this.classList.remove(this._options.debugElem);
-    this._clearMap();
-    event.preventDefault();
+   this._elem.classList.remove(this._options.debugElem);
+   this._clearMap();
+   event.preventDefault();
 
-    return;
+   return;
+  }
+
+  // Private
+  _render() {
+    this._elem = this._options.elem;
+    this._elem.addEventListener('keydown', this._keydown);
   }
 
   _keydown(event) {
@@ -48,24 +55,24 @@ class FontSizeDebug {
 
     // More productive option if (a && b) func();
     if ([
-        this._map[this._options.showFontSizeKey],
-        this._map[this._options.fontSizeKey]
+        this._map[this._options.showBreakKey],
+        this._map[this._options.breakKey]
       ].every(Boolean)
-    ) this.showBreak();
+    ) this.showFontSize();
 
     if ([
-        this._map[this._options.hideFontSizeKye],
-        this._map[this._options.fontSizeKey]
+        this._map[this._options.hideBreakKey],
+        this._map[this._options.breakKey]
       ].every(Boolean)
-    ) this.hideBreak();
+    ) this.hideFontSize();
+  }
+
+  _getElem(options) {
+    return Object.assign({}, defaultOptions, options);
   }
 
   _clearMap() {
     this._map = {};
-  }
-
-  _getOptions(options) {
-    return Object.assign({}, defaultOptions, options);
   }
 }
 
