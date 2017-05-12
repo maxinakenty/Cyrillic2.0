@@ -1,7 +1,7 @@
-import ToggleButton from '../../_js/Toggle-button';
-import VerticalRhythm from '../../_js/Rhythm-debug';
-import GridDebug from '../../_js/Grid-debug';
-import BreakpointsDebug from '../../_js/Breakpoints-debug';
+import ToggleButton from 'Toggle-button';
+import VerticalRhythm from 'Rhythm-debug';
+import GridDebug from 'Grid-debug';
+import BreakpointsDebug from 'Breakpoints-debug';
 
 const toggleButton = new ToggleButton();
 const verticalRhythm = new VerticalRhythm();
@@ -13,7 +13,7 @@ verticalRhythm.init();
 gridDebug.init();
 breakpointsDebug.init();
 
-
 toggleButton.getElem().addEventListener('click', () => {
   verticalRhythm.toggleState(toggleButton.getState());
 });
+
