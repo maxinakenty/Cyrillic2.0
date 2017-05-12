@@ -1,3 +1,5 @@
+const MAP = {};
+
 const defaultOptions = {
   elem: '.container',
   debugElem: 'grid-debug',
@@ -13,7 +15,7 @@ class GridDebug {
     this._elem = this._options.elem;
     this._elems = document.querySelectorAll(this._options.elem);
 
-    this._map = {};
+    this._map = MAP;
     this._keydown = this._keydown.bind(this);
   }
 
