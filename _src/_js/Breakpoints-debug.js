@@ -17,6 +17,7 @@ class BreakpointsDebug {
     this._keydown = this._keydown.bind(this);
   }
 
+  // Public
   init() {
     this._render();
   }
@@ -43,6 +44,7 @@ class BreakpointsDebug {
    return;
   }
 
+  // Private
   _render() {
     this._elem = this._options.elem;
     this._elem.addEventListener('keydown', this._keydown);
