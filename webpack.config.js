@@ -31,7 +31,7 @@ module.exports = {
       'Rhythm-debug': '_js/Rhythm-debug',
       'Grid-debug': '_js/Grid-debug',
       'Breakpoints-debug': '_js/Breakpoints-debug',
-      'FontSizeDebug': '_js/FontSizeDebug'
+      'Font-size-debug': '_js/Font-size-debug'
     }
   },
 
