@@ -1,3 +1,5 @@
+const MAP = {};
+
 const defaultOptions = {
   className: 'vertical-rhythm',
   dataAttr: 'data-rhythm',
@@ -12,7 +14,7 @@ class RhythmDegug {
   constructor(options) {
     this._options = this._getOptions(options);
     this._elem;
-    this._map = {};
+    this._map = MAP;
 
     this._keydown = this._keydown.bind(this);
   }
