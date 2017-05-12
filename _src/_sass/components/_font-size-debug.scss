@@ -3,15 +3,14 @@
   position: relative;
 }
 
-body.breakpoints-debug::before {
+.font-size-debug::before {
 }
 
-body.breakpoints-debug::after {
+.font-size-debug::after {
   display: block;
-  @include breakpoints-param();
   position: fixed;
   right: 0;
-  bottom: 0;
+  top: 0;
   left: 0;
   text-align: center;
   padding: 10px;
