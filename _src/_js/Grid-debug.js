@@ -9,7 +9,7 @@ const defaultOptions = {
 };
 
 
-class GridDebug {
+export default class GridDebug {
   constructor(options) {
     this._options = this._getOptions(options);
     this._elem = this._options.elem;
@@ -82,5 +82,3 @@ class GridDebug {
     this._map = {};
   }
 }
-
-export default GridDebug;
