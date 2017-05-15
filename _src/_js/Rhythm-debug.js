@@ -10,7 +10,7 @@ const defaultOptions = {
 };
 
 
-class RhythmDegug {
+export default class RhythmDegug {
   constructor(options) {
     this._options = this._getOptions(options);
     this._elem;
@@ -116,5 +116,3 @@ class RhythmDegug {
     this._map = {};
   }
 }
-
-export default RhythmDegug;
