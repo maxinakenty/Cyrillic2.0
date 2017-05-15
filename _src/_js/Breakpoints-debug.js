@@ -9,7 +9,7 @@ const defaultOptions = {
 };
 
 
-class BreakpointsDebug {
+export default class BreakpointsDebug {
   constructor(options) {
     this._options = this._getElem(options);
     this._elem;
@@ -75,5 +75,3 @@ class BreakpointsDebug {
     this._map = {};
   }
 }
-
-export default BreakpointsDebug;
