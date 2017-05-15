@@ -9,7 +9,7 @@ const defaultOptions = {
 };
 
 
-class FontSizeDebug {
+export default class FontSizeDebug {
   constructor(options) {
     this._options = this._getElem(options);
     this._elem;
@@ -75,5 +75,3 @@ class FontSizeDebug {
     this._map = {};
   }
 }
-
-export default FontSizeDebug;
