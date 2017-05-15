@@ -4,7 +4,7 @@ const defaultOptions = {
 };
 
 
-class ToggleButton {
+export default class ToggleButton {
   constructor(options) {
     this._options = this._getOptions(options);
     this._state;
@@ -87,5 +87,3 @@ class ToggleButton {
     return Object.assign({}, defaultOptions, options);
   }
 }
-
-export default ToggleButton;
