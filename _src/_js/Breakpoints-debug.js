@@ -33,6 +33,8 @@ export default class BreakpointsDebug {
    this._clearMap();
    event.preventDefault();
 
+   console.log('yep');
+
    return;
   }
 
