@@ -15,6 +15,7 @@ const fixHeight = new FixHeight();
 toggleButton.init();
 verticalRhythm.init();
 gridDebug.init();
+breakpointsDebug.init();
 fixHeight.init();
 
 toggleButton.getElem().addEventListener('click', () => {
