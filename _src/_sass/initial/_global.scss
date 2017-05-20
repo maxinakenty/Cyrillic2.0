@@ -1,0 +1,35 @@
+a {
+  text-decoration: none;
+  color: color('link-color');
+  transition: color $fast $easing,
+              background-color $fast $easing;
+
+  @include above('sm') {
+    background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%, color('link-gradient') 0);
+    background-position: 0 93%;
+    background-repeat: repeat-x;
+    background-size: 100% 0.15rem;
+    text-shadow: 0.1rem 0 color('body-bg'),
+                 0.15rem 0 color('body-bg'),
+                -0.1rem 0 color('body-bg'),
+                -0.15rem 0 color('body-bg');
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: #0000ad;
+      text-decoration: none;
+      background-image: none;
+    }
+
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
