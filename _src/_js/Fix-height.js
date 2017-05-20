@@ -35,9 +35,9 @@ export default class FixHeight {
       elem.style.height = 'auto';
 
       let block = Math.floor(elem.offsetHeight / lineHeight);
-      let imgNewHeight = lineHeight * block;
+      let newHeight = lineHeight * block;
 
-      elem.style.height = `${imgNewHeight}px`;
+      elem.style.height = `${newHeight}px`;
     });
   }
 
