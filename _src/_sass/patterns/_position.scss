@@ -1,0 +1,122 @@
+
+// Top
+// -----
+@mixin top($multiplier: 1) {
+  top: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through length($breakpoints) {
+
+    @if $i <= length($leadings) {
+      @include above(_breakpoint-key($i)) {
+        top: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+// Right
+// ------
+@mixin right($multiplier: 1) {
+  right: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through length($breakpoints) {
+
+    @if $i <= length($leadings) {
+      @include above(_breakpoint-key($i)) {
+        right: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+
+// Bottom
+// -------
+@mixin bottom($multiplier: 1) {
+  bottom: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through length($breakpoints) {
+
+    @if $i <= length($leadings) {
+      @include above(_breakpoint-key($i)) {
+        bottom: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+
+// Left
+// ------
+@mixin left($multiplier: 1) {
+  left: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through length($breakpoints) {
+
+    @if $i <= length($leadings) {
+      @include above(_breakpoint-key($i)) {
+        left: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
+
+
+// Position
+// ----------
+@mixin position(
+  $position,
+  $top,
+  $right: null,
+  $bottom: null,
+  $left: null)
+  {
+    position: unquote($position);
+  @if $right == null and $bottom == null and $left == null {
+    top: _leading-or-str(_breakpoint-key(1), $top);
+
+  } @else if $left == null and $bottom == null {
+      top: _leading-or-str(_breakpoint-key(1), $top);
+      right: _leading-or-str(_breakpoint-key(1), $right);
+
+  } @else if $left == null or $left == $right {
+    top: _leading-or-str(_breakpoint-key(1), $top);
+    right: _leading-or-str(_breakpoint-key(1), $right);
+    bottom: _leading-or-str(_breakpoint-key(1), $bottom);
+
+  } @else {
+      top: _leading-or-str(_breakpoint-key(1), $top);
+      right: _leading-or-str(_breakpoint-key(1), $right);
+      bottom: _leading-or-str(_breakpoint-key(1), $bottom);
+      left: _leading-or-str(_breakpoint-key(1), $left);
+  }
+
+  @for $i from 2 through length($breakpoints) {
+
+    @if $i <= length($leadings) {
+      @include above(_breakpoint-key($i)) {
+        @if $right == null and $bottom == null and $left == null {
+          top: _leading-or-str(_breakpoint-key($i), $top);
+
+        } @else if $left == null and $bottom == null {
+            top: _leading-or-str(_breakpoint-key($i), $top);
+            right: _leading-or-str(_breakpoint-key($i), $right);
+
+        } @else if $left == null or $left == $right {
+          top: _leading-or-str(_breakpoint-key($i), $top);
+          right: _leading-or-str(_breakpoint-key($i), $right);
+          bottom: _leading-or-str(_breakpoint-key($i), $bottom);
+
+        } @else {
+            top: _leading-or-str(_breakpoint-key($i), $top);
+            right: _leading-or-str(_breakpoint-key($i), $right);
+            bottom: _leading-or-str(_breakpoint-key($i), $bottom);
+            left: _leading-or-str(_breakpoint-key($i), $left);
+        }
+      }
+    }
+  }
+}
+
+
+
