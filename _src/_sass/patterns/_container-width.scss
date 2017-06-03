@@ -16,6 +16,10 @@
       }
     }
   } @else {
-    @error "!!!";
+    @error "The value must be a string with a key value from the breakpoint map or a line with the value of 'all'";
   }
+}
+
+.test {
+  @include container-width(1234);
 }
