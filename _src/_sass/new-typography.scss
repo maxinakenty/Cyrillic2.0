@@ -1,11 +1,12 @@
 // Configuration <<<------------
-@import 'config/manifest';
+@import 'config/all';
+@import 'patterns/all';
 
 // Layout styles <<<------------
 @import '../templates/layout';
 
 
-@import 'initial/manifest';
+@import 'initial/all';
 
 // Components <<<------------
-@import 'components/manifest';
+@import 'components/all';
