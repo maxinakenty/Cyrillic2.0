@@ -1,8 +1,9 @@
 .column-main {
-  flex: 0 0 100%;
+  flex: none;
+  width: 100%;
 
   @include above('sm') {
-    flex: 0 0 span(4, $sm);
+    width: span(4, $sm);
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm) / 2;
   }
