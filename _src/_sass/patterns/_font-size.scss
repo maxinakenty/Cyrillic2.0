@@ -1,0 +1,39 @@
+// Font size [mixin]
+// -----------------
+// Sets the font size for all breakpoints.
+// @param {String} - $name -
+//  Key name from $sizes map does not contain a breakpoint key prefix.
+//  If tare not set for all breakpoints,
+///   for example:
+///   $breakpoints: (
+///     xs: value,
+///     sm: value,
+///     md: value,
+///     lg: value,
+///     xl: value
+///   );
+///
+///   $sizes: (
+///     xs-text: value,
+///     sm-text: value,
+///     md-text: value
+///   )
+///   The parameters will only be set for the available values at each breakpoint.
+
+@mixin font-size($name) {
+
+  @if map-has-key( $sizes, _name-with-breakpoint-key(1, $name) ) {
+    font-size: size( _name-with-breakpoint-key(1, $name) );
+  } @else {
+    @error "!!!";
+  }
+
+  @for $i from 2 through length($breakpoints) {
+
+    @if map-has-key( $sizes, _name-with-breakpoint-key($i, $name) ) {
+      @include above( _breakpoint-key($i) ) {
+        font-size: size( _name-with-breakpoint-key($i, $name) );
+      }
+    }
+  }
+}
