@@ -1,0 +1,42 @@
+@mixin breakpoints-param($multiplier: 1) {
+  @for $i from 1 through length($breakpoints) {
+
+    @include above(_breakpoint-key($i)) {
+      $key: _breakpoint-key($i);
+
+      $min-width: if(_breakpoint-min(_breakpoint-key($i), $breakpoints),
+        '---- min-width: #{_breakpoint-min(_breakpoint-key($i), $breakpoints)}',
+         null);
+
+      $max-width: if(_breakpoint-max(_breakpoint-key($i), $breakpoints),
+        '---- max-width: #{_breakpoint-max(_breakpoint-key($i), $breakpoints)}',
+         null);
+
+      content: 'breakpoint: #{$key}  #{$min-width}  #{$max-width}';
+    }
+  }
+}
+
+.breakpoints-debug {
+  display: block;
+  position: relative;
+}
+
+.breakpoints-debug::before {
+}
+
+.breakpoints-debug::after {
+  display: block;
+  @include breakpoints-param();
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  padding: 10px;
+  background-color: pink;
+  font-size: 1rem;
+  z-index: 1002;
+  color: #333;
+  font-weight: bold;
+}
