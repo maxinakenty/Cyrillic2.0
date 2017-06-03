@@ -1,8 +1,9 @@
 .column-sidebar {
-  flex: 0 0 100%;
+  flex: none;
+  flex: 100%;
 
   @include above('sm') {
-    flex: 0 0 span(2, $sm);
+    width: span(2, $sm);
     padding-left: gutter(1, $sm) / 2;
     padding-right: gutter(1, $sm);
     @include margin-top(0.5);
