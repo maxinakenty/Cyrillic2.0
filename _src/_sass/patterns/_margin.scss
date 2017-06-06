@@ -1,65 +1,17 @@
-
-// Margin top
-// -----------
 @mixin margin-top($multiplier: 1) {
-  margin-top: leading(_breakpoint-key(1)) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        margin-top: leading(_breakpoint-key($i)) * $multiplier;
-      }
-    }
-  }
+  @include _generate('margin-top', $multiplier);
 }
 
-
-// Margin bottom
-// -------------
 @mixin margin-bottom($multiplier: 1) {
-  margin-bottom: leading(_breakpoint-key(1)) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        margin-bottom: leading(_breakpoint-key($i)) * $multiplier;
-      }
-    }
-  }
+  @include _generate('margin-bottom', $multiplier);
 }
 
-
-// Margin right
-// -------------
 @mixin margin-right($multiplier: 1) {
-  margin-right: leading(_breakpoint-key(1)) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        margin-right: leading(_breakpoint-key($i)) * $multiplier;
-      }
-    }
-  }
+  @include _generate('margin-right', $multiplier);
 }
 
-
-// Margin left
-// -----------
 @mixin margin-left($multiplier: 1) {
-  margin-left: leading(_breakpoint-key(1)) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        margin-left: leading(_breakpoint-key($i)) * $multiplier;
-      }
-    }
-  }
+  @include _generate('margin-left', $multiplier);
 }
 
 // Margin
