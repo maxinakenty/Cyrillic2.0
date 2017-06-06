@@ -1,0 +1,12 @@
+@mixin _generate($prop, $multiplier) {
+  #{$prop}: leading(_breakpoint-key(1)) * $multiplier;
+
+  @for $i from 2 through length($breakpoints) {
+
+    @if $i <= length($leadings) {
+      @include above(_breakpoint-key($i)) {
+        #{$prop}: leading(_breakpoint-key($i)) * $multiplier;
+      }
+    }
+  }
+}
