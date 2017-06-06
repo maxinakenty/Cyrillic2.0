@@ -1,102 +1,28 @@
 
-// Height
-// -------
 @mixin height($multiplier: 1) {
-  height: leading( _breakpoint-key(1) ) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        height: leading( _breakpoint-key($i) ) * $multiplier;
-      }
-    }
-  }
+  @include _generate('height', $multiplier);
 }
 
-
-// Min height
-// ----------
 @mixin min-height($multiplier: 1) {
-  min-height: leading( _breakpoint-key(1) ) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        min-height: leading( _breakpoint-key($i) ) * $multiplier;
-      }
-    }
-  }
+ @include _generate('min-height', $multiplier);
 }
 
-
-// Max height
-// ----------
 @mixin max-height($multiplier: 1) {
-  max-height: leading( _breakpoint-key(1) ) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        max-height: leading( _breakpoint-key($i) ) * $multiplier;
-      }
-    }
-  }
+  @include _generate('max-height', $multiplier);
 }
 
-
-// Width
-// ------
 @mixin width($multiplier: 1) {
-  width: leading( _breakpoint-key(1) ) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        width: leading( _breakpoint-key($i) ) * $multiplier;
-      }
-    }
-  }
+  @include _generate('width', $multiplier);
 }
 
-
-// Min width
-// ---------
 @mixin min-width($multiplier: 1) {
-  min-width: leading( _breakpoint-key(1) ) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        min-width: leading( _breakpoint-key($i) ) * $multiplier;
-      }
-    }
-  }
+  @include _generate('min-width', $multiplier);
 }
 
-
-// Max width
-// ---------
 @mixin max-width($multiplier: 1) {
-  max-width: leading( _breakpoint-key(1) ) * $multiplier;
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      @include above(_breakpoint-key($i)) {
-        max-width: leading( _breakpoint-key($i) ) * $multiplier;
-      }
-    }
-  }
+ @include _generate('max-width', $multiplier);
 }
 
-
-// Square
-// ------
 @mixin square($multiplier: 1) {
   width: leading( _breakpoint-key(1) ) * $multiplier;
   height: leading( _breakpoint-key(1) ) * $multiplier;
