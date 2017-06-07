@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const defaultOptions = {
   wait: 10,
   elem: 'img',
@@ -19,7 +21,7 @@ export default class FixHeight {
 
   // Private
   _render() {
-    window.addEventListener('resize', this._debounce(
+    window.addEventListener('resize', _.debounce(
       this._fixHeight,
       this._options.wait
     ), true);
@@ -41,22 +43,22 @@ export default class FixHeight {
     });
   }
 
-  _debounce(func, wait, immediate) {
+  // _debounce(func, wait, immediate) {
 
-    return function() {
-      let timeout;
-      const later = () => {
-        timeout = null;
-        if (!immediate) func(...arguments);
-      };
+  //   return function() {
+  //     let timeout;
+  //     const later = () => {
+  //       timeout = null;
+  //       if (!immediate) func(...arguments);
+  //     };
 
-      let callNow = immediate && !timeout;
-      clearTimeout(timeout);
+  //     let callNow = immediate && !timeout;
+  //     clearTimeout(timeout);
 
-      timeout = setTimeout(later, wait);
-      if (callNow) func(...arguments);
-    };
-  }
+  //     timeout = setTimeout(later, wait);
+  //     if (callNow) func(...arguments);
+  //   };
+  // }
 
   _getOptions(options) {
     return Object.assign({}, defaultOptions, options);
