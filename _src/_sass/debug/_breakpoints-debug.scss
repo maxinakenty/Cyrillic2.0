@@ -1,5 +1,6 @@
 @mixin breakpoints-param($multiplier: 1) {
-  @for $i from 1 through length($breakpoints) {
+  
+  @for $i from 2 through length($breakpoints) {
 
     @include above(_breakpoint-key($i)) {
       $key: _breakpoint-key($i);
