@@ -1,15 +1,15 @@
 'use strict';
 
-var __paths = require('./paths.config');
-var autoprefixer = require('autoprefixer');
-var short = require('postcss-short');
-var clearfix = require('postcss-clearfix');
-var inlineSvg = require('postcss-inline-svg');
-var flexbugs = require('postcss-flexbugs-fixes');
-var assets = require('postcss-assets');
-var packer = require('css-mqpacker');
+const __paths = require('./paths.config');
+const autoprefixer = require('autoprefixer');
+const short = require('postcss-short');
+const clearfix = require('postcss-clearfix');
+const inlineSvg = require('postcss-inline-svg');
+const flexbugs = require('postcss-flexbugs-fixes');
+const assets = require('postcss-assets');
+const packer = require('css-mqpacker');
 
-var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 
 module.exports = [
