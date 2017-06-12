@@ -10,7 +10,7 @@ const combine = require('stream-combiner2').obj; // Handle errors
 const path = require('path');
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
-gulp.task('updateHtml', function() {
+gulp.task('updateHtml', () => {
   const manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
 
   return gulp.src(path.join(__paths.root.dist, '/**/*.html'))
