@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const del = require('del');
 const __paths = require('../paths.config');
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
   return del([
     __paths.root.dist,
     __paths.root.tmp,
