@@ -12,7 +12,7 @@ const revNapkin = require('gulp-rev-napkin');
 
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
-gulp.task('revAssets', function() {
+gulp.task('revAssets', () => {
   const ignoreThese = '!' + path.join(__paths.root.dist, '/**/*+(css|js|html)');
 
   return gulp.src([
