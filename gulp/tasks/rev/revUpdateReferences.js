@@ -11,7 +11,7 @@ const path = require('path');
 const revNapkin = require('gulp-rev-napkin');
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
-gulp.task('revUpdateReferences', function() {
+gulp.task('revUpdateReferences', () => {
   const manifest = gulp.src(path.join(__paths.root.manifest, 'rev-manifest.json'));
 
   return gulp.src(path.join(__paths.root.dist, '/**/**.{css,js}'))
