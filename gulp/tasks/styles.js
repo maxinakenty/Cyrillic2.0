@@ -9,7 +9,7 @@ const combine = require('stream-combiner2').obj;
 
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
-gulp.task('styles', function() {
+gulp.task('styles', () => {
   return combine(
     gulp.src(__paths.src.styles.main),
     $.if(IS_DEVELOPMENT, $.sourcemaps.init()),
