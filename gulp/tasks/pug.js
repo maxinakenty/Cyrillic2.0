@@ -5,7 +5,7 @@ const __paths = require('../paths.config');
 const $ = require('gulp-load-plugins')();
 const combine = require('stream-combiner2').obj;
 
-gulp.task('pug', function() {
+gulp.task('pug', () => {
   return combine(
     gulp.src(__paths.src.pug),
     $.pug({
