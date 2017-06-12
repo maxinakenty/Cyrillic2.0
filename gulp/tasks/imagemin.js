@@ -7,7 +7,7 @@ const $ = require('gulp-load-plugins')();
 const pngquant = require('imagemin-pngquant');
 
 
-gulp.task('imagemin', function() {
+gulp.task('imagemin', () => {
   return gulp.src(__paths.src.imagemin)
     .pipe($.changed(__paths.dist.img))
     .pipe($.imagemin({
