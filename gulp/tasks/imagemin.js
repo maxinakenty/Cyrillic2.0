@@ -1,10 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
-var __paths = require('../paths.config');
-var $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const __paths = require('../paths.config');
+const $ = require('gulp-load-plugins')();
 
-var pngquant = require('imagemin-pngquant');
+const pngquant = require('imagemin-pngquant');
 
 
 gulp.task('imagemin', function() {
