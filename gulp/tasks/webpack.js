@@ -4,8 +4,8 @@ const gulp = require('gulp');
 const webpack = require('webpack');
 const wpcfg = require('../../webpack.config');
 
-gulp.task('webpack', function(cb) {
-  webpack(wpcfg, function(err, stats) {
+gulp.task('webpack', cb => {
+  webpack(wpcfg, (err, stats) => {
     if (err) {
       cb(err);
     }
