@@ -1,6 +1,6 @@
-var gulp = require('gulp');
-var zip = require('gulp-zip');
-var __paths = require('../paths.config');
+const gulp = require('gulp');
+const zip = require('gulp-zip');
+const __paths = require('../paths.config');
 
 gulp.task('zip', function() {
   return gulp.src(__paths.dist.all)
