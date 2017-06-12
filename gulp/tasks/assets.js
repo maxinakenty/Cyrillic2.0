@@ -1,11 +1,11 @@
 'use struct';
 
-var gulp = require('gulp');
-var __paths = require('../paths.config');
+const gulp = require('gulp');
+const __paths = require('../paths.config');
 
-var path = require('path');
-var $ = require('gulp-load-plugins')();
-var combine = require('stream-combiner2').obj;
+const path = require('path');
+const $ = require('gulp-load-plugins')();
+const combine = require('stream-combiner2').obj;
 
 gulp.task('assets', function() {
   return gulp.src([
