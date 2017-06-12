@@ -11,7 +11,7 @@ const path = require('path');
 const revNapkin = require('gulp-rev-napkin');
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
-gulp.task('revScripts', function() {
+gulp.task('revScripts', () => {
   return gulp.src(path.join(__paths.root.dist, '/**/*.js'))
     .pipe(
       $.if(!IS_DEVELOPMENT, combine(
