@@ -7,7 +7,7 @@ const path = require('path');
 const $ = require('gulp-load-plugins')();
 const combine = require('stream-combiner2').obj;
 
-gulp.task('assets', function() {
+gulp.task('assets', () => {
   return gulp.src([
       __paths.src.assets
     ], {
