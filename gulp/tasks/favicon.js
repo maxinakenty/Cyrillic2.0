@@ -1,11 +1,11 @@
 'use strict';
 
-var gulp = require('gulp');
-var fs = require('fs');
-var realFavicon = require('gulp-real-favicon');
+const gulp = require('gulp');
+const fs = require('fs');
+const realFavicon = require('gulp-real-favicon');
 
 // File where the favicon markups are stored
-var FAVICON_DATA_FILE = 'faviconData.json';
+const FAVICON_DATA_FILE = 'faviconData.json';
 
 // Generate the icons. This task takes a few seconds to complete.
 // You should run it at least once to create the icons. Then,
