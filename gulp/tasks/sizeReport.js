@@ -1,6 +1,8 @@
-var gulp = require('gulp');
-var __paths = require('../paths.config');
-var $ = require('gulp-load-plugins')();
+'use strict';
+
+const gulp = require('gulp');
+const __paths = require('../paths.config');
+const $ = require('gulp-load-plugins')();
 
 gulp.task('sizeReport', function() {
   return gulp.src(__paths.dist.all)
