@@ -1,20 +1,10 @@
 'use strict';
 
 const gulp = require('gulp');
-const mocha = require('gulp-mocha');
 const requireDir = require('require-dir');
 
 requireDir('./gulp/tasks/', {
   recurse: true
-});
-
-gulp.task('test', function() {
-  gulp.src('./_src/__test__/test-sass.js', {
-      read: false
-    })
-    .pipe(mocha({
-      reporter: 'spec'
-    }))
 });
 
 gulp.task('build', gulp.series(
