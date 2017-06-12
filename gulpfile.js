@@ -1,10 +1,20 @@
 'use strict';
 
-var gulp = require('gulp');
-var requireDir = require('require-dir');
+const gulp = require('gulp');
+const mocha = require('gulp-mocha');
+const requireDir = require('require-dir');
 
 requireDir('./gulp/tasks/', {
   recurse: true
+});
+
+gulp.task('test', function() {
+  gulp.src('./_src/__test__/test-sass.js', {
+      read: false
+    })
+    .pipe(mocha({
+      reporter: 'spec'
+    }))
 });
 
 gulp.task('build', gulp.series(
@@ -31,10 +41,10 @@ gulp.task('build:production', gulp.series(
   'zip',
   'sizeReport'));
 
-// npm run demo
+
 gulp.task('demo', gulp.series('build:production', 'serve'));
 
-// DEFAULT
+
 gulp.task('default',
   gulp.series('build', gulp.parallel('serve', 'watch'))
 );
