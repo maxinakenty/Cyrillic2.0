@@ -65,6 +65,7 @@
     "postcss-inline-svg": "^2.2.0",
     "postcss-short": "^2.0.1",
     "require-dir": "^0.3.1",
+    "sass-true": "^3.0.0-beta.1",
     "stream-combiner2": "^1.1.1",
     "webpack": "^2.3.1"
   },
