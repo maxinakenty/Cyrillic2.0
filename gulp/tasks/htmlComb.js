@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const __paths = require('../paths.config');
 const htmlbeautify = require('gulp-html-beautify');
 
-gulp.task('htmlComb', function() {
+gulp.task('htmlComb', () => {
 
   const options = {
     'indent_size': 4,
