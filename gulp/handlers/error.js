@@ -1,8 +1,6 @@
-'use strict';
+import notifier from 'node-notifier';
 
-var notifier = require('node-notifier');
-
-module.exports = function (error) {
+export default function (error) {
   notifier.notify({
     title: error.plugin,
     message: error.message,
@@ -13,4 +11,4 @@ module.exports = function (error) {
   if (typeof this.emit === 'function') {
     this.emit('end');
   }
-};
+}
