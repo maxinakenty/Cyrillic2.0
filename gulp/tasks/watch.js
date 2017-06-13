@@ -1,7 +1,5 @@
-'use strict';
-
-const gulp = require('gulp');
-const __paths = require('../paths.config');
+import gulp from 'gulp';
+import __paths from '../paths.config';
 
 gulp.task('watch', () => {
   gulp.watch(__paths.watch.pug, gulp.series('pug'));
