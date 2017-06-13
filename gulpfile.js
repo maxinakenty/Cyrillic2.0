@@ -26,14 +26,12 @@ gulp.task('build:production', gulp.series(
   'updateHtml',
   'revScripts',
   'updateHtml',
-  'favicon',
+  // 'favicon',
   'htmlComb',
-  'zip',
   'sizeReport'));
 
 
 gulp.task('demo', gulp.series('build:production', 'serve'));
-
 
 gulp.task('default',
   gulp.series('build', gulp.parallel('serve', 'watch'))
