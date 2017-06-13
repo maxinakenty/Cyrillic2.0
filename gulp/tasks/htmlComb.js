@@ -1,8 +1,6 @@
-'use strict';
-
-const gulp = require('gulp');
-const __paths = require('../paths.config');
-const htmlbeautify = require('gulp-html-beautify');
+import gulp from 'gulp';
+import __paths from '../paths.config';
+import htmlbeautify from 'gulp-html-beautify';
 
 gulp.task('htmlComb', () => {
 
