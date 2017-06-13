@@ -27,6 +27,6 @@
   }
 
   @include above('lg') {
-   @include font-size('beta');
+    @include font-size('beta');
   }
 }
