@@ -3,19 +3,17 @@
 
   @if $typeof-name == string and $name != 'all' {
     max-width: size('#{$name}-container', 'rem');
-
   } @else if $typeof-name == string and $name == 'all' {
-    max-width: size( _name-with-breakpoint-key(1, 'container'), 'rem' );
+    max-width: size(_name-with-breakpoint-key(1, 'container'), 'rem');
 
-    @for $i from 2 through length($breakpoints) {
-
-      @if map-has-key( $sizes, _name-with-breakpoint-key($i, 'container') ) {
-        @include above( _breakpoint-key($i) ) {
-          max-width: size( _name-with-breakpoint-key($i, 'container'), 'rem' );
+    @for $i from 2 through length ($breakpoints) {
+      @if map-has-key( $sizes, _name-with-breakpoint-key($i, 'container')) {
+        @include above(_breakpoint-key($i)) {
+          max-width: size(_name-with-breakpoint-key($i, 'container'), 'rem');
         }
       }
     }
   } @else {
-    @error "The value must be a string with a key value from the breakpoint map or a line with the value of 'all'";
+    @error "The value must be a string with a key value from the breakpoint map or a line with the value of"all"";
   }
 }
