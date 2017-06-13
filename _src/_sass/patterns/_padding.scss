@@ -28,7 +28,7 @@
     padding: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom) _leading-or-str(_breakpoint-key(1), $left);
   }
 
-  @for $i from 2 through length ($breakpoints) {
+  @for $i from 2 through length($breakpoints) {
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         @if $right == null and $bottom == null and $left == null {
