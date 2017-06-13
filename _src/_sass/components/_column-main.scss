@@ -19,15 +19,15 @@
   }
 }
 
-.column-main  + .column-sidebar {
+.column-main + .column-sidebar {
   @include above('sm') {
     padding-left: gutter(1, $sm);
     padding-right: gutter(1, $sm) / 2;
   }
 
   @include above('md') {
-      padding-left: gutter(1, $lg) * 2;
-      padding-right: gutter(1, $lg);
+    padding-left: gutter(1, $lg) * 2;
+    padding-right: gutter(1, $lg);
   }
 
   @include above('lg') {
