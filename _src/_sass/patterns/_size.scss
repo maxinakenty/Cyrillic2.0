@@ -1,10 +1,9 @@
-
 @mixin height($multiplier: 1) {
   @include _generate('height', $multiplier);
 }
 
 @mixin min-height($multiplier: 1) {
- @include _generate('min-height', $multiplier);
+  @include _generate('min-height', $multiplier);
 }
 
 @mixin max-height($multiplier: 1) {
@@ -20,19 +19,18 @@
 }
 
 @mixin max-width($multiplier: 1) {
- @include _generate('max-width', $multiplier);
+  @include _generate('max-width', $multiplier);
 }
 
 @mixin square($multiplier: 1) {
-  width: leading( _breakpoint-key(1) ) * $multiplier;
-  height: leading( _breakpoint-key(1) ) * $multiplier;
+  width: leading(_breakpoint-key(1)) * $multiplier;
+  height: leading(_breakpoint-key(1)) * $multiplier;
 
-  @for $i from 2 through length($breakpoints) {
-
+  @for $i from 2 through length ($breakpoints) {
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
-        width: leading( _breakpoint-key($i) ) * $multiplier;
-        height: leading( _breakpoint-key($i) ) * $multiplier;
+        width: leading(_breakpoint-key($i)) * $multiplier;
+        height: leading(_breakpoint-key($i)) * $multiplier;
       }
     }
   }
