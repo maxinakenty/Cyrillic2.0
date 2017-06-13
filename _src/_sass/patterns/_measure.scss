@@ -3,20 +3,17 @@
 
   @if $typeof-name == string and $name != 'all' {
     max-width: size($name, 'rem');
-
   } @else if $typeof-name == string $name == 'all' {
     margin: auto;
-    max-width: size( _name-with-breakpoint-key(1, 'measure'), 'rem' );
+    max-width: size(_name-with-breakpoint-key(1, 'measure'), 'rem');
 
-    @for $i from 2 through length($breakpoints) {
-
-      @if map-has-key( $sizes, _name-with-breakpoint-key($i, 'measure') ) {
-        @include above( _breakpoint-key($i) ) {
-          max-width: size( _name-with-breakpoint-key($i, 'measure'), 'rem' );
+    @for $i from 2 through length ($breakpoints) {
+      @if map-has-key( $sizes, _name-with-breakpoint-key($i, 'measure')) {
+        @include above(_breakpoint-key($i)) {
+          max-width: size(_name-with-breakpoint-key($i, 'measure'), 'rem');
         }
       }
     }
-
   } @else {
     @error "!!!";
   }
