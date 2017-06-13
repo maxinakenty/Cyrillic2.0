@@ -1,12 +1,8 @@
-@function header-spacing-get(
-  $key
-) {
+@function header-spacing-get($key) {
   $settings: map-merge($headers-spacing-defaults, $headers-spacing);
 
   @if not map-has-key($settings, $key) {
-    @return _nt-error(
-      'There is no headers-spacing setting called `#{$key}`',
-      'header-spacing-get');
+    @return _nt-error( 'There is no headers-spacing setting called `#{$key}`', 'header-spacing-get');
   }
 
   @return map-get($settings, $key);
