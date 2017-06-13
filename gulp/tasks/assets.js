@@ -1,11 +1,12 @@
-'use struct';
+import gulp from 'gulp';
+import __paths from '../paths.config';
+import path from 'path';
 
-const gulp = require('gulp');
-const __paths = require('../paths.config');
+import gulpLoadPlugins from 'gulp-load-plugins';
+const $ = gulpLoadPlugins();
 
-const path = require('path');
-const $ = require('gulp-load-plugins')();
-const combine = require('stream-combiner2').obj;
+import streamCombiner2 from 'stream-combiner2';
+const combine = streamCombiner2.obj;
 
 gulp.task('assets', () => {
   return gulp.src([
