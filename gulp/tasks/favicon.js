@@ -1,8 +1,6 @@
-'use strict';
-
-const gulp = require('gulp');
-const fs = require('fs');
-const realFavicon = require('gulp-real-favicon');
+import gulp from 'gulp';
+import fs from 'fs';
+import realFavicon from 'gulp-real-favicon';
 
 // File where the favicon markups are stored
 const FAVICON_DATA_FILE = 'faviconData.json';
