@@ -28,7 +28,7 @@
 }
 
 .column-quad li {
- @include above('lg') {
-   @include font-size('beta');
- }
+  @include above('lg') {
+    @include font-size('beta');
+  }
 }
