@@ -1,14 +1,12 @@
-'use strict';
+import gulpLoadPlugins from 'gulp-load-plugins';
+const $ = gulpLoadPlugins();
 
-const gulp = require('gulp');
-const __paths = require('../../paths.config');
+import streamCombiner2 from 'stream-combiner2';
+const combine = streamCombiner2.obj;
 
-const $ = require('gulp-load-plugins')();
-// connect the plugin so ($. == gulp + name of plugin) gulp-if == $.if, gulp-sass == $.sass etc
-
-const combine = require('stream-combiner2').obj; // Handle errors
-const path = require('path');
-const revNapkin = require('gulp-rev-napkin');
+import gulp from 'gulp';
+import __paths from '../../paths.config';
+import path from 'path';
 
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
@@ -23,7 +21,7 @@ gulp.task('revAssets', () => {
       $.if(!IS_DEVELOPMENT, combine(
         $.rev(),
         gulp.dest(__paths.root.dist),
-        revNapkin({
+        $.revNapkin({
           verbose: false
         }),
         $.rev.manifest('rev-manifest.json'),
