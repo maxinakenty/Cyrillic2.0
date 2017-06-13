@@ -1,8 +1,6 @@
-'use strict';
-
-const gulp = require('gulp');
-const del = require('del');
-const __paths = require('../paths.config');
+import gulp from 'gulp';
+import del from 'del';
+import __paths from '../paths.config';
 
 gulp.task('clean', () => {
   return del([
