@@ -26,7 +26,7 @@
   width: leading(_breakpoint-key(1)) * $multiplier;
   height: leading(_breakpoint-key(1)) * $multiplier;
 
-  @for $i from 2 through length ($breakpoints) {
+  @for $i from 2 through length($breakpoints) {
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         width: leading(_breakpoint-key($i)) * $multiplier;
