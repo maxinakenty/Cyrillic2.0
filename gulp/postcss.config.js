@@ -10,7 +10,7 @@ import packer from 'css-mqpacker';
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 
-module.exports = [
+export default [
   autoprefixer({
     browsers: [
       'last 2 version', '> 10%'
