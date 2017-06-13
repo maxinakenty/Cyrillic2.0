@@ -1,8 +1,6 @@
-'use strict';
-
-const gulp = require('gulp');
-const mocha = require('gulp-mocha');
-const __paths = require('../paths.config');
+import gulp from 'gulp';
+import mocha from 'gulp-mocha';
+import __paths from '../paths.config';
 
 gulp.task('test', () => {
   return gulp.src(__paths.src.test, {
@@ -10,5 +8,5 @@ gulp.task('test', () => {
     })
     .pipe(mocha({
       reporter: 'spec'
-    }))
+    }));
 });
