@@ -7,12 +7,12 @@
 /// @param {Number} - $multiplier -
 ///   The default values is 1.
 /// @returns {Number} Leading multiplier.
+
 @function leading($breakpoint-key, $multiplier: 1) {
   @if map-has-key($leadings, $breakpoint-key) {
     $leading-value: map-get($leadings, $breakpoint-key) * $multiplier;
 
     @return $leading-value;
   }
-
   @error "#{$breakpoint-key} is not a set leadings variable";
 }
