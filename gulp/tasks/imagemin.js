@@ -1,10 +1,9 @@
-'use strict';
+import gulp from 'gulp';
+import __paths from '../paths.config';
+import gulpLoadPlugins from 'gulp-load-plugins';
+const $ = gulpLoadPlugins();
 
-const gulp = require('gulp');
-const __paths = require('../paths.config');
-const $ = require('gulp-load-plugins')();
-
-const pngquant = require('imagemin-pngquant');
+import pngquant from 'imagemin-pngquant';
 
 
 gulp.task('imagemin', () => {
