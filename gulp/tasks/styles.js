@@ -1,12 +1,12 @@
-'use strict';
+import gulp from 'gulp';
+import __paths from '../paths.config';
+import processors from '../postcss.config';
 
-const gulp = require('gulp');
-const __paths = require('../paths.config');
-const processors = require('../postcss.config');
+import gulpLoadPlugins from 'gulp-load-plugins';
+const $ = gulpLoadPlugins();
 
-const $ = require('gulp-load-plugins')();
-const combine = require('stream-combiner2').obj;
-
+import streamCombiner2 from 'stream-combiner2';
+const combine = streamCombiner2.obj;
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 gulp.task('styles', () => {
