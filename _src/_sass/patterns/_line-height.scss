@@ -5,7 +5,7 @@
   $line-height: leading(_breakpoint-key(1));
   line-height: $line-height;
 
-  @for $i from 2 through length ($breakpoints) {
+  @for $i from 2 through length($breakpoints) {
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         $line-height: leading(_breakpoint-key($i));
