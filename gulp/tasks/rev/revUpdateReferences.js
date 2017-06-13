@@ -1,14 +1,14 @@
-'use strict';
+import gulp from 'gulp';
+import __paths from '../../paths.config';
 
-const gulp = require('gulp');
-const __paths = require('../../paths.config');
+import gulpLoadPlugins from 'gulp-load-plugins';
+const $ = gulpLoadPlugins();
 
-const $ = require('gulp-load-plugins')();
-// connect the plugin so ($. == gulp + name of plugin) gulp-if == $.if, gulp-sass == $.sass etc
+import streamCombiner2 from 'stream-combiner2';
+const combine = streamCombiner2.obj;
 
-const combine = require('stream-combiner2').obj; // Handle errors
-const path = require('path');
-const revNapkin = require('gulp-rev-napkin');
+import path from 'path';
+import revNapkin from 'gulp-rev-napkin';
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 gulp.task('revUpdateReferences', () => {
