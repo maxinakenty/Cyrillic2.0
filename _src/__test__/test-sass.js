@@ -1,5 +1,5 @@
-const path = require('path');
-const sassTrue = require('sass-true');
+import path from 'path';
+import sassTrue from 'sass-true';
 
 const sassFile = path.join(__dirname, 'sass', 'test.scss');
 
