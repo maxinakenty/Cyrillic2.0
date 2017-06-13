@@ -19,32 +19,25 @@
 @mixin margin($top, $right: null, $bottom: null, $left: null) {
   @if $right == null and $bottom == null and $left == null {
     margin: _leading-or-str(_breakpoint-key(1), $top);
-
   } @else if $left == null and $bottom == null {
-      margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right);
-
+    margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right);
   } @else if $left == null or $left == $right {
-      margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom);
-
+    margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom);
   } @else {
-      margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom) _leading-or-str(_breakpoint-key(1), $left);
+    margin: _leading-or-str(_breakpoint-key(1), $top) _leading-or-str(_breakpoint-key(1), $right) _leading-or-str(_breakpoint-key(1), $bottom) _leading-or-str(_breakpoint-key(1), $left);
   }
 
-  @for $i from 2 through length($breakpoints) {
-
+  @for $i from 2 through length ($breakpoints) {
     @if $i <= length($leadings) {
       @include above(_breakpoint-key($i)) {
         @if $right == null and $bottom == null and $left == null {
           margin: _leading-or-str(_breakpoint-key($i), $top);
-
         } @else if $left == null and $bottom == null {
-            margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right);
-
+          margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right);
         } @else if $left == null or $left == $right {
-            margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom);
-
+          margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom);
         } @else {
-            margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom) _leading-or-str(_breakpoint-key($i), $left);
+          margin: _leading-or-str(_breakpoint-key($i), $top) _leading-or-str(_breakpoint-key($i), $right) _leading-or-str(_breakpoint-key($i), $bottom) _leading-or-str(_breakpoint-key($i), $left);
         }
       }
     }
