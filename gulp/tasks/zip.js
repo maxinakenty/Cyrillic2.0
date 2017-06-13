@@ -1,6 +1,6 @@
-const gulp = require('gulp');
-const zip = require('gulp-zip');
-const __paths = require('../paths.config');
+import gulp from 'gulp';
+import zip from 'gulp-zip';
+import __paths from '../paths.config';
 
 gulp.task('zip', () => {
   return gulp.src(__paths.dist.all)
