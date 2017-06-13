@@ -1,13 +1,11 @@
-'use strict';
-
-const __paths = require('./paths.config');
-const autoprefixer = require('autoprefixer');
-const short = require('postcss-short');
-const clearfix = require('postcss-clearfix');
-const inlineSvg = require('postcss-inline-svg');
-const flexbugs = require('postcss-flexbugs-fixes');
-const assets = require('postcss-assets');
-const packer = require('css-mqpacker');
+import __paths from './paths.config';
+import autoprefixer from 'autoprefixer';
+import short from 'postcss-short';
+import clearfix from 'postcss-clearfix';
+import inlineSvg from 'postcss-inline-svg';
+import flexbugs from 'postcss-flexbugs-fixes';
+import assets from 'postcss-assets';
+import packer from 'css-mqpacker';
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
