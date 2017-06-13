@@ -4,8 +4,9 @@
 ///
 /// @param {Number} $index - number
 /// @returns {String} breakpoint key
+
 @function _breakpoint-key($index) {
-  @return  nth(map-keys($breakpoints), $index);
+  @return nth(map-keys($breakpoints), $index);
 }
 
 @function _breakpoint-next($name, $breakpoints, $breakpoint-keys: map-keys($breakpoints)) {
