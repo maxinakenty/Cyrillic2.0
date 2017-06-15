@@ -1,6 +1,6 @@
 .column-sidebar {
   flex: none;
-  flex: 100%;
+  width: 100%;
 
   @include above('sm') {
     width: span(2, $sm);
