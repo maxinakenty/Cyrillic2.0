@@ -6,11 +6,11 @@
     "tasks": "./tasks/",
     "manifest": "./manifest/",
     "serve": "./_dist/**/*.*",
-    "debug": "./npm-debug.log"
+    "debug": "./npm-debug.log",
+    "test": "./test/test-sass.js"
   },
 
   "src": {
-    "assets": "./_src/assets/**",
     "pug": [
       "./_src/pages/index/index.pug"
     ],
@@ -33,8 +33,7 @@
     "assets": "./_src/assets/**",
     "imagemin": "./_src/assets/img/**",
     "spriteSvg": "./_src/assets/img/**/*.svg",
-    "spritePng": "./_src/assets/img/**/*.png",
-    "test": "./_src/__test__/test-sass.js"
+    "spritePng": "./_src/assets/img/**/*.png"
   },
 
   "dist": {
