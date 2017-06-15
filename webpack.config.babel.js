@@ -2,12 +2,12 @@ import webpack from 'webpack';
 const IS_DEVELOPMENT = !process.env.NODE_ENV || process.env.NODE_ENV === 'development'; // Changing environment
 
 const config = {
-  context: __dirname + '/_src/pages/index',
+  context: `${__dirname}/_src/pages/index`,
   entry: {
     main: './index'
   },
   output: {
-    path: __dirname + '/_dist/js',
+    path: `${__dirname}/_dist/js`,
     filename: '[name].js'
   },
 
@@ -24,7 +24,7 @@ const config = {
 
   resolve: {
     modules: [
-      __dirname + '/_src'
+      `${__dirname}/_src`
     ],
     alias: {
       'Toggle-button': '_js/Toggle-button',
