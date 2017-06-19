@@ -3,7 +3,6 @@ $ratios: (
   'minor-sixth': 1.6,
 );
 
-
 $sizes: (
   'root': 16px,
   'xs-line': 1 ('minor-sixth': 1),
@@ -23,106 +22,143 @@ $sizes: (
   'xs-h6': 'xs-base' ('minor-third': 0, 'convert-units': 'rem'),
 );
 
-$sm-font-sizes: (
-  'sm-base': 17px,
-  'sm-leading': 'sm-base' ('minor-sixth': 1),
-
-  'sm-alpha': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
-  'sm-beta': 'sm-base' ('minor-third': -1, 'convert-units': 'rem'),
-  'sm-gamma': 'sm-base' ('minor-third': -2, 'convert-units': 'rem'),
-
-  'sm-h1': 'sm-base' ('minor-third': 6, 'convert-units': 'rem'),
-  'sm-h2': 'sm-base' ('minor-third': 4, 'convert-units': 'rem'),
-  'sm-h3': 'sm-base' ('minor-third': 3, 'convert-units': 'rem'),
-  'sm-h4': 'sm-base' ('minor-third': 2, 'convert-units': 'rem'),
-  'sm-h5': 'sm-base' ('minor-third': 1, 'convert-units': 'rem'),
-  'sm-h6': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
+$roots: (
+  'xs-root': 12px,
+  'sm-root': 14px,
+  'md-root': 15px,
+  'lg-root': 17px,
+  'xl-root': 19px
 );
-
-$md-font-sizes: (
-  'md-base': 18px,
-  'md-leading': 'md-base' ('minor-sixth': 1),
-
-  'md-alpha': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
-  'md-beta': 'md-base' ('minor-third': -1, 'convert-units': 'rem'),
-  'md-gamma': 'md-base' ('minor-third': -2, 'convert-units': 'rem'),
-
-  'md-h1': 'md-base' ('minor-third': 6, 'convert-units': 'rem'),
-  'md-h2': 'md-base' ('minor-third': 4, 'convert-units': 'rem'),
-  'md-h3': 'md-base' ('minor-third': 3, 'convert-units': 'rem'),
-  'md-h4': 'md-base' ('minor-third': 2, 'convert-units': 'rem'),
-  'md-h5': 'md-base' ('minor-third': 1, 'convert-units': 'rem'),
-  'md-h6': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
-);
-
-$lg-font-sizes: (
-  'lg-base': 20px,
-  'lg-leading': 'lg-base' ('minor-sixth': 1),
-
-  'lg-alpha': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
-  'lg-beta': 'lg-base' ('minor-third': -1, 'convert-units': 'rem'),
-  'lg-gamma': 'lg-base' ('minor-third': -2, 'convert-units': 'rem'),
-
-  'lg-h1': 'lg-base' ('minor-third': 6, 'convert-units': 'rem'),
-  'lg-h2': 'lg-base' ('minor-third': 4, 'convert-units': 'rem'),
-  'lg-h3': 'lg-base' ('minor-third': 3, 'convert-units': 'rem'),
-  'lg-h4': 'lg-base' ('minor-third': 2, 'convert-units': 'rem'),
-  'lg-h5': 'lg-base' ('minor-third': 1, 'convert-units': 'rem'),
-  'lg-h6': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
-
-);
-
-$xl-font-sizes: (
-  'xl-base': 22px,
-  'xl-leading': 'xl-base' ('minor-sixth': 1),
-
-  'xl-alpha': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
-  'xl-beta': 'xl-base' ('minor-third': -1, 'convert-units': 'rem'),
-  'xl-gamma': 'xl-base' ('minor-third': -2, 'convert-units': 'rem'),
-
-  'xl-h1': 'xl-base' ('minor-third': 6, 'convert-units': 'rem'),
-  'xl-h2': 'xl-base' ('minor-third': 4, 'convert-units': 'rem'),
-  'xl-h3': 'xl-base' ('minor-third': 3, 'convert-units': 'rem'),
-  'xl-h4': 'xl-base' ('minor-third': 2, 'convert-units': 'rem'),
-  'xl-h5': 'xl-base' ('minor-third': 1, 'convert-units': 'rem'),
-  'xl-h6': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
-);
-
-$container-sizes: (
-  'container-max-width': 94%,
-  'half-container-max-width': 'container-max-width' ('multiple': 0.5),
-
-  'xs-container': 500px,
-  'sm-container': 600px,
-  'md-container': 800px,
-  'lg-container': 1100px,
-  'xl-container': 1300px,
-);
-
-$measure-sizes: (
-  'xs-measure': 500px,
-  'sm-measure': 550px,
-  'md-measure': 600px,
-  'lg-measure': 650px,
-  'xl-measure': 750px,
-);
-
 
 @include add-sizes(
-  $sm-font-sizes,
-  $md-font-sizes,
-  $lg-font-sizes,
-  $xl-font-sizes,
-  $container-sizes,
-  $measure-sizes
+  $roots
 );
 
-// LEADINGS <<<------------
-// calc-leading function _src/_sass/modules/
-$leadings: (
-  'xs': calc-leading('xs-leading'),
-  'sm': calc-leading('sm-leading'),
-  'md': calc-leading('md-leading'),
-  'lg': calc-leading('lg-leading'),
-  'xl': calc-leading('xl-leading'),
-);
+// $ratios: (
+//   'multiple': 'linear',
+//   'minor-sixth': 1.6,
+// );
+
+
+// $sizes: (
+//   'root': 16px,
+//   'xs-line': 1 ('minor-sixth': 1),
+
+//   'xs-base': 16px,
+//   'xs-leading': 'xs-base' ('minor-sixth': 1),
+
+//   'xs-alpha': 'xs-base' ('minor-third': 0, 'convert-units': 'rem'),
+//   'xs-beta': 'xs-base' ('minor-third': -1, 'convert-units': 'rem'),
+//   'xs-gamma': 'xs-base' ('minor-third': -2, 'convert-units': 'rem'),
+
+//   'xs-h1': 'xs-base' ('minor-third': 6, 'convert-units': 'rem'),
+//   'xs-h2': 'xs-base' ('minor-third': 4, 'convert-units': 'rem'),
+//   'xs-h3': 'xs-base' ('minor-third': 3, 'convert-units': 'rem'),
+//   'xs-h4': 'xs-base' ('minor-third': 2, 'convert-units': 'rem'),
+//   'xs-h5': 'xs-base' ('minor-third': 1, 'convert-units': 'rem'),
+//   'xs-h6': 'xs-base' ('minor-third': 0, 'convert-units': 'rem'),
+// );
+
+// $sm-font-sizes: (
+//   'sm-base': 17px,
+//   'sm-leading': 'sm-base' ('minor-sixth': 1),
+
+//   'sm-alpha': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
+//   'sm-beta': 'sm-base' ('minor-third': -1, 'convert-units': 'rem'),
+//   'sm-gamma': 'sm-base' ('minor-third': -2, 'convert-units': 'rem'),
+
+//   'sm-h1': 'sm-base' ('minor-third': 6, 'convert-units': 'rem'),
+//   'sm-h2': 'sm-base' ('minor-third': 4, 'convert-units': 'rem'),
+//   'sm-h3': 'sm-base' ('minor-third': 3, 'convert-units': 'rem'),
+//   'sm-h4': 'sm-base' ('minor-third': 2, 'convert-units': 'rem'),
+//   'sm-h5': 'sm-base' ('minor-third': 1, 'convert-units': 'rem'),
+//   'sm-h6': 'sm-base' ('minor-third': 0, 'convert-units': 'rem'),
+// );
+
+// $md-font-sizes: (
+//   'md-base': 18px,
+//   'md-leading': 'md-base' ('minor-sixth': 1),
+
+//   'md-alpha': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
+//   'md-beta': 'md-base' ('minor-third': -1, 'convert-units': 'rem'),
+//   'md-gamma': 'md-base' ('minor-third': -2, 'convert-units': 'rem'),
+
+//   'md-h1': 'md-base' ('minor-third': 6, 'convert-units': 'rem'),
+//   'md-h2': 'md-base' ('minor-third': 4, 'convert-units': 'rem'),
+//   'md-h3': 'md-base' ('minor-third': 3, 'convert-units': 'rem'),
+//   'md-h4': 'md-base' ('minor-third': 2, 'convert-units': 'rem'),
+//   'md-h5': 'md-base' ('minor-third': 1, 'convert-units': 'rem'),
+//   'md-h6': 'md-base' ('minor-third': 0, 'convert-units': 'rem'),
+// );
+
+// $lg-font-sizes: (
+//   'lg-base': 20px,
+//   'lg-leading': 'lg-base' ('minor-sixth': 1),
+
+//   'lg-alpha': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
+//   'lg-beta': 'lg-base' ('minor-third': -1, 'convert-units': 'rem'),
+//   'lg-gamma': 'lg-base' ('minor-third': -2, 'convert-units': 'rem'),
+
+//   'lg-h1': 'lg-base' ('minor-third': 6, 'convert-units': 'rem'),
+//   'lg-h2': 'lg-base' ('minor-third': 4, 'convert-units': 'rem'),
+//   'lg-h3': 'lg-base' ('minor-third': 3, 'convert-units': 'rem'),
+//   'lg-h4': 'lg-base' ('minor-third': 2, 'convert-units': 'rem'),
+//   'lg-h5': 'lg-base' ('minor-third': 1, 'convert-units': 'rem'),
+//   'lg-h6': 'lg-base' ('minor-third': 0, 'convert-units': 'rem'),
+
+// );
+
+// $xl-font-sizes: (
+//   'xl-base': 22px,
+//   'xl-leading': 'xl-base' ('minor-sixth': 1),
+
+//   'xl-alpha': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
+//   'xl-beta': 'xl-base' ('minor-third': -1, 'convert-units': 'rem'),
+//   'xl-gamma': 'xl-base' ('minor-third': -2, 'convert-units': 'rem'),
+
+//   'xl-h1': 'xl-base' ('minor-third': 6, 'convert-units': 'rem'),
+//   'xl-h2': 'xl-base' ('minor-third': 4, 'convert-units': 'rem'),
+//   'xl-h3': 'xl-base' ('minor-third': 3, 'convert-units': 'rem'),
+//   'xl-h4': 'xl-base' ('minor-third': 2, 'convert-units': 'rem'),
+//   'xl-h5': 'xl-base' ('minor-third': 1, 'convert-units': 'rem'),
+//   'xl-h6': 'xl-base' ('minor-third': 0, 'convert-units': 'rem'),
+// );
+
+// $container-sizes: (
+//   'container-max-width': 94%,
+//   'half-container-max-width': 'container-max-width' ('multiple': 0.5),
+
+//   'xs-container': 500px,
+//   'sm-container': 600px,
+//   'md-container': 800px,
+//   'lg-container': 1100px,
+//   'xl-container': 1300px,
+// );
+
+// $measure-sizes: (
+//   'xs-measure': 500px,
+//   'sm-measure': 550px,
+//   'md-measure': 600px,
+//   'lg-measure': 650px,
+//   'xl-measure': 750px,
+// );
+
+
+// @include add-sizes(
+//   $sm-font-sizes,
+//   $md-font-sizes,
+//   $lg-font-sizes,
+//   $xl-font-sizes,
+//   $container-sizes,
+//   $measure-sizes
+// );
+
+// // LEADINGS <<<------------
+// // calc-leading function _src/_sass/modules/
+// $leadings: (
+//   'xs': calc-leading('xs-leading'),
+//   'sm': calc-leading('sm-leading'),
+//   'md': calc-leading('md-leading'),
+//   'lg': calc-leading('lg-leading'),
+//   'xl': calc-leading('xl-leading'),
+// );
