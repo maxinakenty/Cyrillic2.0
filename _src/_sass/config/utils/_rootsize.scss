@@ -1,0 +1,13 @@
+@mixin rootsize() {
+  $roots-values: map-values($roots);
+  $breakpoint-keys: map-keys($breakpoints);
+  font-size: convert-units(nth($roots-values, 1), '%');
+
+  @for $i from 2 through length($breakpoints) {
+    @if $i <= length($roots) {
+      @include above(nth($breakpoint-keys, $i)) {
+        font-size: convert-units(nth($roots-values, $i), '%');
+      }
+    }
+  }
+}
