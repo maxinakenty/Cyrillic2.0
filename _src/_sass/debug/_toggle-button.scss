@@ -1,0 +1,15 @@
+.toggle-button {
+  display: flex;
+  align-content: center;
+  white-space: nowrap;
+  position: fixed;
+  @include top(1);
+  @include right(1);
+  @include padding-left(0.75);
+  @include padding-right(0.75);
+  @include font-size('beta');
+  @include border-radius(1);
+  background-color: black;
+  color: white;
+  z-index: $z-index-toggle-button;
+}
