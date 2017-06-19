@@ -1,28 +1,33 @@
+// :root {
+//   font-size: 100%;
+// }
+
+// body {
+//   @include font-size('alpha');
+//   @include line-height();
+//   font-style: normal;
+//   font-weight: 400;
+//   hyphens: auto;
+//   text-size-adjust: 100%;
+//   background-color: color('body-bg');
+// }
+
+// // h1, h2 ...h6
+// @for $i from 1 through 6 {
+//   h#{$i} {
+//     @include heading('h#{$i}');
+//   }
+// }
+
+// h6 {
+//   font-style: italic;
+// }
+
+// p {
+//   @include margin-bottom();
+// }
+
+
 :root {
-  font-size: 100%;
-}
-
-body {
-  @include font-size('alpha');
-  @include line-height();
-  font-style: normal;
-  font-weight: 400;
-  hyphens: auto;
-  text-size-adjust: 100%;
-  background-color: color('body-bg');
-}
-
-// h1, h2 ...h6
-@for $i from 1 through 6 {
-  h#{$i} {
-    @include heading('h#{$i}');
-  }
-}
-
-h6 {
-  font-style: italic;
-}
-
-p {
-  @include margin-bottom();
+  @include rootsize();
 }
