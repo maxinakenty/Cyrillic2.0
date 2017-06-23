@@ -7,6 +7,6 @@
 /// @returns {String} -
 ///   Key name with breakpoint key prefix.
 
-@function _name-with-breakpoint-key($breakpoint-key, $name) {
-  @return '#{_breakpoint-key($breakpoint-key)}-#{$name}';
+@function _name-with-breakpoint-key($breakpoint-key-index, $name) {
+  @return '#{_breakpoint-key($breakpoint-key-index)}-#{$name}';
 }
