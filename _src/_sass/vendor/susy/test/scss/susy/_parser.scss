@@ -14,7 +14,7 @@
       'A single unitless number is returned as span only');
   }
 
-  @include test('Span with symmetrical columns') {
+  @include test('Span with symmetrical column-slice') {
     $expect: (
       'span': 5,
       'columns': 12,
@@ -76,46 +76,15 @@
       'Span "all" is properly mapped');
   }
 
-  @include test('Span with column-width') {
-    $expect: (
-      'span': 3 'x' 140px,
-      'spread': 'wide',
-    );
-
-    @include assert-equal(
-      susy-parse(3 x 140px 'wide'),
-      $expect,
-      'Span with column-width is properly mapped');
-  }
-
-  @include test('Error on invalid column-width') {
-    @include assert-equal(
-      susy-parse(3 x 'wide'),
-      'ERROR [susy-parse] `wide` is not a valid column-width',
-      'Errors when column-width is invalid');
-  }
-
-  @include test('Columns with column-width') {
-    $expect: (
-      'span': 3,
-      'columns': 12 'x' 140px,
-    );
-
-    @include assert-equal(
-      susy-parse(3 of 12 x 140px),
-      $expect,
-      'Columns with column-width is properly mapped');
-  }
-
   @include test('Container-spread') {
     $expect: (
       'span': 3,
-      'columns': 12 'x' 140px,
+      'columns': 12,
       'container-spread': 'wide',
     );
 
     @include assert-equal(
-      susy-parse(3 of 12 'wide' x 140px),
+      susy-parse(3 of 12 'wide'),
       $expect,
       'Container-spread is properly mapped');
   }
@@ -188,7 +157,7 @@
   @include test('All values') {
     $config: (
       'span': 'all',
-      'columns': 6 x 140px,
+      'columns': 6,
       'location': 'last',
       'spread': 'wider',
       'container-spread': 'narrow',
@@ -196,7 +165,7 @@
 
     $expect: (
       'span': 6,
-      'columns': (140px 140px 140px 140px 140px 140px),
+      'columns': (1 1 1 1 1 1),
       'location': 1,
       'spread': 1,
       'container-spread': -1,
@@ -206,50 +175,45 @@
       susy-normalize($config),
       $expect);
   }
-}
 
-
-// Repeat
-// ------
-@include test-module('Repeat [function]') {
-  @include test('Repeat single values') {
-    $list: (1 1 1 1);
+  @include test('Missing Columns') {
     @include assert-equal(
-      susy-repeat(4),
-      $list);
+      susy-normalize(('span': 3)),
+      ('span': 3));
   }
 
-  @include test('Repeat list values') {
-    $list: (6em 4em 6em 4em 6em 4em 6em 4em);
+  @include test('Last') {
+    $config: ('columns': (1 1 2 3 5 8 13));
+    $input: (
+      'location': 'last',
+      'span': 4,
+    );
+    $expect: (
+      'location': 4,
+      'span': 4,
+    );
     @include assert-equal(
-      susy-repeat(4, 6em 4em),
-      $list);
-  }
-}
-
-
-// Normalize Columns
-// -----------------
-@include test-module('Susy Normalize Columns [function]') {
-  @include test('Fluid shorthand') {
-    @include assert-equal(
-      susy-normalize-columns(4),
-      1 1 1 1,
-      'Fluid shorthand is converted to longform column description.');
+      susy-normalize($input, $config),
+      $expect);
   }
 
-  @include test('Static shorthand') {
-    @include assert-equal(
-      susy-normalize-columns(4 x 25em),
-      25em 25em 25em 25em,
-      'Static shorthand is converted to longform column description.');
-  }
+  @include test('All') {
+    $grid: (
+      'columns': susy-repeat(10, 5em),
+      'gutters': 0.5em,
+      'spread': 'wide',
+      'container-spread': 'wide',
+    );
+    $input: (
+      'span': 'all',
+    );
+    $expect: (
+      'span': 10,
+    );
 
-  @include test('Longhand') {
     @include assert-equal(
-      susy-normalize-columns(250px 25px 400px),
-      250px 25px 400px,
-      'Longhand is passed through without changes.');
+      susy-normalize($input, $grid),
+      $expect);
   }
 }
 
@@ -262,11 +226,53 @@
       susy-normalize-span('all', 1 1 1 1 1 1),
       6);
   }
+}
 
-  @include test('Shorthand span') {
+
+// Normalize Columns
+// -----------------
+@include test-module('Susy Normalize Columns [function]') {
+  @include test('Nothing to normalize') {
     @include assert-equal(
-      susy-normalize-span(3 x 4em),
-      4em 4em 4em);
+      susy-normalize-columns(1 1 1 1 1 1),
+      1 1 1 1 1 1);
+  }
+
+  @include test('Nothing to normalize') {
+    @include assert-equal(
+      susy-normalize-columns(1 1 1 1 1 1),
+      1 1 1 1 1 1);
+  }
+
+  @include test('Get Symmetrical Slice') {
+    $config: ('columns': susy-repeat(10, 120px));
+
+    @include assert-equal(
+      susy-normalize-columns(6, $config),
+      susy-repeat(6, 120px));
+  }
+
+  @include test('Flatten lists') {
+    $in: 20px susy-repeat(3, 100px) 20px;
+    $out: 20px 100px 100px 100px 20px;
+
+    @include assert-unequal(
+      $in
+      $out,
+      'Confirm that the list needs flattening');
+
+    @include assert-equal(
+      susy-normalize-columns($in),
+      $out,
+      'Confirm that the list is now flat');
+  }
+
+  @include test('Error on failed slice') {
+    $config: ('columns': 3 4 5);
+
+    @include assert-equal(
+      susy-normalize-columns(6, $config),
+      'ERROR [susy-normalize-columns] context-slice of `6` can not be determined based on grid-columns `3 4 5`.');
   }
 }
 
