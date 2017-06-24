@@ -1,22 +1,13 @@
 .column-sidebar {
-  flex: none;
-  width: 100%;
+  @extend %column;
 
   @include above('sm') {
     width: span(2, $sm);
-    padding-left: gutter(1, $sm) / 2;
-    padding-right: gutter(1, $sm);
-    @include margin-top(0.5);
+    margin-top: 1rem;
   }
 
   @include above('md') {
-    padding-left: gutter(1, $md);
-    padding-right: gutter(1, $md);
-  }
-
-  @include above('lg') {
-    padding-left: gutter(1, $lg);
-    padding-right: gutter(1, $lg) * 2;
+    padding-right: gutter(1, $md) * 2;
   }
 }
 
@@ -27,6 +18,6 @@
   }
 
   @include above('lg') {
-    @include font-size('beta');
+    @include font-size('text-sm');
   }
 }
