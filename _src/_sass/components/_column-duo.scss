@@ -1,21 +1,27 @@
-.column-duo {
+%column {
   flex: none;
   width: 100%;
 
   @include above('sm') {
+    padding-left: gutter(1);
+    padding-right: gutter(1);
+  }
+
+  @include above('md') {
+    padding-left: gutter(1, $md);
+    padding-right: gutter(1, $md);
+  }
+}
+
+
+.column-duo {
+  @extend %column;
+
+  @include above('sm') {
     width: span(3, $sm);
-    padding-left: gutter(1, $sm) / 2;
-    padding-right: gutter(1, $sm) / 2;
   }
 
   @include above('md') {
     width: span(6, $md);
-    padding-left: gutter(1, $md);
-    padding-right: gutter(1, $md);
-  }
-
-  @include above('lg') {
-    padding-left: gutter(1, $lg);
-    padding-right: gutter(1, $lg);
   }
 }
