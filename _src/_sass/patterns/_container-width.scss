@@ -2,14 +2,14 @@
   $typeof-name: type-of($name);
 
   @if $typeof-name == string and $name != 'all' {
-    max-width: size('#{$name}-container', 'rem');
+    max-width: #{size('#{$name}-container') / size('#{$name}-root')}rem;
   } @else if $typeof-name == string and $name == 'all' {
-    max-width: size(_name-with-breakpoint-key(1, 'container'), 'rem');
+    max-width: #{size(_name-with-breakpoint-key(1, 'container')) / size(_name-with-breakpoint-key(1, 'root'))}rem;
 
     @for $i from 2 through length($breakpoints) {
       @if map-has-key( $sizes, _name-with-breakpoint-key($i, 'container')) {
         @include above(_breakpoint-key($i)) {
-          max-width: size(_name-with-breakpoint-key($i, 'container'), 'rem');
+          max-width: #{size(_name-with-breakpoint-key($i, 'container')) / size(_name-with-breakpoint-key($i, 'root'))}rem;
         }
       }
     }
