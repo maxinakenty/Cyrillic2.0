@@ -42,23 +42,23 @@
   @if $breakpoint-name != all and map-has-key($breakpoints, $breakpoint-name) {
 
      font-size: size('#{$breakpoint-name}-#{$heading}');
-     line-height: leading($breakpoint-name, $line-height);
-     margin-top: leading($breakpoint-name, $margin-top);
-     margin-bottom: leading($breakpoint-name, $margin-bottom);
+     // line-height: ;
+     // margin-top: ;
+     // margin-bottom: ;
 
   } @else if $breakpoint-name == all {
 
       @if map-has-key($sizes, _name-with-breakpoint-key(1, $heading) ) {
-        font-size: size( _name-with-breakpoint-key(1, $heading) );
-        line-height: leading(_breakpoint-key(1), $line-height);
-        margin-top: leading(_breakpoint-key(1), $margin-top);
-        margin-bottom: leading(_breakpoint-key(1), $margin-bottom);
+        font-size: #{size(_name-with-breakpoint-key(1, $heading)) / size(_name-with-breakpoint-key(1, 'root'))}rem;
+        line-height: $line-height;
+        margin-top: $margin-top;
+        margin-bottom: $margin-bottom;
 
       } @else if map-has-key($sizes, $heading) {
-        font-size: size($heading);
-        line-height: leading(_breakpoint-key(1), $line-height);
-        margin-top: leading(_breakpoint-key(1), $margin-top);
-        margin-bottom: leading(_breakpoint-key(1), $margin-bottom);
+        // font-size: size($heading);
+        // line-height: leading(_breakpoint-key(1), $line-height);
+        // margin-top: leading(_breakpoint-key(1), $margin-top);
+        // margin-bottom: leading(_breakpoint-key(1), $margin-bottom);
 
       } @else {
         @error "!!!";
@@ -68,11 +68,9 @@
 
         @if map-has-key( $sizes, _name-with-breakpoint-key($i, $heading) ) {
           @include above( _breakpoint-key($i) ) {
-
-            font-size: size( _name-with-breakpoint-key($i, $heading) );
-            line-height: leading(_breakpoint-key($i), $line-height);
-            margin-top: leading(_breakpoint-key($i), $margin-top);
-            margin-bottom: leading(_breakpoint-key($i), $margin-bottom);
+            $current-font-size: _name-with-breakpoint-key($i, $heading);
+            $current-root-size: _name-with-breakpoint-key($i, 'root');
+            font-size: #{size($current-font-size) / size($current-root-size)}rem;
           }
         }
       }
