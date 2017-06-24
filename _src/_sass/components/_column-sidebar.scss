@@ -3,11 +3,11 @@
 
   @include above('sm') {
     width: span(2, $sm);
-    margin-top: 1rem;
+    margin-top: 3rem;
   }
 
   @include above('md') {
-    padding-right: gutter(1, $md) * 2;
+    padding-right: gutter($md) * 2;
   }
 }
 

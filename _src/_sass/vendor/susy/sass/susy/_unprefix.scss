@@ -10,8 +10,8 @@
 /// @group api
 /// @alias susy-span
 ///
-/// @param {list} $span
-/// @param {map} $config [()]
+/// @param {List} $span
+/// @param {Map} $config [()]
 @function span(
   $span,
   $config: ()
@@ -28,8 +28,8 @@
 /// @group api
 /// @alias susy-gutter
 ///
-/// @param {integer | list} $context [null] -
-/// @param {map} $config [()]
+/// @param {Integer | List} $context [null] -
+/// @param {Map} $config [()]
 @function gutter(
   $context: susy-get('columns'),
   $config: ()
@@ -46,8 +46,8 @@
 /// @group api
 /// @alias susy-slice
 ///
-/// @param {list} $span
-/// @param {map} $config [()]
+/// @param {List} $span
+/// @param {Map} $config [()]
 @function slice(
   $span,
   $config: ()

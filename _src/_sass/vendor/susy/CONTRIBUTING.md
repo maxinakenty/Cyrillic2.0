@@ -9,39 +9,39 @@ In all cases,
 we ask you to follow the
 [Sass community guidelines](http://sass-lang.com/community-guidelines).
 
-Susy is roughly divided into two layers,
-the core grid-math layer is called **Su**,
-and is made up of "pure" functions
-that expect normalized values.
 
-The "Susy" layer provides extra syntax-sugar
-to the API –
-with parsing, normalization,
-and a smaller set of "common" functions
-that call on the core math as necessary.
+Pull Requests
+-------------
+
+We use the `master` branch for production-ready code,
+and side-branches for everything in-progress
+or up-for-debate.
+
+When submitting a patch via pull request:
+
+- Write a clear, descriptive commit message
+- Include any appropriate unit tests,
+  and make sure all tests are passing (`npm run test`)
+- Add your changes to the [changelog](CHANGELOG.md)
+- Update or write appropriate [SassDoc](http://sassdoc.com/)
+  inline documentation for your changes
+- Keep it simple: one bug fix or feature per pull request
 
 
 Development
 -----------
 
-Set up your environment
-with the appropriate development dependencies:
+Set up your dev environment
+with the appropriate ruby and/or js dependencies:
 
 ```
+# for ruby sass:
+gem install bundler
+bundle install
+
+# for libsass:
 yarn
 ```
-
-As you work...
-
-- Add or update any appropriate unit tests
-  in the `test` directory,
-  and make sure all tests are passing with `npm test`
-- Add your changes to the [changelog](CHANGELOG.md)
-- Update or add inline documentation
-  using [SassDoc][sassdoc] as appropriate,
-  and compile the docs with `npm run sassdoc`
-
-[sassdoc]: http://sassdoc.com/
 
 
 Committing
@@ -60,14 +60,11 @@ They can also be triggered individually:
 # lint
 npm run lint
 
-# test with mocha/true, and compile ag-test CSS
-npm test
-
-# compile full test output for reference
-npm run compile
+# test with mocha/node-sass and ruby sass
+npm run test
 
 # compile docs
-npm run sassdoc
+npm run docs
 ```
 
 Optionally use `npm run test-libsass` for js-only tests,
@@ -75,16 +72,3 @@ or `rake test` for ruby-only environments.
 
 Once you've fixed any final errors or typos,
 commit your changes, and submit a pull request!
-
-
-Pull Requests
--------------
-
-We use the `master` branch for production-ready code,
-and side-branches for everything in-progress
-or up-for-debate.
-
-When submitting a patch via pull request:
-
-- Write a clear, descriptive commit message
-- Keep it simple: one bug fix or feature per pull request

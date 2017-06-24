@@ -8,13 +8,13 @@
 
 .column-main + .column-sidebar {
   @include above('sm') {
-    padding-left: gutter(1) * 2;
-    padding-right: gutter(1);
-    margin-top: 1rem;
+    padding-left: gutter() * 2;
+    padding-right: gutter();
+    margin-top: 3rem;
   }
 
   @include above('md') {
-    padding-left: gutter(1, $md) * 2;
-    padding-right: gutter(1, $md);
+    padding-left: gutter($md) * 2;
+    padding-right: gutter($md);
   }
 }

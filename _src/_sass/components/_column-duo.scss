@@ -3,13 +3,13 @@
   width: 100%;
 
   @include above('sm') {
-    padding-left: gutter(1);
-    padding-right: gutter(1);
+    padding-left: gutter();
+    padding-right: gutter();
   }
 
   @include above('md') {
-    padding-left: gutter(1, $md);
-    padding-right: gutter(1, $md);
+    padding-left: gutter($md);
+    padding-right: gutter($md);
   }
 }
 
@@ -18,7 +18,7 @@
   @extend %column;
 
   @include above('sm') {
-    width: span(3, $sm);
+    width: span(3 , $sm);
   }
 
   @include above('md') {
