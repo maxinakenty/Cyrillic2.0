@@ -1,0 +1,30 @@
+@mixin root-size() {
+  $roots-values: map-values($roots);
+  $breakpoint-keys: map-keys($breakpoints);
+  font-size: convert-units(nth($roots-values, 1), '%');
+
+  @for $i from 2 through length($breakpoints) {
+    @if $i <= length($roots) {
+      @include above(nth($breakpoint-keys, $i)) {
+        font-size: convert-units(nth($roots-values, $i), '%');
+      }
+    }
+  }
+}
+
+
+@mixin font-size($font-name) {
+  $roots-values: map-values($roots);
+  $breakpoint-keys: map-keys($breakpoints);
+  $current-font-size: size(_name-with-breakpoint-key(1, $font-name));
+  font-size: #{$current-font-size / nth($roots-values, 1)}rem;
+
+  @for $i from 2 through length($breakpoints) {
+    @if $i <= length($roots) {
+      @include above(nth($breakpoint-keys, $i)) {
+        $current-font-size: size(_name-with-breakpoint-key($i, $font-name));
+        font-size: #{$current-font-size / nth($roots-values, $i)}rem;
+      }
+    }
+  }
+}
