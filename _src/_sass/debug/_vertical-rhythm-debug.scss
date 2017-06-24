@@ -1,93 +1,32 @@
-// vertical-rhythm-gradient [mixin]
-// --------------------
-/// Set the parametres for gradient
-
-@mixin vertical-rhythm-gradient (
-  $leading,
-  $color: color('grid-bg')
-  ) {
-
-  background-image: linear-gradient(to bottom, $color 1px, transparent 0);
-  background-position: left top;
-  background-repeat: repeat;
-  background-size: 100% $leading;
-}
-
-
-// vertical-rhythm [mixin]
-// -------------------
-/// Set the horizontal rhythm
-@mixin vertical-rhythm_single() {
-  $breakpoint-key: nth(map-keys($breakpoints), 1);
-  $leading: leading($breakpoint-key);
-
-  @include vertical-rhythm-gradient($leading);
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      $breakpoint-key: nth(map-keys($breakpoints), $i);
-
-        @include above('#{$breakpoint-key}') {
-          $breakpoint-key: nth(map-keys($breakpoints), $i);
-          $leading: leading('#{$breakpoint-key}');
-          @include vertical-rhythm-gradient($leading);
-        }
-    }
-  }
-}
-
-
-// vertical-rhythm_double-gradient [mixin]
-// --------------------
-/// Set the parametres for double gradient
-
-@mixin vertical-rhythm_double-gradient (
-  $leading,
-  $color: color('grid-bg')
-  ) {
-  background-image: linear-gradient(
-    to bottom,
-    $color 1px, transparent 0,
-    transparent 0.5 * $leading,
-    $color 0.5 * $leading,
-    transparent 0.5 * $leading + convert-units(1px, 'rem'),
-    transparent $leading
-  );
-  background-position: left top;
-  background-repeat: repeat;
-  background-size: 100% $leading;
-}
-
-
-// vertical-rhythm_double [mixin]
-// -------------------
-/// Set the double horizontal rhythm
-@mixin vertical-rhythm_double() {
-  $breakpoint-key: nth(map-keys($breakpoints), 1);
-  $leading: leading($breakpoint-key);
-  @include vertical-rhythm_double-gradient($leading);
-
-  @for $i from 2 through length($breakpoints) {
-
-    @if $i <= length($leadings) {
-      $breakpoint-key: nth(map-keys($breakpoints), $i);
-
-        @include above('#{$breakpoint-key}') {
-          $breakpoint-key: nth(map-keys($breakpoints), $i);
-          $leading: leading('#{$breakpoint-key}');
-          @include vertical-rhythm_double-gradient($leading);
-        }
-    }
-  }
-}
-
 %vertical-rhythm {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+@mixin vertical-rhythm_single($color: color('rhythm')) {
+  background-image: linear-gradient(to bottom, $color 1px, transparent 0);
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 100% 2rem;
+}
+
+@mixin vertical-rhythm_double (
+  $color: color('rhythm')
+  ) {
+  background-image: linear-gradient(
+    to bottom,
+    $color 1px, transparent 0,
+    transparent 0.5 * 2rem,
+    $color 0.5 * 2rem,
+    transparent 0.5 * 2rem + convert-units(1px, 'rem'),
+    transparent 2rem
+  );
+  background-position: left top;
+  background-repeat: repeat;
+  background-size: 100% 2rem;
 }
 
 .vertical-rhythm[data-rhythm="single"] {
