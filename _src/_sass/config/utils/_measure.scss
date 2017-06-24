@@ -1,0 +1,22 @@
+@mixin measure($name: 'all') {
+  $typeof-name: type-of($name);
+
+  @if $typeof-name == string and $name != 'all' {
+    max-width: size($name);
+  } @else if $typeof-name == string $name == 'all' {
+    margin: auto;
+    max-width: #{size(_name-with-breakpoint-key(1, 'measure')) / size(_name-with-breakpoint-key(1, 'root'))}rem;
+
+    @for $i from 2 through length($breakpoints) {
+      @if map-has-key( $sizes, _name-with-breakpoint-key($i, 'measure')) {
+        @include above(_breakpoint-key($i)) {
+          max-width: #{size(_name-with-breakpoint-key($i, 'measure')) / size(_name-with-breakpoint-key($i, 'root'))}rem;
+        }
+      }
+    }
+  } @else {
+    @error "!!!";
+  }
+}
+
+
