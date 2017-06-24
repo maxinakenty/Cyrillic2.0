@@ -1,22 +1,13 @@
 $susy: (
   'columns': 4,
-  'gutters': leading('xs'),
+  'gutters': 1rem,
 );
 
 $sm: (
   'columns': 6,
-  'gutters': leading('sm'),
 );
 
 $md: (
   'columns': 12,
-  'gutters': leading('md'),
-);
-
-$lg: (
-  'gutters': leading('lg'),
-);
-
-$xl: (
-  'gutters': leading('xl'),
+  'gutters': 2rem,
 );
