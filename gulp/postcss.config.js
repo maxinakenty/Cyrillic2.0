@@ -26,5 +26,5 @@ export default [
     basePath: __paths.dist.root,
     loadPaths: ['img/']
   }),
-  // packer,
+  packer,
 ];
