@@ -5,33 +5,33 @@ $headers-spacing: () !default;
 // Configuration map of headers-spacing factory defaults <<<------------
 $headers-spacing-defaults: (
   'h1': (
-    'line-height': 2,
-    'margin-top': 4,
-    'margin-bottom': 1,
+    'line-height': 4rem,
+    'margin-top': 8rem,
+    'margin-bottom': 2rem,
     ),
   'h2': (
-    'line-height': 1.5,
-    'margin-top': 2.5,
-    'margin-bottom': 0.5,
+    'line-height': 3rem,
+    'margin-top': 5rem,
+    'margin-bottom': 1rem,
     ),
   'h3': (
-    'line-height': 1.5,
-    'margin-top': 2,
-    'margin-bottom': 0.5,
+    'line-height': 3rem,
+    'margin-top': 4rem,
+    'margin-bottom': 1rem,
     ),
   'h4': (
-    'line-height': 1,
-    'margin-top': 1.5,
-    'margin-bottom': 0.5,
+    'line-height': 2rem,
+    'margin-top': 3rem,
+    'margin-bottom': 1rem,
     ),
   'h5': (
-    'line-height': 1,
-    'margin-top': 2.5,
-    'margin-bottom': 0.5,
+    'line-height': 2rem,
+    'margin-top': 5rem,
+    'margin-bottom': 1rem,
     ),
   'h6': (
-    'line-height': 1,
-    'margin-top': 2.5,
-    'margin-bottom': 0.5,
+    'line-height': 2rem,
+    'margin-top': 5rem,
+    'margin-bottom': 1rem,
     ),
 );
