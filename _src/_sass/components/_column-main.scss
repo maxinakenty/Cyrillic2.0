@@ -1,37 +1,20 @@
 .column-main {
-  flex: none;
-  width: 100%;
+  @extend %column;
 
   @include above('sm') {
     width: span(4, $sm);
-    padding-left: gutter(1, $sm) / 2;
-    padding-right: gutter(1, $sm) / 2;
-  }
-
-  @include above('md') {
-    padding-left: gutter(1, $md);
-    padding-right: gutter(1, $md);
-  }
-
-  @include above('lg') {
-    padding-left: gutter(1, $lg);
-    padding-right: gutter(1, $lg);
   }
 }
 
 .column-main + .column-sidebar {
   @include above('sm') {
-    padding-left: gutter(1, $sm);
-    padding-right: gutter(1, $sm) / 2;
+    padding-left: gutter(1) * 2;
+    padding-right: gutter(1);
+    margin-top: 1rem;
   }
 
   @include above('md') {
-    padding-left: gutter(1, $lg) * 2;
-    padding-right: gutter(1, $lg);
-  }
-
-  @include above('lg') {
-    padding-left: gutter(1, $lg) * 2;
-    padding-right: gutter(1, $lg);
+    padding-left: gutter(1, $md) * 2;
+    padding-right: gutter(1, $md);
   }
 }
