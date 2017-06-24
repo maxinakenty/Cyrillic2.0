@@ -1,34 +1,22 @@
 .column-quad {
-  flex: none;
-  width: 100%;
-
+  @extend %column;
   @include above('sm') {
     width: span(3, $sm);
-    float: left;
-    padding-left: gutter(1, $sm) / 2;
-    padding-right: gutter(1, $sm) / 2;
   }
 
   @include above('md') {
     width: span(3, $md);
-    padding-left: gutter(1, $md);
-    padding-right: gutter(1, $md);
-  }
-
-  @include above('lg') {
-    padding-left: gutter(1, $lg);
-    padding-right: gutter(1, $lg);
   }
 }
 
 .column-quad p {
   @include above('lg') {
-    @include font-size('beta');
+    @include font-size('text-sm');
   }
 }
 
 .column-quad li {
   @include above('lg') {
-    @include font-size('beta');
+    @include font-size('text-sm');
   }
 }
