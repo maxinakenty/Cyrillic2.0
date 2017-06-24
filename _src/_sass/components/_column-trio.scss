@@ -1,32 +1,19 @@
 .column-trio {
-  flex: none;
-  width: 100%;
+  @extend %column;
 
   @include above('sm') {
     width: span(2, $sm);
-    padding-left: gutter(1, $sm) / 2;
-    padding-right: gutter(1, $sm) / 2;
-  }
-
-  @include above('md') {
-    padding-left: gutter(1, $md);
-    padding-right: gutter(1, $md);
-  }
-
-  @include above('lg') {
-    padding-left: gutter(1, $lg);
-    padding-right: gutter(1, $lg);
   }
 }
 
 .column-trio p {
   @include above('lg') {
-    @include font-size('beta');
+    @include font-size('text-sm');
   }
 }
 
 .column-trio li {
   @include above('lg') {
-    @include font-size('beta');
+    @include font-size('text-sm');
   }
 }
