@@ -1,4 +1,4 @@
-@mixin breakpoints-param($multiplier: 1) {
+@mixin breakpoints-param() {
   
   @for $i from 2 through length($breakpoints) {
 
@@ -35,9 +35,11 @@
   left: 0;
   text-align: center;
   padding: 10px;
-  background-color: pink;
+  background-color: white;
+  color: white;
   font-size: 1rem;
   z-index: 1002;
-  color: #333;
+  color: black;
   font-weight: bold;
+  box-shadow: 0 -3px 10px 0 rgba(black,.07);
 }
