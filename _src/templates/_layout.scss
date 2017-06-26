@@ -1,14 +1,15 @@
-html,
-body {
-  min-height: 100vh;
-  position: relative;
-}
-
 .wrap {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: color('body');
 }
 
 .content {
   flex: 1;
+}
+
+.footer {
+  height: 4rem;
 }
