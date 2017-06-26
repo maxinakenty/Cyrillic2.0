@@ -1,8 +1,14 @@
 %column {
   flex: none;
   width: 100%;
+  @include measure('xs');
+  margin-left: auto;
+  margin-right: auto;
 
   @include above('sm') {
+    margin-left: initial;
+    margin-right: initial;
+    max-width: initial;
     padding-left: gutter();
     padding-right: gutter();
   }
@@ -13,15 +19,10 @@
   }
 }
 
-
 .column-duo {
   @extend %column;
 
   @include above('sm') {
-    width: span(3 , $sm);
-  }
-
-  @include above('md') {
-    width: span(6, $md);
+    width: span(6 , $sm);
   }
 }
