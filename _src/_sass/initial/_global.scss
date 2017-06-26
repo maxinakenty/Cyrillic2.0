@@ -20,10 +20,10 @@ a {
     background-position: 0 93%;
     background-repeat: repeat-x;
     background-size: 100% 0.15rem;
-    text-shadow: 0.1rem 0 color('body-bg'),
-                 0.15rem 0 color('body-bg'),
-                -0.1rem 0 color('body-bg'),
-                -0.15rem 0 color('body-bg');
+    text-shadow: 0.1rem 0 color('body'),
+                 0.15rem 0 color('body'),
+                -0.1rem 0 color('body'),
+                -0.15rem 0 color('body');
 
     &:hover,
     &:active,
