@@ -1,5 +1,3 @@
-const MAP = {};
-
 const defaultOptions = {
   className: 'vertical-rhythm',
   dataAttr: 'data-rhythm',
@@ -12,11 +10,11 @@ const defaultOptions = {
 
 export default class RhythmDegug {
   constructor(options) {
+    this.state = 'off';
     this._options = this._getOptions(options);
     this._elem;
-    this._map = MAP;
-
-    this._keydown = this._keydown.bind(this);
+    this._map = {};
+    this._handleKeyDown = this._handleKeyDown.bind(this);
   }
 
   // Public
@@ -34,7 +32,7 @@ export default class RhythmDegug {
     return this._state;
   }
 
-  toggleState(state) {
+  setState(state) {
     switch (state) {
       case 'single':
         this._single();
@@ -52,10 +50,11 @@ export default class RhythmDegug {
   _render() {
     this._elem = document.createElement('div');
     this._elem.className = this._options.className;
+
     this._elem.setAttribute(this._options.dataAttr, 'off');
 
     document.body.appendChild(this._elem);
-    window.addEventListener('keydown', this._keydown);
+    window.addEventListener('keydown', this._handleKeyDown);
   }
 
   _getOptions(options) {
@@ -89,27 +88,16 @@ export default class RhythmDegug {
     return;
   }
 
-  _keydown(event) {
+  _handleKeyDown(event) {
     this._map[event.key] = event.type === 'keydown';
+    const singleRhythmKey = this._map[this._options.singleRhythmKey];
+    const doubleRhythmKey = this._map[this._options.doubleRhythmKey];
+    const offRhythmKey = this._map[this._options.offRhythmKey];
+    const rhythmKey = this._map[this._options.rhythmKey];
 
-    // More productive option if (a && b) func();
-    if ([
-        this._map[this._options.singleRhythmKey],
-        this._map[this._options.rhythmKey]
-      ].every(Boolean)
-    ) this._single();
-
-    if ([
-        this._map[this._options.doubleRhythmKey],
-        this._map[this._options.rhythmKey]
-      ].every(Boolean)
-    ) this._double();
-
-    if ([
-        this._map[this._options.offRhythmKey],
-        this._map[this._options.rhythmKey]
-      ].every(Boolean)
-    ) this._off();
+    if (singleRhythmKey && rhythmKey) this._single();
+    if (doubleRhythmKey && rhythmKey) this._double();
+    if (offRhythmKey && rhythmKey) this._off();
   }
 
   _clearMap() {
