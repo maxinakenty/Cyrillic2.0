@@ -1,7 +1,7 @@
 .column-right {
   @extend %column;
   @include above('sm') {
-    margin-left: span(2, $sm);
+    margin-left: span(4, $sm);
   }
 }
 
@@ -11,7 +11,7 @@
   @include above('sm') {
     position: absolute;
     left: 0;
-    max-width: span(2, $sm);
+    max-width: span(4, $sm);
     padding-left: gutter();
     padding-right: gutter() * 2;
   }
