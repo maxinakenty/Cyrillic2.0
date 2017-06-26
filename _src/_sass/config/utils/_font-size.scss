@@ -1,15 +1,23 @@
-@mixin font-size($font-name) {
-  $roots-values: map-values($roots);
-  $breakpoint-keys: map-keys($breakpoints);
-  $current-font-size: size(_name-with-breakpoint-key(1, $font-name));
-  font-size: #{$current-font-size / nth($roots-values, 1)}rem;
+@mixin font-size($name, $breakpoint: 'all') {
+  $type-of-breakpoint: type-of($breakpoint);
 
-  @for $i from 2 through length($breakpoints) {
-    @if $i <= length($roots) {
-      @include above(nth($breakpoint-keys, $i)) {
-        $current-font-size: size(_name-with-breakpoint-key($i, $font-name));
-        font-size: #{$current-font-size / nth($roots-values, $i)}rem;
+  @if $type-of-breakpoint == string and $breakpoint != all {
+    font-size: #{size('#{$breakpoint}-#{$name}') / size('#{$breakpoint}-root')}rem;
+  } @else if $type-of-breakpoint == string and $breakpoint == all {
+    $roots-values: map-values($roots);
+    $breakpoint-keys: map-keys($breakpoints);
+    $current-font-size: size(_name-with-breakpoint-key(1, $name));
+    font-size: #{$current-font-size / nth($roots-values, 1)}rem;
+
+    @for $i from 2 through length($breakpoints) {
+      @if $i <= length($roots) {
+        @include above(nth($breakpoint-keys, $i)) {
+          $current-font-size: size(_name-with-breakpoint-key($i, $name));
+          font-size: #{$current-font-size / nth($roots-values, $i)}rem;
+        }
       }
     }
+  } @else {
+    @warn "!!!";
   }
 }
