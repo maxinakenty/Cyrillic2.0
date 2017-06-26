@@ -2,7 +2,7 @@
   @extend %column;
 
   @include above('sm') {
-    width: span(4, $sm);
+    width: span(8, $sm);
   }
 }
 
