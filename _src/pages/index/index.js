@@ -19,5 +19,5 @@ breakpointsDebug.init();
 fixHeight.init();
 
 toggleButton.getElem().addEventListener('click', () => {
-  verticalRhythm.toggleState(toggleButton.getState());
+  verticalRhythm.setState(toggleButton.getState());
 });

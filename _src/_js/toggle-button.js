@@ -6,11 +6,10 @@ const defaultOptions = {
 
 export default class ToggleButton {
   constructor(options) {
+    this.state;
     this._options = this._getOptions(options);
-    this._state;
-
     this._mouseDown = this._mouseDown.bind(this);
-    this._click = this._click.bind(this);
+    this._handleClick = this._handleClick.bind(this);
   }
 
   // Public
@@ -69,11 +68,11 @@ export default class ToggleButton {
     const body = document.body;
     body.insertBefore(this._elem, body.firstChild);
 
-    this._elem.addEventListener('click', this._click);
+    this._elem.addEventListener('click', this._handleClick);
     this._elem.addEventListener('mousedown', this._mouseDown);
   }
 
-  _click(event) {
+  _handleClick(event) {
     if (!event.target.closest(`.${this._options.className}`)) return;
 
     this.toggle();
