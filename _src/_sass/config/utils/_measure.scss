@@ -2,7 +2,7 @@
   $typeof-name: type-of($name);
 
   @if $typeof-name == string and $name != 'all' {
-    max-width: size($name);
+    max-width: #{size('#{$name}-measure') / size('#{$name}-root')}rem;
   } @else if $typeof-name == string $name == 'all' {
     margin: auto;
     max-width: #{size(_name-with-breakpoint-key(1, 'measure')) / size(_name-with-breakpoint-key(1, 'root'))}rem;
