@@ -2,7 +2,8 @@
   @extend %column;
 
   @include above('sm') {
-    width: span(2, $sm);
+    width: span(4, $sm);
+    padding-right: gutter() * 2;
     margin-top: 3rem;
   }
 
