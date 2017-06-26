@@ -1,5 +1,3 @@
-const MAP = {};
-
 const defaultOptions = {
   elem: '.container',
   debugElem: 'grid-debug',
@@ -15,8 +13,8 @@ export default class GridDebug {
     this._elem = this._options.elem;
     this._elems = document.querySelectorAll(this._options.elem);
 
-    this._map = MAP;
-    this._keydown = this._keydown.bind(this);
+    this._map = {};
+    this._handleKeyDown = this._handleKeyDown.bind(this);
   }
 
   // Public
@@ -54,24 +52,17 @@ export default class GridDebug {
 
   // Private
   _render() {
-    window.addEventListener('keydown', this._keydown);
+    window.addEventListener('keydown', this._handleKeyDown);
   }
 
-  _keydown(event) {
+  _handleKeyDown(event) {
     this._map[event.key] = event.type === 'keydown';
+    const showGridKey = this._map[this._options.showGridKey];
+    const hideGridKey = this._map[this._options.hideGridKey];
+    const gridKey = this._map[this._options.gridKey];
 
-    // More productive option if (a && b) func();
-    if ([
-        this._map[this._options.showGridKey],
-        this._map[this._options.gridKey]
-      ].every(Boolean)
-    ) this.showGrid();
-
-    if (
-      [this._map[this._options.hideGridKey],
-        this._map[this._options.gridKey]
-      ].every(Boolean)
-    ) this.hideGrid();
+    if (showGridKey && gridKey) this.showGrid();
+    if (hideGridKey && gridKey) this.hideGrid();
   }
 
   _getOptions(options) {
