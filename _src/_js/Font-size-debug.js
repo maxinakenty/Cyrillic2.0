@@ -1,5 +1,3 @@
-const MAP = {};
-
 const defaultOptions = {
   elem: document.body,
   debugElem: 'font-size-debug',
@@ -13,8 +11,8 @@ export default class FontSizeDebug {
   constructor(options) {
     this._options = this._getElem(options);
     this._elem;
-    this._map = MAP;
-    this._keydown = this._keydown.bind(this);
+    this._map = {};
+    this._handleKeyDown = this._handleKeyDown.bind(this);
   }
 
   // Public
@@ -23,48 +21,41 @@ export default class FontSizeDebug {
   }
 
   getElem() {
-    if(!this._elem) this._render();
+    if (!this._elem) this._render();
 
     return this._elem;
   }
 
   showFontSize() {
-   this._elem.classList.add(this._options.debugElem);
-   this._clearMap();
-   event.preventDefault();
+    this._elem.classList.add(this._options.debugElem);
+    this._clearMap();
+    event.preventDefault();
 
-   return;
+    return;
   }
 
   hideFontSize() {
-   this._elem.classList.remove(this._options.debugElem);
-   this._clearMap();
-   event.preventDefault();
+    this._elem.classList.remove(this._options.debugElem);
+    this._clearMap();
+    event.preventDefault();
 
-   return;
+    return;
   }
 
   // Private
   _render() {
     this._elem = this._options.elem;
-    this._elem.addEventListener('keydown', this._keydown);
+    this._elem.addEventListener('keydown', this._handleKeyDown);
   }
 
-  _keydown(event) {
+  _handleKeyDown(event) {
     this._map[event.key] = event.type === 'keydown';
+    const showBreakKey = this._map[this._options.showBreakKey];
+    const hideBreakKey = this._map[this._options.hideBreakKey];
+    const breakKey = this._map[this._options.breakKey];
 
-    // More productive option if (a && b) func();
-    if ([
-        this._map[this._options.showBreakKey],
-        this._map[this._options.breakKey]
-      ].every(Boolean)
-    ) this.showFontSize();
-
-    if ([
-        this._map[this._options.hideBreakKey],
-        this._map[this._options.breakKey]
-      ].every(Boolean)
-    ) this.hideFontSize();
+    if (showBreakKey && breakKey) this.showFontSize();
+    if (hideBreakKey && breakKey) this.hideFontSize();
   }
 
   _getElem(options) {
