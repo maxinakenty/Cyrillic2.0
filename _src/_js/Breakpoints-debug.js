@@ -27,19 +27,19 @@ export default class BreakpointsDebug {
   }
 
   showBreak() {
-   this._elem.classList.add(this._options.debugElem);
-   this._clearMap();
-   event.preventDefault();
+    this._elem.classList.add(this._options.debugElem);
+    this._clearMap();
+    event.preventDefault();
 
-   return;
+    return;
   }
 
   hideBreak() {
-   this._elem.classList.remove(this._options.debugElem);
-   this._clearMap();
-   event.preventDefault();
+    this._elem.classList.remove(this._options.debugElem);
+    this._clearMap();
+    event.preventDefault();
 
-   return;
+    return;
   }
 
   // Private
@@ -52,7 +52,7 @@ export default class BreakpointsDebug {
     this._map[event.key] = event.type === 'keydown';
     const showBreakKey = this._map[this._options.showBreakKey];
     const hideBreakKey = this._map[this._options.hideBreakKey];
-    const breakKey =  this._map[this._options.breakKey];
+    const breakKey = this._map[this._options.breakKey];
 
     if (showBreakKey && breakKey) this.showBreak();
     if (hideBreakKey && breakKey) this.hideBreak();
