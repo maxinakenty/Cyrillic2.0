@@ -3,10 +3,6 @@
   @include above('sm') {
     width: span(3, $sm);
   }
-
-  @include above('md') {
-    width: span(3, $md);
-  }
 }
 
 .column-quad p {
