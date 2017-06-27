@@ -24,39 +24,52 @@ export default class ToggleButton {
   }
 
   getState() {
-    return this._state;
+    return this.state;
+  }
+
+  setState(newState) {
+    switch (newState) {
+      case 'single':
+        this._setSingleRhythm();
+        break;
+      case 'double':
+        this._setDoubleRhythm();
+        break;
+      default:
+        this._turnOffRhythm();
+        break;
+    }
   }
 
   toggle() {
     if (this._elem.closest(`[${this._options.dataAttr}="off"]`)) {
-      this._single();
+      this._setSingleRhythm();
 
     } else if (this._elem.closest(`[${this._options.dataAttr}="single"]`)) {
-      this._double();
+      this._setDoubleRhythm();
 
     } else {
-      this._off();
+      this._turnOffRhythm();
     }
   }
 
-
   // Private
-  _off() {
+  _turnOffRhythm() {
     this._elem.setAttribute(this._options.dataAttr, 'off');
     this._elem.textContent = 'rhythm off';
-    this._state = 'off';
+    this.state = 'off';
   }
 
-  _single() {
+  _setSingleRhythm() {
     this._elem.setAttribute(this._options.dataAttr, 'single');
     this._elem.textContent = 'rhythm single';
-    this._state = 'single';
+    this.state = 'single';
   }
 
-  _double() {
+  _setDoubleRhythm() {
     this._elem.setAttribute(this._options.dataAttr, 'double');
     this._elem.textContent = 'rhythm double';
-    this._state = 'double';
+    this.state = 'double';
   }
 
   _render() {
