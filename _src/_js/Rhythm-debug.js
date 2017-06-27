@@ -10,7 +10,7 @@ const defaultOptions = {
 
 export default class RhythmDegug {
   constructor(options) {
-    this.state = 'off';
+    this.state;
     this._options = this._getOptions(options);
     this._elem;
     this._map = {};
@@ -29,19 +29,19 @@ export default class RhythmDegug {
   }
 
   getState() {
-    return this._state;
+    return this.state;
   }
 
-  setState(state) {
-    switch (state) {
+  setState(newState) {
+    switch (newState) {
       case 'single':
-        this._single();
+        this._setSingleRhythm();
         break;
       case 'double':
-        this._double();
+        this._setDoubleRhythm();
         break;
       default:
-        this._off();
+        this._turnOffRhythm();
         break;
     }
   }
@@ -50,38 +50,34 @@ export default class RhythmDegug {
   _render() {
     this._elem = document.createElement('div');
     this._elem.className = this._options.className;
-
     this._elem.setAttribute(this._options.dataAttr, 'off');
 
-    document.body.appendChild(this._elem);
     window.addEventListener('keydown', this._handleKeyDown);
+    document.body.appendChild(this._elem);
   }
 
   _getOptions(options) {
     return Object.assign({}, defaultOptions, options);
   }
 
-  _off() {
+  _turnOffRhythm() {
     this._elem.setAttribute(this._options.dataAttr, 'off');
-
     this._clearMap();
     event.preventDefault();
 
     return;
   }
 
-  _single() {
+  _setSingleRhythm() {
     this._elem.setAttribute(this._options.dataAttr, 'single');
-
     this._clearMap();
     event.preventDefault();
 
     return;
   }
 
-  _double() {
+  _setDoubleRhythm() {
     this._elem.setAttribute(this._options.dataAttr, 'double');
-
     this._clearMap();
     event.preventDefault();
 
@@ -95,9 +91,9 @@ export default class RhythmDegug {
     const offRhythmKey = this._map[this._options.offRhythmKey];
     const rhythmKey = this._map[this._options.rhythmKey];
 
-    if (singleRhythmKey && rhythmKey) this._single();
-    if (doubleRhythmKey && rhythmKey) this._double();
-    if (offRhythmKey && rhythmKey) this._off();
+    if (singleRhythmKey && rhythmKey) this._setSingleRhythm();
+    if (doubleRhythmKey && rhythmKey) this._setDoubleRhythm();
+    if (offRhythmKey && rhythmKey) this._turnOffRhythm();
   }
 
   _clearMap() {
