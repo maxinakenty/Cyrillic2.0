@@ -6,7 +6,6 @@ const defaultOptions = {
   hideBreakKey: 'h',
 };
 
-
 export default class BreakpointsDebug {
   constructor(options) {
     this._options = this._getElem(options);

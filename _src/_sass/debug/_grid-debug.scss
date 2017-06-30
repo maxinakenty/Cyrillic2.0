@@ -9,10 +9,6 @@
   @include above('sm') {
     background-size: span(2, $sm);
   }
-
-  @include above('md') {
-    background-size: span(2, $md);
-  }
 }
 
 .grid-debug {
