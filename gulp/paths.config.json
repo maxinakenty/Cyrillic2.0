@@ -12,7 +12,7 @@
 
   "src": {
     "pug": [
-      "./_src/pages/index/index.pug"
+      "./_src/index.pug"
     ],
     "styles": {
       "main": "./_src/_sass/new-typography.scss",
