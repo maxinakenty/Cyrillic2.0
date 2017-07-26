@@ -6,11 +6,11 @@
       $key: _breakpoint-key($i);
 
       $min-width: if(_breakpoint-min(_breakpoint-key($i), $breakpoints),
-        '---- min-width: #{_breakpoint-min(_breakpoint-key($i), $breakpoints)}',
+        '____ min-width: #{_breakpoint-min(_breakpoint-key($i), $breakpoints)}',
          null);
 
       $max-width: if(_breakpoint-max(_breakpoint-key($i), $breakpoints),
-        '---- max-width: #{_breakpoint-max(_breakpoint-key($i), $breakpoints)}',
+        '____ max-width: #{_breakpoint-max(_breakpoint-key($i), $breakpoints)}',
          null);
 
       content: 'breakpoint: #{$key}  #{$min-width}  #{$max-width}';
