@@ -1,0 +1,169 @@
+extends templates/layout
+
+block head
+  - var pageTitle = 'New Typography';
+
+block content
+    .container(role="grid")
+      .single-measure(role="gridcell")
+        h1 Web Design is 95% typography'
+        p.
+          95% of the information on the web is written language. It is only logical to say that a web designer should get good training in the main discipline of shaping written information, in other words: Typography.
+        p.
+          Back in 1969, Emil Ruder, a famous Swiss typographer, wrote on behalf of his contemporary print materials what we could easily say about our contemporary websites:
+
+        blockquote
+          p.
+            Today we are inundated with such an immense flood of printed matter that the value of the individual work has depreciated, for our harassed contemporaries simply cannot take everything that is printed today. It is the typographer’s task to divide up and organize and interpret this mass of printed matter in such a way that the reader will have a good chance of finding what is of interest to him.
+
+        p.
+          With some imagination (replace print with online) this sounds like the job description of an information designer. It is the information designer’s task “to divide up and organize and interpret this mass of printed matter in such a way that the reader will have a good chance of finding what is of interest to him”.
+
+        p.
+          Macro-typography (overall text-structure) in contrast to micro typography (detailed aspects of type and spacing) covers many aspects of what we nowadays call “information design”. So to speak, information designers nowadays do the job that typographers did 30 years ago:
+
+        blockquote
+          p.
+            Typography has one plain duty before it and that is to convey information in writing. No argument or consideration can absolve typography from this duty. A printed work which cannot be read becomes a product without purpose.
+
+        p.
+          Optimizing typography is optimizing readability, accessibility, usability(!), overall graphic balance. Organizing blocks of text and combining them with pictures, isn’t that what graphic designers, usability specialists, information architects do? So why is it such a neglected topic?
+
+        h2!='Too few fonts? <br/>resolution too low?'
+        p.
+          The main—usually whiny—argument against typographical discipline online is that there are only few fonts available. The second argument is that the screen resolution is too low, which makes it hard to read pixelated or anti-aliased fonts in the first place.
+
+        p.
+          The main—usually whiny—argument against typographical discipline online is that there are only few fonts available. The second argument is that the screen resolution is too low, which makes it hard to read pixelated or anti-aliased fonts in the first place.
+
+        p.
+          The argument that we do not have enough fonts at our disposition is as good as irrelevant: During the Italian renaissance the typographer had one font to work with, and yet this period produced some of the most beautiful typographical work:
+
+        h2 Choosing a&nbsp;typeface is&nbsp;not typography
+        p.
+          The second argument is not much better. In the beginning of printing the quality of printed letters was way worse than what we see on the screen nowadays. More importantly, if handled professionally, screen fonts are pretty well readable.
+        p.
+          Information design is not about the use of good typefaces, it is about the use of good typography. Which is a huge difference. Anyone can use typefaces, some can choose good typefaces, but only few master typography.
+
+        h3 Treat Text as&nbsp;a&nbsp;User Interface
+        p!='Yes, it is annoying how different browsers and platforms render fonts, and yes, the resolution issue makes it hard to stay focused for more than five minutes. But, well, it is part of a web designer’s job to make sure that texts are easy and nice to read on all major browsers and platforms. Correct leading, word and letter spacing, active white space, and dosed use of color help readability. But that’s not quite it. A great web designer knows how to work with text not just as content, he treats “<a href="#">text as a user interface</a>”. Have a look at <a href="https://www.subtraction.com/">Khoi Vinh’s website</a>, and you’ll probably understand what that means:'
+    .container(role="grid")
+      .column-duo(role="gridcell")
+        h4 Column one
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+      .column-duo(role="gridcell")
+        h4 Column two
+        p
+          | Quos atque officia quod. 
+          i Suscipit delectus
+          |  cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit tempora.
+    .container(role="grid")
+      .column-trio(role="gridcell")
+        h5 Column one
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+      .column-trio(role="gridcell")
+        h5 Column two
+        p
+          | Quos atque officia quod. 
+          i Suscipit delectus
+          |  cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit tempora.
+      .column-trio(role="gridcell")
+        h5 Column three
+        p
+          | Quos atque officia quod. 
+          i Suscipit delectus
+          |  cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit tempora.
+    .container(role="grid")
+      .column-quad(role="gridcell")
+        h5 Column one
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+      .column-quad(role="gridcell")
+        h6 Column two
+        p
+          | Quos atque officia quod. 
+          i Suscipit delectus
+          |  cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit tempora.
+      .column-quad(role="gridcell")
+        h6 Column three
+        p
+          | Quos atque officia quod. 
+          i Suscipit delectus
+          |  cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit tempora.
+      .column-quad(role="gridcell")
+        h6 Column four
+        p
+          | Quos atque officia quod. 
+          i Suscipit delectus
+          |  cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip reprehenderit nihil veniam tempora do maxime omnis reiciendis elit tempora.
+    .container(role="grid")
+      .column-main(role="gridcell")
+        h2 Main column
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+      aside.column-sidebar(role="gridcell")
+        h4 Sidebar
+        p!='Quos atque officia quod.<i>Suscipit delectus</i>cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id&nbsp;tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip.'
+    .container(role="grid")
+      aside.column-sidebar(role="gridcell")
+        h4 Sidebar
+        p
+          | Quos atque officia quod. 
+          i Suscipit delectus
+          |  cupidatat, quia nulla numquam aute cillum proident. Maiores iusto culpa molestias quam id tenetur saepe impedit reiciendis itaque ducimus itaque nostrud. Tempor aliquip, culpa earum itaque sed consequatur minus aliquip.
+      .column-main(role="gridcell")
+        h2 Main column
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+    .container(role="grid")
+      .column-main(role="gridcell").column-right
+        h2 Main column
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+        p.caption.sidenote This is an inline caption.
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+    .container(role="grid")
+      .column-main(role="gridcell").column-left
+        h2 Main column
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+        p.caption.sidenote This is a long inline caption that will probably go across a couple of lines.
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
+        p
+          | Consectetur adipisicing elit, alias at autem magna aliquid 
+          a(href='#') quam proident
+          |  quis aliquam. temporibus minus eius veniam cupidatat ex, voluptas fuga, quos, mollitia incidunt do officia facilis. molestiae consequat excepturi laborum perferendis tempor minim eiusmod minim minus quia sint.
